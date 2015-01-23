@@ -5,9 +5,16 @@ public class Controller_pg : MonoBehaviour {
 
 	float speed = 1;
 	Animator anim;
+	Rigidbody rig;
+	bool jump = false;
+	bool falling = false;
+	float YPos = 0;
+	float jumpHeigth = 2;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
+		rig = GetComponent<Rigidbody> ();
+		jump = false;
 	}
 	
 	// Update is called once per frame
@@ -22,7 +29,6 @@ public class Controller_pg : MonoBehaviour {
 					transform.Rotate (Vector3.up, 1);
 			
 		// FINE SISTEMA DI ROTAZIONE
-
 
 		//Usiamo i tasti per muoverci
 		if (Input.GetKey (KeyCode.W)) {
@@ -41,5 +47,35 @@ public class Controller_pg : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.W)) {
 			anim.SetBool("walk", false);
 		}
+	
+
+
+
+		}
+	void FixedUpdate() {
+		if (!jump && !falling) {
+			if(Input.GetKeyDown(KeyCode.Space)){
+				jump = true;
+				YPos = transform.position.y;
+			}
+		}
+		do_jump();
 	}
+	void do_jump(){
+		if (jump && !falling) {
+			if(YPos + jumpHeigth >= transform.position.y){
+				Debug.Log("Jumping");
+				rig.AddForce(Vector3.up * 200);
+				falling = true;
+			}
+		}
+	}
+	void OnCollisionEnter(Collision collision) {
+		if (falling) {
+			Debug.Log("Hit the ground");
+			falling = false;
+			jump = false;
+		}
+	}
+
 }
