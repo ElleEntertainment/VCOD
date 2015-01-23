@@ -8,6 +8,7 @@ public class Controller_pg : MonoBehaviour {
 	Rigidbody rig;
 	bool jump = false;
 	bool falling = false;
+	bool run = true;
 	float YPos = 0;
 	float jumpHeigth = 2;
 	// Use this for initialization
@@ -15,6 +16,7 @@ public class Controller_pg : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		rig = GetComponent<Rigidbody> ();
 		jump = false;
+		run = true;
 	}
 	
 	// Update is called once per frame
@@ -29,11 +31,24 @@ public class Controller_pg : MonoBehaviour {
 					transform.Rotate (Vector3.up, 1);
 			
 		// FINE SISTEMA DI ROTAZIONE
+		if (Input.GetKeyDown (KeyCode.C)) {
+			run = !run;
+			anim.SetBool("canRun", run);
+		}
 
 		//Usiamo i tasti per muoverci
 		if (Input.GetKey (KeyCode.W)) {
 			//anim.SetFloat("direction", move);
-			anim.SetBool("walk", true);
+			if(run){
+				anim.SetBool("run", true);
+				anim.SetBool("walk", false);
+				transform.Translate (Vector3.left * speed / 15, Space.Self);
+			}
+			else{
+				anim.SetBool("run", false);
+				anim.SetBool("walk", true);
+				transform.Translate (Vector3.left * speed / 30, Space.Self);
+			}
 			transform.Translate (Vector3.left * speed / 30, Space.Self); // diviso 30 per ridurre la velocità
 		}
 		if (Input.GetKey (KeyCode.S))
@@ -45,7 +60,10 @@ public class Controller_pg : MonoBehaviour {
 		//Fine sistema di movimento semplice
 		//Ci sono gli if senza gli else per dare la possibilità di muoversi in più direzioni in una volta
 		if (Input.GetKeyUp (KeyCode.W)) {
-			anim.SetBool("walk", false);
+			if(run)
+				anim.SetBool("run", false);
+			else
+				anim.SetBool("walk", false);
 		}
 	
 
