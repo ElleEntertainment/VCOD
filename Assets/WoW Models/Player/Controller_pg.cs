@@ -42,7 +42,7 @@ public class Controller_pg : MonoBehaviour {
 			if(run){
 				anim.SetBool("run", true);
 				anim.SetBool("walk", false);
-				transform.Translate (Vector3.left * speed / 15, Space.Self);
+				transform.Translate (Vector3.left * speed / 14, Space.Self);
 			}
 			else{
 				anim.SetBool("run", false);
