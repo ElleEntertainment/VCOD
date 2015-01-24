@@ -63,7 +63,7 @@ public class Infetto : MonoBehaviour {
 	}
 
 	void facePosition(Vector3 pos){
-			if (isInCombat) {
+			if (isInCombat || backHome) {
 			Vector3 target = pos - transform.position;
 			float angle = Vector3.Angle(target, transform.forward);
 			Vector3 targetDir = pos - transform.position;
