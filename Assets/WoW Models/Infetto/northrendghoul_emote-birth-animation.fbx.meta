@@ -1,0 +1,1042 @@
+fileFormatVersion: 2
+guid: b5d6407ec3a873549ad16de3574db8f8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: northrendghoul_emote-birth-animation
+    100004: northrendghoul_emote-birth-animation 1
+    100006: northrendghoul_emote-birth-animation_bone_0
+    100008: northrendghoul_emote-birth-animation_bone_11
+    100010: northrendghoul_emote-birth-animation_bone_12
+    100012: northrendghoul_emote-birth-animation_bone_13
+    100014: northrendghoul_emote-birth-animation_bone_14
+    100016: northrendghoul_emote-birth-animation_bone_15
+    100018: northrendghoul_emote-birth-animation_bone_16
+    100020: northrendghoul_emote-birth-animation_bone_19
+    100022: northrendghoul_emote-birth-animation_bone_20
+    100024: northrendghoul_emote-birth-animation_bone_21
+    100026: northrendghoul_emote-birth-animation_bone_23
+    100028: northrendghoul_emote-birth-animation_bone_24
+    100030: northrendghoul_emote-birth-animation_bone_27
+    100032: northrendghoul_emote-birth-animation_bone_28
+    100034: northrendghoul_emote-birth-animation_bone_29
+    100036: northrendghoul_emote-birth-animation_bone_30
+    100038: northrendghoul_emote-birth-animation_bone_31
+    100040: northrendghoul_emote-birth-animation_bone_32
+    100042: northrendghoul_emote-birth-animation_bone_33
+    100044: northrendghoul_emote-birth-animation_bone_34
+    100046: northrendghoul_emote-birth-animation_bone_35
+    100048: northrendghoul_emote-birth-animation_bone_36
+    100050: northrendghoul_emote-birth-animation_bone_37
+    100052: northrendghoul_emote-birth-animation_bone_38
+    100054: northrendghoul_emote-birth-animation_bone_39
+    100056: northrendghoul_emote-birth-animation_bone_4
+    100058: northrendghoul_emote-birth-animation_bone_41
+    100060: northrendghoul_emote-birth-animation_bone_42
+    100062: northrendghoul_emote-birth-animation_bone_43
+    100064: northrendghoul_emote-birth-animation_bone_44
+    100066: northrendghoul_emote-birth-animation_bone_45
+    100068: northrendghoul_emote-birth-animation_bone_47
+    100070: northrendghoul_emote-birth-animation_bone_48
+    100072: northrendghoul_emote-birth-animation_bone_49
+    100074: northrendghoul_emote-birth-animation_bone_5
+    100076: northrendghoul_emote-birth-animation_bone_50
+    100078: northrendghoul_emote-birth-animation_bone_51
+    100080: northrendghoul_emote-birth-animation_bone_52
+    100082: northrendghoul_emote-birth-animation_bone_53
+    100084: northrendghoul_emote-birth-animation_bone_54
+    100086: northrendghoul_emote-birth-animation_bone_55
+    100088: northrendghoul_emote-birth-animation_bone_57
+    100090: northrendghoul_emote-birth-animation_bone_58
+    100092: northrendghoul_emote-birth-animation_bone_59
+    100094: northrendghoul_emote-birth-animation_bone_6
+    100096: northrendghoul_emote-birth-animation_bone_60
+    100098: northrendghoul_emote-birth-animation_bone_61
+    100100: northrendghoul_emote-birth-animation_bone_62
+    100102: northrendghoul_emote-birth-animation_bone_63
+    100104: northrendghoul_emote-birth-animation_bone_64
+    100106: northrendghoul_emote-birth-animation_bone_65
+    100108: northrendghoul_emote-birth-animation_bone_66
+    100110: northrendghoul_emote-birth-animation_bone_67
+    100112: northrendghoul_emote-birth-animation_bone_68
+    100114: northrendghoul_emote-birth-animation_bone_69
+    100116: northrendghoul_emote-birth-animation_bone_7
+    100118: northrendghoul_emote-birth-animation_bone_70
+    100120: northrendghoul_emote-birth-animation_bone_74
+    100122: northrendghoul_emote-birth-animation_bone_75
+    100124: northrendghoul_emote-birth-animation_bone_76
+    100126: northrendghoul_emote-birth-animation_bone_77
+    100128: northrendghoul_emote-birth-animation_bone_8
+    100130: northrendghoul_emote-birth-animation_bone_80
+    100132: northrendghoul_emote-birth-animation_bone_81
+    100134: northrendghoul_emote-birth-animation_bone_82
+    100136: northrendghoul_emote-birth-animation_bone_83
+    100138: northrendghoul_emote-birth-animation_bone_84
+    100140: northrendghoul_emote-birth-animation_bone_9
+    100142: northrendghoul_emote-birth-animation_bone_ArmL
+    100144: northrendghoul_emote-birth-animation_bone_ArmR
+    100146: northrendghoul_emote-birth-animation_bone_Breath
+    100148: northrendghoul_emote-birth-animation_bone_CCH
+    100150: northrendghoul_emote-birth-animation_bone_CHD
+    100152: northrendghoul_emote-birth-animation_bone_CSL
+    100154: northrendghoul_emote-birth-animation_bone_CSR
+    100156: northrendghoul_emote-birth-animation_bone_Head
+    100158: northrendghoul_emote-birth-animation_bone_Jaw
+    100160: northrendghoul_emote-birth-animation_bone_LThumb
+    100162: northrendghoul_emote-birth-animation_bone_Name
+    100164: northrendghoul_emote-birth-animation_bone_Root
+    100166: northrendghoul_emote-birth-animation_bone_RThumb
+    100168: northrendghoul_emote-birth-animation_bone_ShoulderL
+    100170: northrendghoul_emote-birth-animation_bone_ShoulderR
+    100172: northrendghoul_emote-birth-animation_bone_SpineLow
+    100174: northrendghoul_emote-birth-animation_bone_Waist
+    400000: //RootNode
+    400002: northrendghoul_emote-birth-animation
+    400004: northrendghoul_emote-birth-animation 1
+    400006: northrendghoul_emote-birth-animation_bone_0
+    400008: northrendghoul_emote-birth-animation_bone_11
+    400010: northrendghoul_emote-birth-animation_bone_12
+    400012: northrendghoul_emote-birth-animation_bone_13
+    400014: northrendghoul_emote-birth-animation_bone_14
+    400016: northrendghoul_emote-birth-animation_bone_15
+    400018: northrendghoul_emote-birth-animation_bone_16
+    400020: northrendghoul_emote-birth-animation_bone_19
+    400022: northrendghoul_emote-birth-animation_bone_20
+    400024: northrendghoul_emote-birth-animation_bone_21
+    400026: northrendghoul_emote-birth-animation_bone_23
+    400028: northrendghoul_emote-birth-animation_bone_24
+    400030: northrendghoul_emote-birth-animation_bone_27
+    400032: northrendghoul_emote-birth-animation_bone_28
+    400034: northrendghoul_emote-birth-animation_bone_29
+    400036: northrendghoul_emote-birth-animation_bone_30
+    400038: northrendghoul_emote-birth-animation_bone_31
+    400040: northrendghoul_emote-birth-animation_bone_32
+    400042: northrendghoul_emote-birth-animation_bone_33
+    400044: northrendghoul_emote-birth-animation_bone_34
+    400046: northrendghoul_emote-birth-animation_bone_35
+    400048: northrendghoul_emote-birth-animation_bone_36
+    400050: northrendghoul_emote-birth-animation_bone_37
+    400052: northrendghoul_emote-birth-animation_bone_38
+    400054: northrendghoul_emote-birth-animation_bone_39
+    400056: northrendghoul_emote-birth-animation_bone_4
+    400058: northrendghoul_emote-birth-animation_bone_41
+    400060: northrendghoul_emote-birth-animation_bone_42
+    400062: northrendghoul_emote-birth-animation_bone_43
+    400064: northrendghoul_emote-birth-animation_bone_44
+    400066: northrendghoul_emote-birth-animation_bone_45
+    400068: northrendghoul_emote-birth-animation_bone_47
+    400070: northrendghoul_emote-birth-animation_bone_48
+    400072: northrendghoul_emote-birth-animation_bone_49
+    400074: northrendghoul_emote-birth-animation_bone_5
+    400076: northrendghoul_emote-birth-animation_bone_50
+    400078: northrendghoul_emote-birth-animation_bone_51
+    400080: northrendghoul_emote-birth-animation_bone_52
+    400082: northrendghoul_emote-birth-animation_bone_53
+    400084: northrendghoul_emote-birth-animation_bone_54
+    400086: northrendghoul_emote-birth-animation_bone_55
+    400088: northrendghoul_emote-birth-animation_bone_57
+    400090: northrendghoul_emote-birth-animation_bone_58
+    400092: northrendghoul_emote-birth-animation_bone_59
+    400094: northrendghoul_emote-birth-animation_bone_6
+    400096: northrendghoul_emote-birth-animation_bone_60
+    400098: northrendghoul_emote-birth-animation_bone_61
+    400100: northrendghoul_emote-birth-animation_bone_62
+    400102: northrendghoul_emote-birth-animation_bone_63
+    400104: northrendghoul_emote-birth-animation_bone_64
+    400106: northrendghoul_emote-birth-animation_bone_65
+    400108: northrendghoul_emote-birth-animation_bone_66
+    400110: northrendghoul_emote-birth-animation_bone_67
+    400112: northrendghoul_emote-birth-animation_bone_68
+    400114: northrendghoul_emote-birth-animation_bone_69
+    400116: northrendghoul_emote-birth-animation_bone_7
+    400118: northrendghoul_emote-birth-animation_bone_70
+    400120: northrendghoul_emote-birth-animation_bone_74
+    400122: northrendghoul_emote-birth-animation_bone_75
+    400124: northrendghoul_emote-birth-animation_bone_76
+    400126: northrendghoul_emote-birth-animation_bone_77
+    400128: northrendghoul_emote-birth-animation_bone_8
+    400130: northrendghoul_emote-birth-animation_bone_80
+    400132: northrendghoul_emote-birth-animation_bone_81
+    400134: northrendghoul_emote-birth-animation_bone_82
+    400136: northrendghoul_emote-birth-animation_bone_83
+    400138: northrendghoul_emote-birth-animation_bone_84
+    400140: northrendghoul_emote-birth-animation_bone_9
+    400142: northrendghoul_emote-birth-animation_bone_ArmL
+    400144: northrendghoul_emote-birth-animation_bone_ArmR
+    400146: northrendghoul_emote-birth-animation_bone_Breath
+    400148: northrendghoul_emote-birth-animation_bone_CCH
+    400150: northrendghoul_emote-birth-animation_bone_CHD
+    400152: northrendghoul_emote-birth-animation_bone_CSL
+    400154: northrendghoul_emote-birth-animation_bone_CSR
+    400156: northrendghoul_emote-birth-animation_bone_Head
+    400158: northrendghoul_emote-birth-animation_bone_Jaw
+    400160: northrendghoul_emote-birth-animation_bone_LThumb
+    400162: northrendghoul_emote-birth-animation_bone_Name
+    400164: northrendghoul_emote-birth-animation_bone_Root
+    400166: northrendghoul_emote-birth-animation_bone_RThumb
+    400168: northrendghoul_emote-birth-animation_bone_ShoulderL
+    400170: northrendghoul_emote-birth-animation_bone_ShoulderR
+    400172: northrendghoul_emote-birth-animation_bone_SpineLow
+    400174: northrendghoul_emote-birth-animation_bone_Waist
+    4300000: northrendghoul_emote-birth-animation
+    7400000: Birth
+    9500000: //RootNode
+    13700000: northrendghoul_emote-birth-animation
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Birth
+      takeName: Birth
+      firstFrame: 0
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: northrendghoul_emote-birth-animation
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_11
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_12
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_13
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_14
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_15
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_16
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_75
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_76
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_77
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_CCH
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_Head
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_Head/northrendghoul_emote-birth-animation_bone_23
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_Head/northrendghoul_emote-birth-animation_bone_24
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_Head/northrendghoul_emote-birth-animation_bone_Breath
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_Head/northrendghoul_emote-birth-animation_bone_Jaw
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_38
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_38/northrendghoul_emote-birth-animation_bone_48
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_39
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_39/northrendghoul_emote-birth-animation_bone_49
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_82
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_83
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_32/northrendghoul_emote-birth-animation_bone_LThumb
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_33
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_33/northrendghoul_emote-birth-animation_bone_41
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_33/northrendghoul_emote-birth-animation_bone_41/northrendghoul_emote-birth-animation_bone_50
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_34
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_34/northrendghoul_emote-birth-animation_bone_42
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_34/northrendghoul_emote-birth-animation_bone_42/northrendghoul_emote-birth-animation_bone_51
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderL/northrendghoul_emote-birth-animation_bone_ArmL/northrendghoul_emote-birth-animation_bone_30/northrendghoul_emote-birth-animation_bone_80
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_35
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_35/northrendghoul_emote-birth-animation_bone_43
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_35/northrendghoul_emote-birth-animation_bone_43/northrendghoul_emote-birth-animation_bone_52
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_44
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_44/northrendghoul_emote-birth-animation_bone_53
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_45
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_45/northrendghoul_emote-birth-animation_bone_54
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_81
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_84
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_36/northrendghoul_emote-birth-animation_bone_RThumb
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_37
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_37/northrendghoul_emote-birth-animation_bone_47
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_SpineLow/northrendghoul_emote-birth-animation_bone_6/northrendghoul_emote-birth-animation_bone_ShoulderR/northrendghoul_emote-birth-animation_bone_ArmR/northrendghoul_emote-birth-animation_bone_31/northrendghoul_emote-birth-animation_bone_37/northrendghoul_emote-birth-animation_bone_47/northrendghoul_emote-birth-animation_bone_55
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_4
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_4/northrendghoul_emote-birth-animation_bone_7
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_4/northrendghoul_emote-birth-animation_bone_7/northrendghoul_emote-birth-animation_bone_19
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_4/northrendghoul_emote-birth-animation_bone_7/northrendghoul_emote-birth-animation_bone_19/northrendghoul_emote-birth-animation_bone_27
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5/northrendghoul_emote-birth-animation_bone_8
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5/northrendghoul_emote-birth-animation_bone_8/northrendghoul_emote-birth-animation_bone_20
+        weight: 1
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5/northrendghoul_emote-birth-animation_bone_8/northrendghoul_emote-birth-animation_bone_20/northrendghoul_emote-birth-animation_bone_28
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5/northrendghoul_emote-birth-animation_bone_9
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5/northrendghoul_emote-birth-animation_bone_9/northrendghoul_emote-birth-animation_bone_21
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_0/northrendghoul_emote-birth-animation_bone_Root/northrendghoul_emote-birth-animation_bone_Waist/northrendghoul_emote-birth-animation_bone_5/northrendghoul_emote-birth-animation_bone_9/northrendghoul_emote-birth-animation_bone_21/northrendghoul_emote-birth-animation_bone_29
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_57
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_58
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_59
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_60
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_61
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_62
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_63
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_64
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_65
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_66
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_67
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_68
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_69
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_70
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_74
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_CHD
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_CSL
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_CSR
+        weight: 0
+      - path: northrendghoul_emote-birth-animation 1/northrendghoul_emote-birth-animation_bone_Name
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: northrendghoul_emote-birth-animation_bone_Root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_SpineLow
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_ShoulderL
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_ArmL
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_30
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_32
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_ShoulderR
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_ArmR
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_31
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_35
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_4
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_7
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_19
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_5
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_8
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_20
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_23
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_24
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: northrendghoul_emote-birth-animation_bone_Jaw
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: northrendghoul_emote-birth-animation(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation 1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_0
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_Root
+      position: {x: -0, y: .608310878, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_SpineLow
+      position: {x: .029870186, y: .0235959291, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_6
+      position: {x: -.022170011, y: .192528889, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_11
+      position: {x: -.0330044478, y: .0178052783, z: -.0869230852}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_12
+      position: {x: -.116829649, y: -.0119605064, z: -.104030482}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_13
+      position: {x: -.186945915, y: -.0694745108, z: -.036794208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_14
+      position: {x: -.186945871, y: -.0670874119, z: .0423774421}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_15
+      position: {x: -.116829582, y: -.0107668638, z: .107226543}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_16
+      position: {x: -.0330043882, y: .0178139806, z: .0901190564}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_75
+      position: {x: -.18936947, y: -.0310709476, z: .000794191496}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_76
+      position: {x: -.0498202033, y: .0797123909, z: -.00434593437}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_77
+      position: {x: -.202798113, y: -.0761669204, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_CCH
+      position: {x: -.202798054, y: -.0761669204, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_Head
+      position: {x: -.218199492, y: .157523632, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_23
+      position: {x: -.125288591, y: -.0067859292, z: .0383989662}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_24
+      position: {x: -.125288635, y: -.0067859292, z: -.0332135931}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_Breath
+      position: {x: -.170481637, y: -.111438274, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_Jaw
+      position: {x: -.045506835, y: -.105015807, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_ShoulderL
+      position: {x: -.150054738, y: .104396343, z: -.0720427558}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_ArmL
+      position: {x: .000698879361, y: -.0238842368, z: -.075621061}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_30
+      position: {x: .0128005147, y: -.207559049, z: -.0549159795}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_32
+      position: {x: -.089811936, y: -.282041937, z: -.0789668262}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_38
+      position: {x: -.0415100604, y: -.101742111, z: -.041477412}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_48
+      position: {x: -.00474858284, y: -.11193829, z: .00270110369}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_39
+      position: {x: .0187076628, y: -.123390138, z: -.0339776874}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_49
+      position: {x: .0287252795, y: -.108688742, z: .0209527612}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_82
+      position: {x: .00362691283, y: -.11292389, z: .00556755066}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_83
+      position: {x: .00362691283, y: -.11292389, z: .00556755066}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_LThumb
+      position: {x: -.0456972867, y: -.0491657816, z: .0282759666}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_33
+      position: {x: -.0881515592, y: -.234408751, z: -.0214424264}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_41
+      position: {x: 5.96046448e-08, y: -.0947552249, z: -.00110173225}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_50
+      position: {x: 5.96046448e-08, y: -.100264221, z: .0110180974}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_34
+      position: {x: -.0393715166, y: -.233651161, z: -.0796642303}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_42
+      position: {x: .0107092708, y: -.101710372, z: -.0199738443}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_51
+      position: {x: .00347617269, y: -.115701176, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_80
+      position: {x: -.0220276844, y: -.0884021521, z: -.092834264}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_ShoulderR
+      position: {x: -.150054112, y: .104396224, z: .0720427558}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_ArmR
+      position: {x: .000698670745, y: -.023884654, z: .0756211132}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_31
+      position: {x: .0127363056, y: -.20629108, z: .0595141202}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_35
+      position: {x: -.0835438073, y: -.236487284, z: .016489625}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_43
+      position: {x: .00243319571, y: -.0946911573, z: .00273640454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_52
+      position: {x: .00380985439, y: -.100372553, z: -.00922387838}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_36
+      position: {x: -.0897487029, y: -.283308953, z: .0743693113}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_44
+      position: {x: -.042753499, y: -.10227108, z: .0388313234}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_53
+      position: {x: -.00144222379, y: -.112054721, z: -.00122821331}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_45
+      position: {x: .0184742063, y: -.122301579, z: .0378242992}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_54
+      position: {x: .0336099416, y: -.10811954, z: -.016060859}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_81
+      position: {x: -.000674918294, y: -.119076729, z: -.00246524811}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_84
+      position: {x: -.000674933195, y: -.119076729, z: -.00246521831}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_RThumb
+      position: {x: -.0412578732, y: -.0508529209, z: -.0318891704}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_37
+      position: {x: -.0217709988, y: -.235329151, z: .0804015696}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_47
+      position: {x: -.00457780063, y: -.100121468, z: .0205470603}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_55
+      position: {x: .000499293208, y: -.112139463, z: .0024138391}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_Waist
+      position: {x: -.0126409205, y: .0343450308, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_4
+      position: {x: -.0286663081, y: -.0550891161, z: -.0626827255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_7
+      position: {x: -.0709408373, y: -.212766528, z: -.0333804488}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_19
+      position: {x: .115648575, y: -.262239516, z: -.0446054265}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_27
+      position: {x: -.123364493, y: -.0929808021, z: -.00576044619}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_5
+      position: {x: -.0286662411, y: -.0550892353, z: .0626826286}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_8
+      position: {x: -.0709406883, y: -.212766439, z: .0333800763}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_20
+      position: {x: .115648553, y: -.262239814, z: .044605162}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_28
+      position: {x: -.123367906, y: -.092972666, z: .00581923127}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_9
+      position: {x: -.0725919306, y: -.19035989, z: .000422805548}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_21
+      position: {x: .0172981471, y: -.0921787024, z: -.000774670392}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_29
+      position: {x: .00665318221, y: -.0828833878, z: .00232374296}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_57
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_58
+      position: {x: -.22501047, y: .967423201, z: .0678098649}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_59
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_60
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_61
+      position: {x: -.254281253, y: 0, z: -.000932713796}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_62
+      position: {x: -.126730964, y: 0, z: -.0625103489}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_63
+      position: {x: -.0937963575, y: 0, z: .261297375}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_64
+      position: {x: -.109212853, y: 0, z: .197856694}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_65
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_66
+      position: {x: -0, y: .666666806, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_67
+      position: {x: -0, y: .666666806, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_68
+      position: {x: -0, y: .666666806, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_69
+      position: {x: -0, y: .666666687, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_70
+      position: {x: -0, y: .666666687, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_74
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_CHD
+      position: {x: -.21049957, y: .981959462, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_CSL
+      position: {x: -.232773989, y: .303852648, z: -.281461388}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_CSR
+      position: {x: -.232773989, y: .303852737, z: .268909603}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: northrendghoul_emote-birth-animation_bone_Name
+      position: {x: -.221832097, y: 1.09729505, z: .0678098276}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ffb817c8895712f499e53b12b8e7c510,
+    type: 3}
+  animationType: 3
+  additionalBone: 0
+  userData: 
