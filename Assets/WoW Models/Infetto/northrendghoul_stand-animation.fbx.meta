@@ -1031,9 +1031,9 @@ ModelImporter:
     foreArmTwist: .5
     upperLegTwist: .5
     legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
-    feetSpacing: 0
+    armStretch: .488000005
+    legStretch: .495999992
+    feetSpacing: .485000014
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3

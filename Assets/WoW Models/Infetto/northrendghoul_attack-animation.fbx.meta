@@ -214,7 +214,7 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 1
@@ -617,7 +617,7 @@ ModelImporter:
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_Root
       position: {x: -0, y: .608310878, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: 0, y: .707106471, z: 0, w: .707107186}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_SpineLow
@@ -627,7 +627,7 @@ ModelImporter:
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_6
       position: {x: -.022170011, y: .192528889, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -2.27319195e-08, y: 2.82937158e-08, z: -.232445866, w: .972609401}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_11
@@ -712,12 +712,12 @@ ModelImporter:
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_ArmL
       position: {x: .000698879361, y: -.0238842368, z: -.075621061}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: .600447476, y: .0370306782, z: -5.67706707e-07, w: .798806369}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_30
       position: {x: .0128005147, y: -.207559049, z: -.0549159795}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: .0028704768, y: -.0394713543, z: .137713164, w: .989681184}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_32
@@ -802,12 +802,12 @@ ModelImporter:
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_ArmR
       position: {x: .000698670745, y: -.023884654, z: .0756211132}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -.591121256, y: -.0364953205, z: 5.76142554e-07, w: .805756748}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_31
       position: {x: .0127363056, y: -.20629108, z: .0595141202}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -.0184134245, y: .0418229215, z: .137102485, w: .989502251}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_35
@@ -887,17 +887,17 @@ ModelImporter:
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_4
       position: {x: -.0286663081, y: -.0550891161, z: -.0626827255}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -.0136426501, y: -.00212778407, z: .0425563306, w: .998998642}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_7
       position: {x: -.0709408373, y: -.212766528, z: -.0333804488}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -.00314772176, y: .000788566831, z: -.0127971154, w: .999912858}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_19
       position: {x: .115648575, y: -.262239516, z: -.0446054265}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: .0167923588, y: .00164836342, z: -.029750865, w: .999414921}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_27
@@ -907,17 +907,17 @@ ModelImporter:
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_5
       position: {x: -.0286662411, y: -.0550892353, z: .0626826286}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: .013642367, y: .00212778314, z: .0425560288, w: .998998702}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_8
       position: {x: -.0709406883, y: -.212766439, z: .0333800763}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: .00314759719, y: -.000788507401, z: -.0127966097, w: .999912858}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_20
       position: {x: .115648553, y: -.262239814, z: .044605162}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -.0167919528, y: -.00164840498, z: -.0297510736, w: .999414921}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: northrendghoul_attack-animation_bone_28
@@ -1035,13 +1035,13 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    armTwist: .5
+    armTwist: .492000014
     foreArmTwist: .5
     upperLegTwist: .5
     legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
-    feetSpacing: 0
+    armStretch: .508000016
+    legStretch: .504000008
+    feetSpacing: .514999986
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ffb817c8895712f499e53b12b8e7c510,
     type: 3}

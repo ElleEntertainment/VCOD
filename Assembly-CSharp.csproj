@@ -47,8 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Game_Manager.cs" />
-     <Compile Include="Assets\Infetto.cs" />
      <Compile Include="Assets\Move.cs" />
+     <Compile Include="Assets\WoW Models\Infetto\Infetto.cs" />
      <Compile Include="Assets\WoW Models\Player\Controller_pg.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />

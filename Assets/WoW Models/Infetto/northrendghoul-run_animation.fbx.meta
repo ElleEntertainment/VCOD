@@ -203,9 +203,9 @@ ModelImporter:
       name: Run
       takeName: Run
       firstFrame: 0
-      lastFrame: 18.7999992
+      lastFrame: 18.8999996
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 20
       level: 0
       cycleOffset: 0
       loop: 0
@@ -214,7 +214,7 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 1
