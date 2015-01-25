@@ -11,12 +11,18 @@ public class Controller_pg : MonoBehaviour {
 	bool run = true;
 	float YPos = 0;
 	float jumpHeigth = 2;
+	float attackTime = 1.0F;
+	int health;
+	string damageRec = "";
+	bool attackRec = false;
+	public GUISkin customSkin;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
 		rig = GetComponent<Rigidbody> ();
 		jump = false;
 		run = true;
+		health = 250;
 	}
 	
 	// Update is called once per frame
@@ -93,6 +99,34 @@ public class Controller_pg : MonoBehaviour {
 			Debug.Log("Hit the ground");
 			falling = false;
 			jump = false;
+		}
+	}
+
+	void attackEnemy(){
+		if (attackTime - Time.deltaTime <= 0) {
+			Random.seed = (int)Time.time;
+			Random.Range(5, 15);
+			int dam = (int)Random.value;
+			//target.SendMessage("applyDamage", dam);
+			
+		} else
+			attackTime -= Time.deltaTime;
+	}
+	
+	void applyDamage(int damage){
+		health -= damage;
+		damageRec = "<b>" + damage + "</b>";
+		attackRec = true;
+		Debug.Log ("Damage Received " + damage);
+	}
+	
+	void OnGUI(){
+		GUI.skin = customSkin;
+		GUI.color = Color.black;
+		GUI.Label(new Rect (0, 0, 50, 50), "" + health + "");
+		if (attackRec) {
+				GUI.color = Color.red;
+				GUI.Label (new Rect (Screen.width / 2 - 20, Screen.height / 2, 50, 50), damageRec);
 		}
 	}
 

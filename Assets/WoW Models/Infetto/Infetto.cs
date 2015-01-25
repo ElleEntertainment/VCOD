@@ -9,6 +9,9 @@ public class Infetto : MonoBehaviour {
 	bool isInCombat = false;
 	bool isAttacking = false;
 	bool backHome = false;
+	float attackTime = 1.5F;
+	bool attackRec = false;
+	string damageRec;
 	Vector3 initialPos;
 	// Use this for initialization
 	void Start () {
@@ -16,6 +19,7 @@ public class Infetto : MonoBehaviour {
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
 		anim = GetComponent<Animator>();
 		initialPos = transform.position;
+		damageRec = "";
 	}
 	
 	// Update is called once per frame
@@ -58,6 +62,8 @@ public class Infetto : MonoBehaviour {
 			}
 				
 		}
+		if(isAttacking)
+			attackPlayer();
 
 
 	}
@@ -73,6 +79,26 @@ public class Infetto : MonoBehaviour {
 	}
 
 	void attackPlayer(){
+		if (attackTime - Time.deltaTime <= 0) {
+			Random.seed = (int)Time.time;
+			int dam = Mathf.RoundToInt(Random.Range(5, 15));
+			player.SendMessage("applyDamage", dam);
+			attackTime = 1.5F;
+			Debug.Log("Player Attacked");
 
+		} else
+			attackTime -= Time.deltaTime;
+	}
+
+	void applyDamage(int damage){
+		health -= damage;
+		damageRec = "<b>" + damage + "</b>";
+	}
+
+	void OnGUI(){
+		if (attackRec) {
+				GUI.color = Color.white;
+				GUI.Label (new Rect (Screen.width / 2 - 50, Screen.height / 2, 50, 50), damageRec);
+		}
 	}
 }
