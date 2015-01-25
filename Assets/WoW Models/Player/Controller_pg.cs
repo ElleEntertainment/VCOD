@@ -42,7 +42,7 @@ public class Controller_pg : MonoBehaviour {
 			if(run){
 				anim.SetBool("run", true);
 				anim.SetBool("walk", false);
-				transform.Translate (Vector3.left * speed / 14, Space.Self);
+				transform.Translate (Vector3.left * speed / 15, Space.Self);
 			}
 			else{
 				anim.SetBool("run", false);
@@ -59,7 +59,7 @@ public class Controller_pg : MonoBehaviour {
 			transform.Translate (Vector3.forward * speed / 30, Space.Self);
 		//Fine sistema di movimento semplice
 		//Ci sono gli if senza gli else per dare la possibilità di muoversi in più direzioni in una volta
-		if (Input.GetKeyUp (KeyCode.W)) {
+		if (Input.GetKeyUp (KeyCode.W)) { //quando si rilascia il tasto W il personaggio non deve più correre
 			if(run)
 				anim.SetBool("run", false);
 			else
