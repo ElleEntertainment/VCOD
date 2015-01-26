@@ -17,6 +17,8 @@ public class Controller_pg : MonoBehaviour {
 	string damageRec = "";
 	bool attackRec = false;
 	public GUISkin customSkin;
+
+    Vector3 spawnPos;
     //--------------------------------
 
 
@@ -27,6 +29,7 @@ public class Controller_pg : MonoBehaviour {
 		jump = false;
 		run = true;
 		health = 250;
+        spawnPos = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -80,7 +83,16 @@ public class Controller_pg : MonoBehaviour {
 		}
 	  
 
-
+        //Check morte del player
+        if (health <= 0)
+        {
+            Debug.Log("Player morto.");
+            //Respawna il player
+            transform.position = new Vector3(spawnPos.x, spawnPos.y, spawnPos.z);
+            //Resetta la vita
+            health = 250;
+            //todo: Il player non cammina più
+        }
 
 		}
 	void FixedUpdate() {
