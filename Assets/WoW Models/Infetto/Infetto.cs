@@ -33,27 +33,42 @@ public class Infetto : MonoBehaviour {
 			anim.SetBool("run", true);
 		}
 
-		if (isInCombat) {
+
+        //------ posiziona il mob verso la direzione del player
+		if (isInCombat) 
+        {
 			posToFace = player.transform.position;
-		} else {
+		} 
+        else 
+        {
 			posToFace = initialPos;
 		}
 		facePosition (posToFace);
+        //-------------------------------------------------------
 
+        // se il mob è in combat e la distanza è maggiore o uguale a 2 si muove verso il player e non attacca
 		if (isInCombat && distanceFromPlayer >= 2) {
 			transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.05F);
 			isAttacking = false;
 		}
+        //-----------------------------------------------
+        //questa non l'ho capita anche perchè non ho mai visto 2 booleani confrontati (sono 2 bool no?)
 		if (anim.GetBool ("attack") != isAttacking)
 						anim.SetBool ("attack", isAttacking);
+        //------------------------------------------
+        //Se il mob è in combat e la distanza è minore di 2 e non sta attaccando allora il mob comincia a attaccare
 		if (isInCombat && distanceFromPlayer < 2 && !isAttacking) {
 			isAttacking = true;
 		}
+        //------------
+        //Se è in combat ma la distanza dal punto di spawn è maggiore o uguale a 25 torna al punto di spawn e resetto l'aggro
 		if (isInCombat && distanceFromHome >= 25) {
 			isInCombat = false;
 			backHome = true;
 			isAttacking = false;
 		}
+        //-----------------------------
+        //questo confronto non l'ho capito
 		if (backHome && distanceFromHome > 0) {
 			transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.05F);
 			if(distanceFromHome <= 1){
@@ -62,6 +77,8 @@ public class Infetto : MonoBehaviour {
 			}
 				
 		}
+
+        //se il bool è a true attacco il player
 		if(isAttacking)
 			attackPlayer();
 

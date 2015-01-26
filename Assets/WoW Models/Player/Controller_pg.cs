@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Controller_pg : MonoBehaviour {
 
+    //inizializzazione variabili
 	float speed = 1;
 	Animator anim;
 	Rigidbody rig;
@@ -16,6 +17,9 @@ public class Controller_pg : MonoBehaviour {
 	string damageRec = "";
 	bool attackRec = false;
 	public GUISkin customSkin;
+    //--------------------------------
+
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
@@ -45,12 +49,14 @@ public class Controller_pg : MonoBehaviour {
 		//Usiamo i tasti per muoverci
 		if (Input.GetKey (KeyCode.W)) {
 			//anim.SetFloat("direction", move);
-			if(run){
+			if(run)
+            {
 				anim.SetBool("run", true);
 				anim.SetBool("walk", false);
 				transform.Translate (Vector3.left * speed / 15, Space.Self);
 			}
-			else{
+			else
+            {
 				anim.SetBool("run", false);
 				anim.SetBool("walk", true);
 				transform.Translate (Vector3.left * speed / 30, Space.Self);
@@ -65,13 +71,14 @@ public class Controller_pg : MonoBehaviour {
 			transform.Translate (Vector3.forward * speed / 30, Space.Self);
 		//Fine sistema di movimento semplice
 		//Ci sono gli if senza gli else per dare la possibilità di muoversi in più direzioni in una volta
-		if (Input.GetKeyUp (KeyCode.W)) { //quando si rilascia il tasto W il personaggio non deve più correre
+		if (Input.GetKeyUp (KeyCode.W)) 
+        { //quando si rilascia il tasto W il personaggio non deve più correre
 			if(run)
 				anim.SetBool("run", false);
 			else
 				anim.SetBool("walk", false);
 		}
-	
+	  
 
 
 
