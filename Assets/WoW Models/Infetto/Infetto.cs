@@ -13,6 +13,7 @@ public class Infetto : MonoBehaviour {
 	bool attackRec = false;
 	string damageRec;
 	Vector3 initialPos;
+	int ID = 0;
 	// Use this for initialization
 	void Start () {
 		health = 150;
@@ -21,7 +22,12 @@ public class Infetto : MonoBehaviour {
 		initialPos = transform.position;
 		damageRec = "";
 	}
-	
+	public void setId(int id){
+		ID = id;
+	}
+	public int getId(){
+		return ID;
+	}
 	// Update is called once per frame
 	void Update () {
 		Vector3 posToFace;
@@ -53,6 +59,9 @@ public class Infetto : MonoBehaviour {
 		}
         //-----------------------------------------------
         //questa non l'ho capita anche perchè non ho mai visto 2 booleani confrontati (sono 2 bool no?)
+		//isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
+		//anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
+		//in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
 		if (anim.GetBool ("attack") != isAttacking)
 						anim.SetBool ("attack", isAttacking);
         //------------------------------------------
@@ -69,6 +78,8 @@ public class Infetto : MonoBehaviour {
 		}
         //-----------------------------
         //questo confronto non l'ho capito
+		//backHome è true quando l'infetto ha disingaggiato il player, questo controllo serve per far
+		//tornare alla posizione iniziale l'infetto.
 		if (backHome && distanceFromHome > 0) {
 			transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.05F);
 			if(distanceFromHome <= 1){
@@ -96,26 +107,25 @@ public class Infetto : MonoBehaviour {
 	}
 
 	void attackPlayer(){
-		if (attackTime - Time.deltaTime <= 0) {
-			Random.seed = (int)Time.time;
+		attackTime -= Time.deltaTime;
+		if (attackTime  < 0.0F) {
 			int dam = Mathf.RoundToInt(Random.Range(5, 15));
+			Debug.Log("Player Attacked da " + ID);
 			player.SendMessage("applyDamage", dam);
 			attackTime = 1.5F;
-			Debug.Log("Player Attacked");
-
-		} else
-			attackTime -= Time.deltaTime;
+		} 
 	}
 
 	void applyDamage(int damage){
 		health -= damage;
 		damageRec = "<b>" + damage + "</b>";
 	}
-
+	/* Va portato sulla classe textManager
 	void OnGUI(){
 		if (attackRec) {
 				GUI.color = Color.white;
 				GUI.Label (new Rect (Screen.width / 2 - 50, Screen.height / 2, 50, 50), damageRec);
 		}
 	}
+	*/
 }

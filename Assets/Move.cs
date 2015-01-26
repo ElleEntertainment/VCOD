@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//classe per gestire i movimenti della telecamera
 public class Move : MonoBehaviour {
 
 	Vector3 initPos; 

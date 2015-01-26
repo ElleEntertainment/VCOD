@@ -4,6 +4,7 @@ using System.Collections;
 public class Controller_pg : MonoBehaviour {
 
     //inizializzazione variabili
+	public Text_Manager TM;
 	float speed = 1;
 	Animator anim;
 	Rigidbody rig;
@@ -14,6 +15,7 @@ public class Controller_pg : MonoBehaviour {
 	float jumpHeigth = 2;
 	float attackTime = 1.0F;
 	int health;
+	int maxHealth;
 	string damageRec = "";
 	bool attackRec = false;
 	public GUISkin customSkin;
@@ -29,7 +31,9 @@ public class Controller_pg : MonoBehaviour {
 		jump = false;
 		run = true;
 		health = 250;
+		maxHealth = health;
         spawnPos = transform.position;
+		TM.SendMessage ("playerText" ,health + "-" + maxHealth + "-");
 	}
 	
 	// Update is called once per frame
@@ -136,17 +140,7 @@ public class Controller_pg : MonoBehaviour {
 		health -= damage;
 		damageRec = "<b>" + damage + "</b>";
 		attackRec = true;
+		TM.SendMessage ("playerText" ,health + "-" + maxHealth + "-" + damage);
 		Debug.Log ("Damage Received " + damage);
 	}
-	
-	void OnGUI(){
-		GUI.skin = customSkin;
-		GUI.color = Color.black;
-		GUI.Label(new Rect (0, 0, 50, 50), "" + health + "");
-		if (attackRec) {
-				GUI.color = Color.red;
-				GUI.Label (new Rect (Screen.width / 2 - 20, Screen.height / 2, 50, 50), damageRec);
-		}
-	}
-
 }
