@@ -88,10 +88,10 @@ public class Controller_pg : MonoBehaviour {
         {
             Debug.Log("Player morto.");
             //Respawna il player
-            transform.position = new Vector3(spawnPos.x, spawnPos.y, spawnPos.z);
+            //transform.position = new Vector3(spawnPos.x, spawnPos.y, spawnPos.z);
+            transform.position = spawnPos;
             //Resetta la vita
             health = 250;
-            //todo: Il player non cammina più
         }
 
 		}
