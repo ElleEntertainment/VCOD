@@ -19,6 +19,7 @@ public class Controller_pg : MonoBehaviour {
 	string damageRec = "";
 	bool attackRec = false;
 	public GUISkin customSkin;
+	Infetto currentTarget = null;
     bool wasDead = false;
 
     Vector3 spawnPos;
@@ -39,7 +40,6 @@ public class Controller_pg : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float move = Input.GetAxis ("Horizontal");
 		AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 		//Sistema di Rotazione (non ce n'è bisogno per ora)
 		if (Input.GetKey (KeyCode.LeftArrow)) 
@@ -151,6 +151,11 @@ public class Controller_pg : MonoBehaviour {
 
     public int getHealthPlayer()
     {
-            return health;
+        return health;
     }
+	void setTarget(Infetto inf){
+		if(inf!= currentTarget)
+			currentTarget = inf;
+		Debug.Log ("L'id del target è " + inf.getId());
+	}
 }

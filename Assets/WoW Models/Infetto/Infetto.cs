@@ -44,6 +44,7 @@ public class Infetto : MonoBehaviour {
 
 
 		}
+		//-------setta il target del player
 
 
         //------ posiziona il mob verso la direzione del player
@@ -141,6 +142,15 @@ public class Infetto : MonoBehaviour {
 	void applyDamage(int damage){
 		health -= damage;
 		damageRec = "<b>" + damage + "</b>";
+	}
+
+	//------setta il target del player quando viene cliccato il tasto destro del mouse
+	void OnMouseOver(){
+		if (Vector3.Distance (transform.position, player.transform.position) <= 25) {
+			if(Input.GetMouseButtonUp(1)){
+				player.SendMessage("setTarget", this);
+			}
+		}
 	}
 
 	/* Va portato sulla classe textManager
