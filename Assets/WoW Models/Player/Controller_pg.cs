@@ -95,8 +95,9 @@ public class Controller_pg : MonoBehaviour {
             //Respawna il player
             transform.position = spawnPos;
             //Resetta la vita
-            health = 250;
+            health = maxHealth;
             wasDead = true;
+			TM.SendMessage ("playerText" ,health + "-" + maxHealth + "-");
         }
 
 		}
@@ -139,6 +140,9 @@ public class Controller_pg : MonoBehaviour {
 	
 	void applyDamage(int damage){
 		health -= damage;
+		if (health <= 0) {
+			health = 0;
+		}
 		damageRec = "<b>" + damage + "</b>";
 		attackRec = true;
 		TM.SendMessage ("playerText" ,health + "-" + maxHealth + "-" + damage);
@@ -147,9 +151,6 @@ public class Controller_pg : MonoBehaviour {
 
     public int getHealthPlayer()
     {
-        if (wasDead)
-            return maxHealth;
-        else
             return health;
     }
 }

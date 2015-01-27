@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class Infetto : MonoBehaviour {
 
@@ -9,7 +10,9 @@ public class Infetto : MonoBehaviour {
 	bool isInCombat = false;
 	bool isAttacking = false;
 	bool backHome = false;
-	float attackTime = 1.5F;
+	float attackTime;
+	float attackAnimationDuration = 0.79F;
+	float attackSpeed = 1.5F;
 	bool attackRec = false;
 	string damageRec;
 	Vector3 initialPos;
@@ -21,6 +24,7 @@ public class Infetto : MonoBehaviour {
 		anim = GetComponent<Animator>();
 		initialPos = transform.position;
 		damageRec = "";
+		attackTime = attackAnimationDuration;
 	}
 	public void setId(int id){
 		ID = id;
@@ -37,6 +41,8 @@ public class Infetto : MonoBehaviour {
 		if (distanceFromPlayer <= 8 && distanceFromPlayer >= 2 && !isInCombat && !backHome) {
 			isInCombat = true;
 			anim.SetBool("run", true);
+
+
 		}
 
 
@@ -56,18 +62,30 @@ public class Infetto : MonoBehaviour {
 		if (isInCombat && distanceFromPlayer >= 2) {
 			transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.05F);
 			isAttacking = false;
+			attackTime -= Time.deltaTime;
 		}
-        //-----------------------------------------------
-        //questa non l'ho capita anche perchè non ho mai visto 2 booleani confrontati (sono 2 bool no?)
-		//isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
-		//anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
-		//in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
-		if (anim.GetBool ("attack") != isAttacking)
-						anim.SetBool ("attack", isAttacking);
         //------------------------------------------
         //Se il mob è in combat e la distanza è minore di 2 e non sta attaccando allora il mob comincia a attaccare
 		if (isInCombat && distanceFromPlayer < 2 && !isAttacking) {
 			isAttacking = true;
+		}
+		//-----------------------------------------------
+		//questa non l'ho capita anche perchè non ho mai visto 2 booleani confrontati (sono 2 bool no?)
+		//isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
+		//anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
+		//in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
+		if (anim.GetBool ("attack") != isAttacking) {
+			anim.SetBool ("attack", isAttacking);
+			if(isAttacking){
+				AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
+				float duration = 0.79F;
+				float curSpeed = anim.speed;
+				anim.speed = duration / attackSpeed;
+				AnimationInfo[] aniInfo = anim.GetCurrentAnimationClipState(0);
+				AnimationClip clip = aniInfo[0].clip;
+				
+				Debug.Log ("La velocità dell'animazione è " + anim.speed);
+			}
 		}
         //------------
         //Se è in combat ma la distanza dal punto di spawn è maggiore o uguale a 25 torna al punto di spawn e resetto l'aggro
@@ -90,8 +108,12 @@ public class Infetto : MonoBehaviour {
 		}
 
         //se il bool è a true attacco il player
-		if(isAttacking)
-			attackPlayer();
+		if (isAttacking) {
+			attackPlayer ();
+		}
+		else{
+			anim.speed = 1;
+		}
 
 
 	}
@@ -112,7 +134,7 @@ public class Infetto : MonoBehaviour {
 			int dam = Mathf.RoundToInt(Random.Range(5, 15));
 			Debug.Log("Player Attacked da " + ID);
 			player.SendMessage("applyDamage", dam);
-			attackTime = 1.5F;
+			attackTime = attackSpeed;
 		} 
 	}
 
@@ -120,6 +142,7 @@ public class Infetto : MonoBehaviour {
 		health -= damage;
 		damageRec = "<b>" + damage + "</b>";
 	}
+
 	/* Va portato sulla classe textManager
 	void OnGUI(){
 		if (attackRec) {

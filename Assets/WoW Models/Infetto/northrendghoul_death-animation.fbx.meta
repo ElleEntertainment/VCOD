@@ -193,9 +193,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationCompression: 3
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0
+    animationPositionError: 0
+    animationScaleError: 0
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
@@ -203,7 +203,7 @@ ModelImporter:
       name: Death
       takeName: Death
       firstFrame: 0
-      lastFrame: 42
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -215,9 +215,9 @@ ModelImporter:
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -226,7 +226,7 @@ ModelImporter:
       - path: 
         weight: 1
       - path: northrendghoul_death-animation
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0
@@ -238,25 +238,25 @@ ModelImporter:
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_11
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_12
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_13
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_14
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_15
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_16
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_75
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_76
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_77
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_CCH
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_Head
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_Head/northrendghoul_death-animation_bone_23
@@ -264,7 +264,7 @@ ModelImporter:
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_Head/northrendghoul_death-animation_bone_24
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_Head/northrendghoul_death-animation_bone_Breath
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_Head/northrendghoul_death-animation_bone_Jaw
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL
@@ -276,33 +276,33 @@ ModelImporter:
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_38
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_38/northrendghoul_death-animation_bone_48
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_39
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_39/northrendghoul_death-animation_bone_49
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_82
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_83
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_32/northrendghoul_death-animation_bone_LThumb
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_33
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_33/northrendghoul_death-animation_bone_41
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_33/northrendghoul_death-animation_bone_41/northrendghoul_death-animation_bone_50
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_34
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_34/northrendghoul_death-animation_bone_42
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_34/northrendghoul_death-animation_bone_42/northrendghoul_death-animation_bone_51
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderL/northrendghoul_death-animation_bone_ArmL/northrendghoul_death-animation_bone_30/northrendghoul_death-animation_bone_80
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR
@@ -312,31 +312,31 @@ ModelImporter:
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_35
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_35/northrendghoul_death-animation_bone_43
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_35/northrendghoul_death-animation_bone_43/northrendghoul_death-animation_bone_52
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_44
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_44/northrendghoul_death-animation_bone_53
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_45
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_45/northrendghoul_death-animation_bone_54
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_81
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_84
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_36/northrendghoul_death-animation_bone_RThumb
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_37
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_37/northrendghoul_death-animation_bone_47
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_SpineLow/northrendghoul_death-animation_bone_6/northrendghoul_death-animation_bone_ShoulderR/northrendghoul_death-animation_bone_ArmR/northrendghoul_death-animation_bone_31/northrendghoul_death-animation_bone_37/northrendghoul_death-animation_bone_47/northrendghoul_death-animation_bone_55
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_4
@@ -346,7 +346,7 @@ ModelImporter:
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_4/northrendghoul_death-animation_bone_7/northrendghoul_death-animation_bone_19
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_4/northrendghoul_death-animation_bone_7/northrendghoul_death-animation_bone_19/northrendghoul_death-animation_bone_27
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5/northrendghoul_death-animation_bone_8
@@ -354,51 +354,51 @@ ModelImporter:
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5/northrendghoul_death-animation_bone_8/northrendghoul_death-animation_bone_20
         weight: 0
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5/northrendghoul_death-animation_bone_8/northrendghoul_death-animation_bone_20/northrendghoul_death-animation_bone_28
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5/northrendghoul_death-animation_bone_9
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5/northrendghoul_death-animation_bone_9/northrendghoul_death-animation_bone_21
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_0/northrendghoul_death-animation_bone_Root/northrendghoul_death-animation_bone_Waist/northrendghoul_death-animation_bone_5/northrendghoul_death-animation_bone_9/northrendghoul_death-animation_bone_21/northrendghoul_death-animation_bone_29
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_57
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_58
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_59
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_60
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_61
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_62
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_63
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_64
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_65
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_66
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_67
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_68
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_69
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_70
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_74
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_CHD
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_CSL
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_CSR
-        weight: 0
+        weight: 1
       - path: northrendghoul_death-animation 1/northrendghoul_death-animation_bone_Name
-        weight: 0
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1
