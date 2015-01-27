@@ -28,6 +28,9 @@ public class Text_Manager : MonoBehaviour {
 		if (disappearTime <= 0) {
 			playerDamage = "";
 		}
+
+        
+
 	}
 
 	void OnGUI(){
@@ -42,7 +45,7 @@ public class Text_Manager : MonoBehaviour {
 	void playerText(string value) {
 		char[] del = {'-'};
 		string[] values = value.Split(del);
-		playerCurHealth = values [0];
+        playerCurHealth = values [0];
 		playerToTHealth = values [1];
 		playerDamage = values [2];
 		disappearTime = 0.7F;

@@ -19,6 +19,7 @@ public class Controller_pg : MonoBehaviour {
 	string damageRec = "";
 	bool attackRec = false;
 	public GUISkin customSkin;
+    bool wasDead = false;
 
     Vector3 spawnPos;
     //--------------------------------
@@ -92,10 +93,10 @@ public class Controller_pg : MonoBehaviour {
         {
             Debug.Log("Player morto.");
             //Respawna il player
-            //transform.position = new Vector3(spawnPos.x, spawnPos.y, spawnPos.z);
             transform.position = spawnPos;
             //Resetta la vita
             health = 250;
+            wasDead = true;
         }
 
 		}
@@ -143,4 +144,12 @@ public class Controller_pg : MonoBehaviour {
 		TM.SendMessage ("playerText" ,health + "-" + maxHealth + "-" + damage);
 		Debug.Log ("Damage Received " + damage);
 	}
+
+    public int getHealthPlayer()
+    {
+        if (wasDead)
+            return maxHealth;
+        else
+            return health;
+    }
 }
