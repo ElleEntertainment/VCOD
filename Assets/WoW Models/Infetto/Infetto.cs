@@ -32,6 +32,10 @@ public class Infetto : MonoBehaviour {
 	public int getId(){
 		return ID;
 	}
+	public void setDmg(int dmg)
+	{
+		health = health - dmg;
+	}
 	// Update is called once per frame
 	void Update () {
 		Vector3 posToFace;
