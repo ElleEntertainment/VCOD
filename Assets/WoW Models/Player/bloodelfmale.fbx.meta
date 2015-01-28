@@ -1854,8 +1854,8 @@ ModelImporter:
     foreArmTwist: .5
     upperLegTwist: .5
     legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armStretch: .504000008
+    legStretch: .495999992
     feetSpacing: 0
     rootMotionBoneName: bloodelfmale_bone_26
   lastHumanDescriptionAvatarSource: {instanceID: 0}

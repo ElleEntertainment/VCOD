@@ -5,26 +5,36 @@ using UnityEditor;
 public class Infetto : MonoBehaviour {
 
 	int health;
+	int maxHealth;
 	GameObject player;
 	Animator anim;
-	bool isInCombat = false;
-	bool isAttacking = false;
-	bool backHome = false;
+	bool isInCombat;
+	bool isAttacking;
+	bool backHome;
+	bool dead;
 	float attackTime;
-	float attackAnimationDuration = 0.79F;
-	float attackSpeed = 1.5F;
-	bool attackRec = false;
+	float attackAnimationDuration;
+	float attackSpeed;
+	bool attackRec;
 	string damageRec;
 	Vector3 initialPos;
 	int ID = 0;
 	// Use this for initialization
 	void Start () {
-		health = 150;
+		attackAnimationDuration = 0.79F;
+		attackSpeed = 1.5F;
+		maxHealth = 150;
+		health = maxHealth;
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
 		anim = GetComponent<Animator>();
 		initialPos = transform.position;
 		damageRec = "";
 		attackTime = attackAnimationDuration;
+		isInCombat = false;
+		isAttacking = false;
+		backHome = false;
+		dead = false;
+		attackRec = false;
 	}
 	public void setId(int id){
 		ID = id;
@@ -32,94 +42,94 @@ public class Infetto : MonoBehaviour {
 	public int getId(){
 		return ID;
 	}
-	public void setDmg(int dmg)
-	{
-		health = health - dmg;
+	public int getHealth(){
+		return health;
+	}
+	public int getMaxHealth(){
+		return maxHealth;
 	}
 	// Update is called once per frame
 	void Update () {
-		Vector3 posToFace;
+		if (!dead) {
+						Vector3 posToFace;
 
-		float distanceFromPlayer = Vector3.Distance (transform.position, player.transform.position);
-		float distanceFromHome = Vector3.Distance (transform.position, initialPos);
-		if (distanceFromPlayer <= 8 && distanceFromPlayer >= 2 && !isInCombat && !backHome) {
-			isInCombat = true;
-			anim.SetBool("run", true);
-
-
-		}
-		//-------setta il target del player
+						float distanceFromPlayer = Vector3.Distance (transform.position, player.transform.position);
+						float distanceFromHome = Vector3.Distance (transform.position, initialPos);
+						if (distanceFromPlayer <= 8 && distanceFromPlayer >= 2 && !isInCombat && !backHome) {
+								isInCombat = true;
+								anim.SetBool ("run", true);
 
 
-        //------ posiziona il mob verso la direzione del player
-		if (isInCombat) 
-        {
-			posToFace = player.transform.position;
-		} 
-        else 
-        {
-			posToFace = initialPos;
-		}
-		facePosition (posToFace);
-        //-------------------------------------------------------
+						}
+						//-------setta il target del player
 
-        // se il mob è in combat e la distanza è maggiore o uguale a 2 si muove verso il player e non attacca
-		if (isInCombat && distanceFromPlayer >= 2) {
-			transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.05F);
-			isAttacking = false;
-			attackTime -= Time.deltaTime;
-		}
-        //------------------------------------------
-        //Se il mob è in combat e la distanza è minore di 2 e non sta attaccando allora il mob comincia a attaccare
-		if (isInCombat && distanceFromPlayer < 2 && !isAttacking) {
-			isAttacking = true;
-		}
-		//-----------------------------------------------
-		//questa non l'ho capita anche perchè non ho mai visto 2 booleani confrontati (sono 2 bool no?)
-		//isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
-		//anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
-		//in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
-		if (anim.GetBool ("attack") != isAttacking) {
-			anim.SetBool ("attack", isAttacking);
-			if(isAttacking){
-				AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
-				float duration = 0.79F;
-				float curSpeed = anim.speed;
-				anim.speed = duration / attackSpeed;
-				AnimationInfo[] aniInfo = anim.GetCurrentAnimationClipState(0);
-				AnimationClip clip = aniInfo[0].clip;
+
+						//------ posiziona il mob verso la direzione del player
+						if (isInCombat) {
+								posToFace = player.transform.position;
+						} else {
+								posToFace = initialPos;
+						}
+						facePosition (posToFace);
+						//-------------------------------------------------------
+
+						// se il mob è in combat e la distanza è maggiore o uguale a 2 si muove verso il player e non attacca
+						if (isInCombat && distanceFromPlayer >= 2) {
+								transform.position = Vector3.MoveTowards (transform.position, player.transform.position, 0.05F);
+								isAttacking = false;
+								attackTime -= Time.deltaTime;
+						}
+						//------------------------------------------
+						//Se il mob è in combat e la distanza è minore di 2 e non sta attaccando allora il mob comincia a attaccare
+						if (isInCombat && distanceFromPlayer < 2 && !isAttacking) {
+								isAttacking = true;
+						}
+						//-----------------------------------------------
+						//questa non l'ho capita anche perchè non ho mai visto 2 booleani confrontati (sono 2 bool no?)
+						//isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
+						//anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
+						//in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
+						if (anim.GetBool ("attack") != isAttacking) {
+								anim.SetBool ("attack", isAttacking);
+								if (isAttacking) {
+										AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo (0);
+										float duration = 0.79F;
+										float curSpeed = anim.speed;
+										anim.speed = duration / attackSpeed;
+										AnimationInfo[] aniInfo = anim.GetCurrentAnimationClipState (0);
+										AnimationClip clip = aniInfo [0].clip;
 				
-				Debug.Log ("La velocità dell'animazione è " + anim.speed);
-			}
-		}
-        //------------
-        //Se è in combat ma la distanza dal punto di spawn è maggiore o uguale a 25 torna al punto di spawn e resetto l'aggro
-		if (isInCombat && distanceFromHome >= 25) {
-			isInCombat = false;
-			backHome = true;
-			isAttacking = false;
-		}
-        //-----------------------------
-        //questo confronto non l'ho capito
-		//backHome è true quando l'infetto ha disingaggiato il player, questo controllo serve per far
-		//tornare alla posizione iniziale l'infetto.
-		if (backHome && distanceFromHome > 0) {
-			transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.05F);
-			if(distanceFromHome <= 1){
-				backHome = false;
-				anim.SetBool("run", false);
-			}
+										Debug.Log ("La velocità dell'animazione è " + anim.speed);
+								}
+						}
+						//------------
+						//Se è in combat ma la distanza dal punto di spawn è maggiore o uguale a 25 torna al punto di spawn e resetto l'aggro
+						if (isInCombat && distanceFromHome >= 25) {
+								isInCombat = false;
+								backHome = true;
+								isAttacking = false;
+						}
+						//-----------------------------
+						//questo confronto non l'ho capito
+						//backHome è true quando l'infetto ha disingaggiato il player, questo controllo serve per far
+						//tornare alla posizione iniziale l'infetto.
+						if (backHome && distanceFromHome > 0) {
+								transform.position = Vector3.MoveTowards (transform.position, initialPos, 0.05F);
+								if (distanceFromHome <= 1) {
+										backHome = false;
+										anim.SetBool ("run", false);
+										health = maxHealth;
+								}
 				
-		}
+						}
 
-        //se il bool è a true attacco il player
-		if (isAttacking) {
-			attackPlayer ();
-		}
-		else{
-			anim.speed = 1;
-		}
-
+						//se il bool è a true attacco il player
+						if (isAttacking) {
+								attackPlayer ();
+						} else {
+								anim.speed = 1;
+						}
+				}
 
 	}
 
@@ -132,7 +142,9 @@ public class Infetto : MonoBehaviour {
 			transform.rotation = Quaternion.LookRotation(newDir);
 		}
 	}
-
+	public bool isDead(){
+		return dead;
+	}
 	void attackPlayer(){
 		attackTime -= Time.deltaTime;
 		if (attackTime  < 0.0F) {
@@ -145,24 +157,18 @@ public class Infetto : MonoBehaviour {
 
 	void applyDamage(int damage){
 		health -= damage;
+		if (health <= 0) {
+			dead = true;
+		}
 		damageRec = "<b>" + damage + "</b>";
 	}
 
 	//------setta il target del player quando viene cliccato il tasto destro del mouse
 	void OnMouseOver(){
-		if (Vector3.Distance (transform.position, player.transform.position) <= 25) {
+		if (Vector3.Distance (transform.position, player.transform.position) <= 500) {
 			if(Input.GetMouseButtonUp(1)){
 				player.SendMessage("setTarget", this);
 			}
 		}
 	}
-
-	/* Va portato sulla classe textManager
-	void OnGUI(){
-		if (attackRec) {
-				GUI.color = Color.white;
-				GUI.Label (new Rect (Screen.width / 2 - 50, Screen.height / 2, 50, 50), damageRec);
-		}
-	}
-	*/
 }
