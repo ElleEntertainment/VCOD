@@ -44,10 +44,10 @@ public class Controller_pg : MonoBehaviour
 		{
 				AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo (0);
 				//Sistema di Rotazione (non ce n'è bisogno per ora)
-				if (Input.GetKey (KeyCode.LeftArrow)) 
+				if (Input.GetKey (KeyCode.A)) 
 						transform.Rotate (Vector3.up, -1); //-1 sono i gradi di rotazione
 		else
-			if (Input.GetKey (KeyCode.RightArrow))
+			if (Input.GetKey (KeyCode.D))
 						transform.Rotate (Vector3.up, 1);
 			
 				// FINE SISTEMA DI ROTAZIONE
@@ -72,10 +72,10 @@ public class Controller_pg : MonoBehaviour
 				}
 				if (Input.GetKey (KeyCode.S))
 						transform.Translate (Vector3.right * speed / 30, Space.Self);
-				if (Input.GetKey (KeyCode.A))
+				/*if (Input.GetKey (KeyCode.A))
 						transform.Translate (Vector3.back * speed / 30, Space.Self);
 				if (Input.GetKey (KeyCode.D))
-						transform.Translate (Vector3.forward * speed / 30, Space.Self);
+						transform.Translate (Vector3.forward * speed / 30, Space.Self);*/
 				//Fine sistema di movimento semplice
 				//Ci sono gli if senza gli else per dare la possibilità di muoversi in più direzioni in una volta
 				if (Input.GetKeyUp (KeyCode.W)) { //quando si rilascia il tasto W il personaggio non deve più correre
