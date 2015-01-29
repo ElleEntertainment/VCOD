@@ -63,6 +63,12 @@ public class Controller_pg : MonoBehaviour
 		}
 
 		//Usiamo i tasti per muoverci
+        if (Input.GetKey(KeyCode.K))
+        {
+            long tempo_now = UnixTimeNow();
+            long t = tempo_now - tempo_attacco;
+            Debug.Log("Differenza tempo = " + t);
+        }
 		if (Input.GetKey (KeyCode.W)) {
 				//anim.SetFloat("direction", move);
 				if (run) {
@@ -112,7 +118,7 @@ public class Controller_pg : MonoBehaviour
             if (currentTarget != null)
             {
                 long tempo_ora = UnixTimeNow(); 
-                long diff_tempo = tempo_attacco - UnixTimeNow();
+                long diff_tempo = tempo_ora - tempo_attacco;
                 if (diff_tempo >= 2) //se sono passati 2 secondi...
                 {
                     if (Vector3.Distance(transform.position, currentTarget.transform.position) <= 2)
@@ -147,19 +153,20 @@ public class Controller_pg : MonoBehaviour
         if (currentTarget == null && !isAttacking) //health regen (ci penso io, devo capire come calcolare il tempo nel gioco)
         {
             tempo_ora_regen_health = UnixTimeNow(); //registro quando sono uscito fuori dal combat
+            if ((tempo_attacco - tempo_ora_regen_health) >= 5 || (tempo_attacco - tempo_ora_regen_health) == 0)
+            {
+                int max_health_player = getMaxHealthPlayer();
+                if (health < max_health_player)
+                    health = health + (max_health_player / 100) * 3; //+3% ogni 5 secondi
+                if (health > max_health_player)
+                    health = max_health_player;
+                TM.SendMessage("playerText", health + "-" + maxHealth + "-0");
+                //Debug.Log("Doing Health regeneration");
+                /*if (health == max_health_player)
+                    Debug.Log("Health regeneration completed");*/
+            }
         }
-        if ((tempo_ora_regen_health - tempo_attacco) >= 5 || (tempo_ora_regen_health - tempo_attacco) == 0)
-        {
-            int max_health_player = getMaxHealthPlayer();
-            if(health < max_health_player)
-                health = health + (max_health_player/100)*3; //+3% ogni 5 secondi
-            if (health > max_health_player)
-                health = max_health_player;
-            TM.SendMessage("playerText", health + "-" + maxHealth);
-            //Debug.Log("Doing Health regeneration");
-            /*if (health == max_health_player)
-                Debug.Log("Health regeneration completed");*/
-        }
+        
 
 		}
 
