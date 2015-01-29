@@ -46,6 +46,11 @@ public class Text_Manager : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		//backup colors
+		Color backupColor = GUI.color;
+		Color backupContentColor = GUI.contentColor;
+		Color backupBackgroundColor = GUI.backgroundColor;
+
 
 		//--------- Player
 		float curh = (float)Convert.ToInt32 (playerCurHealth);
@@ -74,17 +79,21 @@ public class Text_Manager : MonoBehaviour {
 						//Debug.Log (percent);
 						GUI.color = Color.black;
 						GUI.Box (tbuttonRect, " ");
-						GUI.color = Color.red;
+						GUI.color= Color.red;
 						GUI.Button (new Rect (320, 0, tpercent * 3, 25), " ");
 						GUI.color = Color.black;
 						if (tbuttonRect.Contains (Event.current.mousePosition))
 								GUI.Label (new Rect (420, -30, 80, 80), targetCurHealth + "/" + targetTotHealth);
 						else
 								GUI.Label (new Rect (430, -30, 80, 80), tpercent + "%");
-		
 						GUI.color = Color.white;
 						GUI.Label (new Rect (Screen.width / 2 , Screen.height / 2 , 40, 40), targetDamage);
 		}
+		//Reset color
+		GUI.color = backupColor;
+		GUI.contentColor = backupContentColor;
+		GUI.backgroundColor = backupBackgroundColor;
+
 
 	}
 	//funzione che chiama il player quando deve aggiornare i suoi dati

@@ -97,6 +97,7 @@ public class Controller_pg : MonoBehaviour
 						anim.SetBool ("walk", false);
 		}
 		if(Input.GetMouseButtonDown(0)){
+			currentTarget.stopParticle();
 			currentTarget = null;
 			TM.setTargetTrue(false);
 		}
@@ -112,28 +113,19 @@ public class Controller_pg : MonoBehaviour
 				wasDead = true;
 				TM.SendMessage ("playerText", health + "-" + maxHealth + "-");
 		}
-
-        if (Input.GetKey(KeyCode.R))
-        {
-            if (currentTarget != null)
-            {
-                long tempo_ora = UnixTimeNow(); 
-                long diff_tempo = tempo_ora - tempo_attacco;
-                if (diff_tempo >= 2) //se sono passati 2 secondi...
-                {
-                    if (Vector3.Distance(transform.position, currentTarget.transform.position) <= 2)
-                    {
-                        isAttacking = true;
-                        attackEnemy(currentTarget);
-                        tempo_attacco = UnixTimeNow();
-                    }
-                }
-                else
-                    isAttacking = false;
-            }
-            else
-                isAttacking = false;
-        }
+		
+	    if (currentTarget != null)
+	    {
+	            if (Vector3.Distance(transform.position, currentTarget.transform.position) <= 2)
+	            {
+	                isAttacking = true;
+	                attackEnemy(currentTarget);
+	            }
+	        	else
+	            	isAttacking = false;
+	    }
+	    else
+	        isAttacking = false;
 
         if (currentTarget != null && !isAttacking)
         {
@@ -229,7 +221,7 @@ public class Controller_pg : MonoBehaviour
 
 		public int getHealthPlayer ()
 		{
-				return health;
+			return health;
 		}
         public int getMaxHealthPlayer()
         {
@@ -237,10 +229,13 @@ public class Controller_pg : MonoBehaviour
         }
 
 		void setTarget (Infetto inf)
-		{
-				if (inf != currentTarget)
-						currentTarget = inf;
-				Debug.Log ("L'id del target è " + inf.getId ());
+		{		
+			if (currentTarget != null)
+					currentTarget.stopParticle ();
+			if (inf != currentTarget)
+					currentTarget = inf;
+			Debug.Log ("L'id del target è " + inf.getId ());
+			currentTarget.startParticle ();
 		}
 
 		public Infetto getTarget()
