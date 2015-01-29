@@ -161,6 +161,7 @@ public class Infetto : MonoBehaviour {
 			dead = true;
 		}
 		damageRec = "<b>" + damage + "</b>";
+        Debug.Log("Danno player to infetto = " + damage);
 	}
 
 	//------setta il target del player quando viene cliccato il tasto destro del mouse

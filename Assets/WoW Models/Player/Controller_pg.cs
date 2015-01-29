@@ -24,6 +24,8 @@ public class Controller_pg : MonoBehaviour
 		bool wasDead = false;
 		bool isAttacking;
 		Vector3 spawnPos;
+        long tempo_attacco;
+        long tempo_ora_regen_health;
 		//--------------------------------
 
 
@@ -39,6 +41,8 @@ public class Controller_pg : MonoBehaviour
 		spawnPos = transform.position;
 		TM.SendMessage ("playerText", health + "-" + maxHealth + "-");
 		isAttacking = false;
+        tempo_attacco = UnixTimeNow();
+        tempo_ora_regen_health = UnixTimeNow();
 		}
 	
 		// Update is called once per frame
@@ -102,28 +106,60 @@ public class Controller_pg : MonoBehaviour
 				wasDead = true;
 				TM.SendMessage ("playerText", health + "-" + maxHealth + "-");
 		}
-		
-		if (currentTarget != null) {
-				if (Vector3.Distance (transform.position, currentTarget.transform.position) <= 2) {
-						isAttacking = true;
-						attackEnemy (currentTarget);
-				} else
-						isAttacking = false;
-		} else
-				isAttacking = false;
 
-		if (currentTarget != null && !isAttacking) {
-			TM.setTargetTrue(true);
-			string targetInfo = currentTarget.getHealth()+"-"+currentTarget.getMaxHealth()+"-";
-			TM.SendMessage("targetText", targetInfo);
-		}
-		if (currentTarget != null) {
-			if(currentTarget.isDead()){
-				currentTarget = null;
-				TM.setTargetTrue(false);
-			}
-		}
-				
+        if (Input.GetKey(KeyCode.R))
+        {
+            if (currentTarget != null)
+            {
+                long tempo_ora = UnixTimeNow(); 
+                long diff_tempo = tempo_attacco - UnixTimeNow();
+                if (diff_tempo >= 2) //se sono passati 2 secondi...
+                {
+                    if (Vector3.Distance(transform.position, currentTarget.transform.position) <= 2)
+                    {
+                        isAttacking = true;
+                        attackEnemy(currentTarget);
+                        tempo_attacco = UnixTimeNow();
+                    }
+                }
+                else
+                    isAttacking = false;
+            }
+            else
+                isAttacking = false;
+        }
+
+        if (currentTarget != null && !isAttacking)
+        {
+            TM.setTargetTrue(true);
+            string targetInfo = currentTarget.getHealth() + "-" + currentTarget.getMaxHealth() + "-";
+            TM.SendMessage("targetText", targetInfo);
+        }
+        if (currentTarget != null)
+        {
+            if (currentTarget.isDead())
+            {
+                currentTarget = null;
+                TM.setTargetTrue(false);
+            }
+        }
+
+        if (currentTarget == null && !isAttacking) //health regen (ci penso io, devo capire come calcolare il tempo nel gioco)
+        {
+            tempo_ora_regen_health = UnixTimeNow(); //registro quando sono uscito fuori dal combat
+        }
+        if ((tempo_ora_regen_health - tempo_attacco) >= 5 || (tempo_ora_regen_health - tempo_attacco) == 0)
+        {
+            int max_health_player = getMaxHealthPlayer();
+            if(health < max_health_player)
+                health = health + (max_health_player/100)*3; //+3% ogni 5 secondi
+            if (health > max_health_player)
+                health = max_health_player;
+            TM.SendMessage("playerText", health + "-" + maxHealth);
+            //Debug.Log("Doing Health regeneration");
+            /*if (health == max_health_player)
+                Debug.Log("Health regeneration completed");*/
+        }
 
 		}
 
@@ -188,6 +224,10 @@ public class Controller_pg : MonoBehaviour
 		{
 				return health;
 		}
+        public int getMaxHealthPlayer()
+        {
+            return maxHealth;
+        }
 
 		void setTarget (Infetto inf)
 		{
@@ -205,4 +245,10 @@ public class Controller_pg : MonoBehaviour
 						return null;
 				}
 		}
+
+        public long UnixTimeNow()
+        {
+            var timeSpan = (System.DateTime.UtcNow - new System.DateTime(1970, 1, 1, 0, 0, 0));
+            return (long)timeSpan.TotalSeconds;
+        }
 }
