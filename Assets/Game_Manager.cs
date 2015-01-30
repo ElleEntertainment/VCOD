@@ -10,6 +10,7 @@ public class Game_Manager : MonoBehaviour {
 	public  Infetto infetto;
 	Vector3[] positions = new Vector3[5];
 	Quaternion[] rotations = new Quaternion[5];
+	public Controller_pg player;
     
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class Game_Manager : MonoBehaviour {
 		for (int i = 0; i < num_infetti; i++) {
 			Infetto inf = Instantiate(infetto ,positions[i], rotations[i]) as Infetto;
 			inf.setId(i);
+			inf.setLevel(player.getLevel());
 			infetti[i] = inf;
 		}
 	}
@@ -45,6 +47,7 @@ public class Game_Manager : MonoBehaviour {
 	public void createNewInfetto(int id){
 	Infetto inf = Instantiate(infetto ,new Vector3(Random.Range(750, 850), 0, Random.Range(750, 850)), new Quaternion(0, Random.Range(-1, 1), 0, 0)) as Infetto;
 	inf.setId(id);
+	inf.setLevel(player.getLevel());
 	infetti[id] = inf;
 	}
 }

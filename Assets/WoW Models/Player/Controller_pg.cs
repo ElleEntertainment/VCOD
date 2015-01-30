@@ -24,6 +24,9 @@ public class Controller_pg : MonoBehaviour
 		bool wasDead = false;
 		bool isAttacking;
 		Vector3 spawnPos;
+		int level = 1;
+		int exp;
+		int expToNextLevel;
         long tempo_attacco;
         long tempo_ora_regen_health;
         long t;
@@ -33,6 +36,9 @@ public class Controller_pg : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+		level = 1;
+		exp = 0;
+		expToNextLevel = 150;
 		anim = GetComponent<Animator> ();
 		rig = GetComponent<Rigidbody> ();
 		jump = false;
@@ -40,7 +46,7 @@ public class Controller_pg : MonoBehaviour
 		health = 250;
 		maxHealth = health;
 		spawnPos = transform.position;
-		TM.SendMessage ("playerText", health + "-" + maxHealth + "-");
+		TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + " " + "-" + level + "-" + exp + "-" + expToNextLevel);
 		isAttacking = false;
         tempo_attacco = UnixTimeNow();
         tempo_ora_regen_health = UnixTimeNow();
@@ -115,7 +121,7 @@ public class Controller_pg : MonoBehaviour
 				//Resetta la vita
 				health = maxHealth;
 				wasDead = true;
-				TM.SendMessage ("playerText", health + "-" + maxHealth + "-");
+				TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + " " + "-" + level + "-" + exp + "-" + expToNextLevel);
 		}
 		
 	    if (currentTarget != null)
@@ -134,7 +140,7 @@ public class Controller_pg : MonoBehaviour
         if (currentTarget != null && !isAttacking)
         {
             TM.setTargetTrue(true);
-            string targetInfo = currentTarget.getHealth() + "-" + currentTarget.getMaxHealth() + "-";
+            string targetInfo = currentTarget.getHealth() + "-" + currentTarget.getMaxHealth() + "-" + " " + "-" + currentTarget.getLevel() + "-";
             TM.SendMessage("targetText", targetInfo);
         }
         if (currentTarget != null)
@@ -158,7 +164,7 @@ public class Controller_pg : MonoBehaviour
                     health = health + (max_health_player / 100) * 3; //+3% ogni 5 secondi (in questo caso +7.5)
                 if (health >= max_health_player)
                     health = max_health_player;
-                TM.SendMessage("playerText", health + "-" + maxHealth + "-0");
+                TM.SendMessage("playerText", health + "-" + maxHealth + "-" + " " + "-" + level + "-" + exp + "-" + expToNextLevel);
                 t = UnixTimeNow();
                 //Debug.Log("Doing Health regeneration");
                 /*if (health == max_health_player)
@@ -207,7 +213,7 @@ public class Controller_pg : MonoBehaviour
 			if (attackTime - Time.deltaTime <= 0) {
 			int dam =Random.Range (10, 25);
 			target.SendMessage("applyDamage", dam);
-			string targetInfo = currentTarget.getHealth()+"-"+currentTarget.getMaxHealth()+"-"+dam;
+			string targetInfo = currentTarget.getHealth()+"-"+currentTarget.getMaxHealth()+"-"+dam+"-"+currentTarget.getLevel()+"-";
 			TM.SendMessage("targetText", targetInfo);
 			attackTime = 1.5F;
 			} else
@@ -222,7 +228,7 @@ public class Controller_pg : MonoBehaviour
 				}
 				damageRec = "<b>" + damage + "</b>";
 				attackRec = true;
-				TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + damage);
+				TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + damage + "-" + level + "-" + exp + "-" + expToNextLevel);
 				Debug.Log ("Damage Received " + damage);
 		}
 
@@ -234,7 +240,10 @@ public class Controller_pg : MonoBehaviour
         {
             return maxHealth;
         }
-
+		public int getLevel(){
+			return level;
+		}
+		
 		void setTarget (Infetto inf)
 		{		
 			if (currentTarget != null)
@@ -244,6 +253,16 @@ public class Controller_pg : MonoBehaviour
 			Debug.Log ("L'id del target è " + inf.getId ());
 			currentTarget.startParticle ();
 		}
+	void setExp(int experience){
+		exp = exp + experience;
+		if (exp >= expToNextLevel) {
+			level++;
+			exp = 0;
+			expToNextLevel  = Mathf.RoundToInt((level * 150) * 1.1F);
+		}
+		string targetInfo = " - - - -" + experience;
+		TM.SendMessage("targetText", targetInfo);
+	}
 
 		public Infetto getTarget()
 		{

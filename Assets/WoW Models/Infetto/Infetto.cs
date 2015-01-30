@@ -18,8 +18,9 @@ public class Infetto : MonoBehaviour {
 	bool attackRec;
 	string damageRec;
 	Vector3 initialPos;
+	GameObject sphere;
+	int level;
 	int ID = 0;
-	ParticleSystem partic;
 	// Use this for initialization
 	void Start () {
 		attackAnimationDuration = 0.79F;
@@ -36,12 +37,22 @@ public class Infetto : MonoBehaviour {
 		backHome = false;
 		dead = false;
 		attackRec = false;
-		partic = GetComponent<ParticleSystem> ();
-		partic.Pause ();
-
+		sphere = transform.GetChild (2).gameObject;
+		Component[] comp = sphere.GetComponents <Renderer>();
+		foreach (Renderer r in comp){
+			r.enabled = false;
+			Debug.Log(r.name + " disabilitato");
+		}
+		sphere.GetComponent<Light> ().enabled = false;
 	}
 	public void setId(int id){
 		ID = id;
+	}
+	public void setLevel(int lev){
+		level = lev;
+	}
+	public int getLevel(){
+		return level;
 	}
 	public int getId(){
 		return ID;
@@ -53,11 +64,22 @@ public class Infetto : MonoBehaviour {
 		return maxHealth;
 	}
 	public void startParticle(){
-		partic.Play ();
+		sphere.renderer.enabled = true;
+		Component[] comp = sphere.GetComponents <Renderer>();
+		foreach (Renderer r in comp){
+			r.enabled = true;
+			Debug.Log(r.name + " abilitato");
+		}
+		sphere.GetComponent<Light> ().enabled = true;
 	}
 	public void stopParticle(){
-		partic.Stop();
-		partic.Clear ();
+		sphere.renderer.enabled = false;
+		Component[] comp = sphere.GetComponents <Renderer>();
+		foreach (Renderer r in comp){
+			r.enabled = false;
+			Debug.Log(r.name + " disabilitato");
+		}
+		sphere.GetComponent<Light> ().enabled = false;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -171,6 +193,7 @@ public class Infetto : MonoBehaviour {
 		health -= damage;
 		if (health <= 0) {
 			dead = true;
+			player.SendMessage("setExp", level * 15);
 		}
 		damageRec = "<b>" + damage + "</b>";
         Debug.Log("Danno player to infetto = " + damage);
