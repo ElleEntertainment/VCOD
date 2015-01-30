@@ -26,6 +26,7 @@ public class Controller_pg : MonoBehaviour
 		Vector3 spawnPos;
         long tempo_attacco;
         long tempo_ora_regen_health;
+        long t;
 		//--------------------------------
 
 
@@ -43,6 +44,7 @@ public class Controller_pg : MonoBehaviour
 		isAttacking = false;
         tempo_attacco = UnixTimeNow();
         tempo_ora_regen_health = UnixTimeNow();
+        t = UnixTimeNow();
 		}
 	
 		// Update is called once per frame
@@ -63,11 +65,13 @@ public class Controller_pg : MonoBehaviour
 		}
 
 		//Usiamo i tasti per muoverci
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKey(KeyCode.K)) //Tasto per debuggare
         {
             long tempo_now = UnixTimeNow();
             long t = tempo_now - tempo_attacco;
             Debug.Log("Differenza tempo = " + t);
+
+            Debug.Log("Time.DeltaTime = " + Time.deltaTime);
         }
 		if (Input.GetKey (KeyCode.W)) {
 				//anim.SetFloat("direction", move);
@@ -144,15 +148,18 @@ public class Controller_pg : MonoBehaviour
 
         if (currentTarget == null && !isAttacking) //health regen (ci penso io, devo capire come calcolare il tempo nel gioco)
         {
+            
             tempo_ora_regen_health = UnixTimeNow(); //registro quando sono uscito fuori dal combat
-            if ((tempo_attacco - tempo_ora_regen_health) >= 5 || (tempo_attacco - tempo_ora_regen_health) == 0)
+            
+            if ((tempo_ora_regen_health - t) >= 5)
             {
                 int max_health_player = getMaxHealthPlayer();
                 if (health < max_health_player)
-                    health = health + (max_health_player / 100) * 3; //+3% ogni 5 secondi
-                if (health > max_health_player)
+                    health = health + (max_health_player / 100) * 3; //+3% ogni 5 secondi (in questo caso +7.5)
+                if (health >= max_health_player)
                     health = max_health_player;
                 TM.SendMessage("playerText", health + "-" + maxHealth + "-0");
+                t = UnixTimeNow();
                 //Debug.Log("Doing Health regeneration");
                 /*if (health == max_health_player)
                     Debug.Log("Health regeneration completed");*/
