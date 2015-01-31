@@ -91,7 +91,7 @@ public class Text_Manager : MonoBehaviour {
 		int expInt = Convert.ToInt32 (playerExp);
 		int expToNextInt = Convert.ToInt32 (playerExpToNextLevel);
 		int expPercent = Mathf.RoundToInt (((float)expInt / (float)expToNextInt) * 100);
-		GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 40, 40), targetExpGive);
+		GUI.Label (new Rect (Screen.width / 2, Screen.height - 100, 40, 40), targetExpGive);
 		if(expPercent > 0)
 			GUI.Button (new Rect (Screen.width/2 - 200,Screen.height - 35, expPercent * 4 , 25), "");
 		GUI.color = Color.white;
@@ -145,6 +145,7 @@ public class Text_Manager : MonoBehaviour {
 		targetLevel = values [3];
 		targetExpGive = values [4];
 		tdisappearTime = 0.7F;
+		expdisappearTime = 1.0F;
 	}
 	public void setTargetTrue(bool hasTarget){
 		playerHasTarget = hasTarget;

@@ -107,11 +107,15 @@ public class Controller_pg : MonoBehaviour
 						anim.SetBool ("walk", false);
 		}
 		if(Input.GetMouseButtonDown(0)){
-			currentTarget.stopParticle();
-			currentTarget = null;
-			TM.setTargetTrue(false);
+			if(currentTarget!=null){
+				currentTarget.stopParticle();
+				currentTarget = null;
+				TM.setTargetTrue(false);
+			}
 		}
-
+		if (Input.GetKeyDown (KeyCode.L)) {
+			save ();
+		}
 
 		//Check morte del player
 		if (health <= 0) {
@@ -273,7 +277,15 @@ public class Controller_pg : MonoBehaviour
 						return null;
 				}
 		}
+		
+		void save(){
+		DbManager.setInstance ();
+		string myData = "INSERT OR REPLACE INTO player VALUES('ChesterGay', " + level + ", " + exp + ", " + health + ", " + maxHealth + ");";
+		DbManager.savePlayer(myData);
+		}
+		void load(){
 
+		}
         public long UnixTimeNow()
         {
             var timeSpan = (System.DateTime.UtcNow - new System.DateTime(1970, 1, 1, 0, 0, 0));
