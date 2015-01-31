@@ -152,9 +152,13 @@ public class Controller_pg : MonoBehaviour
             }
         }
 
-        if (currentTarget == null && !isAttacking) //health regen (ci penso io, devo capire come calcolare il tempo nel gioco)
+        if (currentTarget == null && !isAttacking) 
         {
             
+            /*
+             * ********************************************
+             * Health regeneration System
+             * *******************************************
             tempo_ora_regen_health = UnixTimeNow(); //registro quando sono uscito fuori dal combat
             
             if ((tempo_ora_regen_health - t) >= 5)
