@@ -16,7 +16,8 @@ using Mono.Data.Sqlite;
 	static SqliteConnection myConnection = null;
 	private DbManager ()
 	{
-		//SqliteConnection.CreateFile ("Assets/DB/virus.sqlite");
+		if(!System.IO.File.Exists("Assets/DB/virus.sqlite"))
+			SqliteConnection.CreateFile ("Assets/DB/virus.sqlite");
 		myConnection = new SqliteConnection("URI=file:Assets/DB/virus.sqlite,version=3");
 		createTables ();
 	}
@@ -43,6 +44,19 @@ using Mono.Data.Sqlite;
 		SqliteCommand com = new SqliteCommand (sql, myConnection);
 		com.ExecuteNonQuery ();
 		myConnection.Close ();
+	}
+	public static string loadPlayer(string playerName){
+		myConnection.Open ();
+		string sql = "SELECT * FROM player WHERE name='" + playerName + "';";
+		SqliteCommand com = new SqliteCommand (sql, myConnection);
+		SqliteDataReader reader = com.ExecuteReader ();
+		string result = "";
+
+		if (reader.Read ()) {
+			result = reader["level"] + "-" + reader["exp"] + "-" + reader["health"] + "-" + reader["maxhealth"];
+		}
+		myConnection.Close ();
+		return result;
 	}
 
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Controller_pg : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Controller_pg : MonoBehaviour
 		{
 		level = 1;
 		exp = 0;
-		expToNextLevel = 150;
+		expToNextLevel = Mathf.RoundToInt(150 * 1.1F);
 		anim = GetComponent<Animator> ();
 		rig = GetComponent<Rigidbody> ();
 		jump = false;
@@ -116,6 +117,9 @@ public class Controller_pg : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.L)) {
 			save ();
 		}
+		if (Input.GetKeyDown (KeyCode.M)) {
+			load ();
+		}
 
 		//Check morte del player
 		if (health <= 0) {
@@ -176,8 +180,8 @@ public class Controller_pg : MonoBehaviour
                 t = UnixTimeNow();
                 //Debug.Log("Doing Health regeneration");
                 /*if (health == max_health_player)
-                    Debug.Log("Health regeneration completed");*/
-            }
+                    Debug.Log("Health regeneration completed");
+            }*/
         }
         
 
@@ -219,7 +223,7 @@ public class Controller_pg : MonoBehaviour
 		void attackEnemy (Infetto target)
 		{
 			if (attackTime - Time.deltaTime <= 0) {
-			int dam =Random.Range (10, 25);
+			int dam = UnityEngine.Random.Range (10, 25);
 			target.SendMessage("applyDamage", dam);
 			string targetInfo = currentTarget.getHealth()+"-"+currentTarget.getMaxHealth()+"-"+dam+"-"+currentTarget.getLevel()+"-";
 			TM.SendMessage("targetText", targetInfo);
@@ -261,16 +265,17 @@ public class Controller_pg : MonoBehaviour
 			Debug.Log ("L'id del target è " + inf.getId ());
 			currentTarget.startParticle ();
 		}
-	void setExp(int experience){
-		exp = exp + experience;
-		if (exp >= expToNextLevel) {
-			level++;
-			exp = 0;
-			expToNextLevel  = Mathf.RoundToInt((level * 150) * 1.1F);
+		void setExp(int experience){
+			exp = exp + experience;
+			if (exp >= expToNextLevel) {
+				level++;
+				exp = 0;
+				expToNextLevel  = Mathf.RoundToInt((level * 150) * 1.1F);
+			}
+			string targetInfo = " - - - -" + experience;
+			TM.SendMessage("targetText", targetInfo);
+			TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
 		}
-		string targetInfo = " - - - -" + experience;
-		TM.SendMessage("targetText", targetInfo);
-	}
 
 		public Infetto getTarget()
 		{
@@ -285,10 +290,23 @@ public class Controller_pg : MonoBehaviour
 		void save(){
 		DbManager.setInstance ();
 		string myData = "INSERT OR REPLACE INTO player VALUES('ChesterGay', " + level + ", " + exp + ", " + health + ", " + maxHealth + ");";
+		Debug.Log (myData);
 		DbManager.savePlayer(myData);
 		}
 		void load(){
-
+		DbManager.setInstance ();
+		string myData = DbManager.loadPlayer ("ChesterGay");
+		Debug.Log (myData);
+		if (!myData.Equals ("")) {
+				char[] del = {'-'};
+				string[] values = myData.Split (del);
+				level = Convert.ToInt32 (values [0]);
+				exp = Convert.ToInt32 (values [1]);
+				health = Convert.ToInt32 (values [2]);
+				maxHealth = Convert.ToInt32 (values [3]);
+				expToNextLevel  = Mathf.RoundToInt((level * 150) * 1.1F);
+				TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
+		}
 		}
         public long UnixTimeNow()
         {
