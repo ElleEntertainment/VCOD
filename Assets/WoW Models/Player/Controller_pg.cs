@@ -79,6 +79,7 @@ public class Controller_pg : MonoBehaviour
             Debug.Log("Differenza tempo = " + t);
 
             Debug.Log("Time.DeltaTime = " + Time.deltaTime);
+            //Debug.Log("Rotazioneeeeeeeeeeeeeeee" + transform.rotation.y);
         }
 		if (Input.GetKey (KeyCode.W)) {
 				//anim.SetFloat("direction", move);
@@ -289,13 +290,13 @@ public class Controller_pg : MonoBehaviour
 		
 		void save(){
 		DbManager.setInstance ();
-		string myData = "INSERT OR REPLACE INTO player VALUES('ChesterGay', " + level + ", " + exp + ", " + health + ", " + maxHealth + ");";
+        string myData = "INSERT OR REPLACE INTO player VALUES('player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ");";
 		Debug.Log (myData);
 		DbManager.savePlayer(myData);
 		}
 		void load(){
 		DbManager.setInstance ();
-		string myData = DbManager.loadPlayer ("ChesterGay");
+		string myData = DbManager.loadPlayer ("player");
 		Debug.Log (myData);
 		if (!myData.Equals ("")) {
 				char[] del = {'-'};
@@ -304,6 +305,11 @@ public class Controller_pg : MonoBehaviour
 				exp = Convert.ToInt32 (values [1]);
 				health = Convert.ToInt32 (values [2]);
 				maxHealth = Convert.ToInt32 (values [3]);
+                spawnPos.x = (float)Convert.ToDouble(values[4]);
+                spawnPos.y = (float)Convert.ToDouble(values[5]);
+                spawnPos.z = (float)Convert.ToDouble(values[6]);
+                transform.position = spawnPos;
+                transform.Rotate((float)Convert.ToDouble(values[7]), (float)Convert.ToDouble(values[8]), (float)Convert.ToDouble(values[9]));
 				expToNextLevel  = Mathf.RoundToInt((level * 150) * 1.1F);
 				TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
 		}

@@ -28,12 +28,19 @@ using Mono.Data.Sqlite;
 	}
 	private static void createTables(){
 		myConnection.Open ();
-		string playerTable = "CREATE TABLE IF NOT EXISTS player ( " +
+		string playerTable = "DROP TABLE player; " +
+                            "CREATE TABLE IF NOT EXISTS player ( " +
 							"name varchar(20), " +
 							"level int, " +
 							"exp int, " +
 							"health int, " +
 							"maxhealth int, " +
+                            "position_x float, " +
+                            "position_y float, " +
+                            "position_z float, " +
+                            "orientation_x float, " +
+                            "orientation_y float, " +
+                            "orientation_z float, " +
 							"PRIMARY KEY (name)) ";
 		SqliteCommand com = new SqliteCommand (playerTable, myConnection);
 		com.ExecuteNonQuery ();
@@ -47,13 +54,13 @@ using Mono.Data.Sqlite;
 	}
 	public static string loadPlayer(string playerName){
 		myConnection.Open ();
-		string sql = "SELECT * FROM player WHERE name='" + playerName + "';";
+        string sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "';";
 		SqliteCommand com = new SqliteCommand (sql, myConnection);
 		SqliteDataReader reader = com.ExecuteReader ();
 		string result = "";
 
 		if (reader.Read ()) {
-			result = reader["level"] + "-" + reader["exp"] + "-" + reader["health"] + "-" + reader["maxhealth"];
+            result = reader["level"] + "-" + reader["exp"] + "-" + reader["health"] + "-" + reader["maxhealth"] + "-" + reader["position_x"] + "-" + reader["position_y"] + "-" + reader["position_z"] + "-" + reader["orientation_x"] + "-" + reader["orientation_y"] + "-" + reader["orientation_z"];
 		}
 		myConnection.Close ();
 		return result;
