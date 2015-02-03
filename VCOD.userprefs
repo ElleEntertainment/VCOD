@@ -1,13 +1,13 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WoW Models\Infetto\Infetto.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DbManager.cs">
     <Files>
+      <File FileName="Assets\WoW Models\Player\Controller_pg.cs" Line="1" Column="1" />
       <File FileName="Assets\WoW Models\Infetto\Infetto.cs" Line="44" Column="1" />
-      <File FileName="Assets\WoW Models\Player\Controller_pg.cs" Line="276" Column="45" />
       <File FileName="Assets\Game_Manager.cs" Line="1" Column="1" />
       <File FileName="Assets\Move.cs" Line="1" Column="1" />
-      <File FileName="Assets\Text_Manager.cs" Line="140" Column="3" />
-      <File FileName="Assets\DbManager.cs" Line="56" Column="104" />
+      <File FileName="Assets\Text_Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets\DbManager.cs" Line="24" Column="122" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

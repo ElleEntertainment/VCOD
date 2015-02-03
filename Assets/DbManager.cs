@@ -13,6 +13,7 @@ using Mono.Data.Sqlite;
 
 	public class DbManager
 	{
+	static float GAME_VERSION = 1.0f; //viene aggiornata ad ogni modifica sostanziale (per adesso possiamo aggiornarlo in base ai progressi nel db)
 	static SqliteConnection myConnection = null;
 	private DbManager ()
 	{
@@ -20,6 +21,8 @@ using Mono.Data.Sqlite;
 			SqliteConnection.CreateFile ("Assets/DB/virus.sqlite");
 		myConnection = new SqliteConnection("URI=file:Assets/DB/virus.sqlite,version=3");
 		createTables ();
+		while (!update())  //---- ciclo di aggiornamenti fino alla versione corrente (return true se DB_VERSION = GAME_VERSION)
+						;
 	}
 		
 	public static void setInstance(){
@@ -28,8 +31,7 @@ using Mono.Data.Sqlite;
 	}
 	private static void createTables(){
 		myConnection.Open ();
-		string playerTable = "DROP TABLE player; " +
-                            "CREATE TABLE IF NOT EXISTS player ( " +
+		string playerTable = "CREATE TABLE IF NOT EXISTS player ( " +
 							"name varchar(20), " +
 							"level int, " +
 							"exp int, " +
@@ -41,7 +43,12 @@ using Mono.Data.Sqlite;
                             "orientation_x float, " +
                             "orientation_y float, " +
                             "orientation_z float, " +
-							"PRIMARY KEY (name)) ";
+							"PRIMARY KEY (name)); " +
+							"CREATE TABLE IF NOT EXISTS version ( " +
+							"id int autoincrement, " +
+							"game_version numeric(12,4), " +
+							"db_version numeric(12,4), " +
+							"PRIMARY KEY(id));";
 		SqliteCommand com = new SqliteCommand (playerTable, myConnection);
 		com.ExecuteNonQuery ();
 		myConnection.Close ();
@@ -64,6 +71,57 @@ using Mono.Data.Sqlite;
 		}
 		myConnection.Close ();
 		return result;
+	}
+	//La versione del game andrà di pari passo con quella del DB, quando ci sarà una versione di gioco diversa verrà di conseguenza aggiornato anche il db(anche se non ci sono
+	//aggiornamenti verrà comunque aggiornata la versione nel DB) questo metodo ci consente di tenere aggiornato il DB di qualsiasi versione di gioco e senza metter mano
+	//a client SQLite o mettere bottoni
+	bool update(){
+		float currentGV = 0;
+		float currentDB = 0;
+		string sql = "SELECT * FROM version;";
+		SqliteCommand com = new SqliteCommand(sql, myConnection); 
+		SqliteDataReader reader = com.ExecuteReader ();
+		//----- controlla se c'è già una riga nella tabella versione, se non c'è la inserisce con la versione di gioco corrente e db con solo le tabelle create
+		// e ritorna false per continuare il ciclo di aggiornamento
+		if (!reader.HasRows) {
+			SqliteCommand Ins = new SqliteCommand ("INSERT INTO version (game_version, db_version) VALUES(" + GAME_VERSION + ", 1.0);", myConnection);
+			Ins.ExecuteNonQuery();
+			if(GAME_VERSION > 1.0f)
+				return false;
+			return true;
+		}
+		else{
+			if(reader.Read()){
+				currentGV = reader.GetFloat(2);
+				currentDB = reader.GetFloat(3);
+				if(currentGV < GAME_VERSION){    //----- Aggiorna nel db la versione di gioco con quella corrente
+					SqliteCommand Ins = new SqliteCommand ("UPDATE version SET game_version = " + GAME_VERSION + ");" , myConnection);
+					Ins.ExecuteNonQuery();
+					currentGV = GAME_VERSION;
+				}
+
+			}
+	    }
+		if (currentGV > currentDB) {  //Qui all'interno ci andranno i diversi update per versione di gioco
+			if(currentDB == 1.0f){
+				//Qui vanno inseriti gli aggiornamenti poi con la query sotto viene aggiornata la versione del db
+				//SqliteCommand upda = new SqliteCommand ("UPDATE version SET db_version = 1.1 WHERE id = 1;", myConnection);
+				//upda.ExecuteNonQuery();
+				//currentDB = 1.1f;
+			}
+			else if(currentDB == 1.1f){
+				//Qui vanno inseriti gli aggiornamenti poi con la query sotto viene aggiornata la versione del db
+				//SqliteCommand upda = new SqliteCommand ("UPDATE version SET db_version = 1.2 WHERE id = 1;", myConnection);
+				//upda.ExecuteNonQuery();
+				//currentDB = 1.2f;
+			}
+		
+		}
+		if (currentDB < currentGV) //se il db non è ancora all'ultima versione ritorna false per continuare il ciclo
+			return false;
+		
+	    return true;
+
 	}
 
 }
