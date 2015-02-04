@@ -19,6 +19,7 @@ public class Infetto : MonoBehaviour {
 	string damageRec;
 	Vector3 initialPos;
 	GameObject sphere;
+	public Text_Manager TM;
 	int level;
 	int ID = 0;
 	// Use this for initialization
@@ -206,5 +207,14 @@ public class Infetto : MonoBehaviour {
 				player.SendMessage("setTarget", this);
 			}
 		}
+	}
+	//collisione del proiettile con l'infetto
+	void OnCollisionEnter (Collision collision)
+	{
+
+		Collider ammo = collision.collider;
+		Debug.Log (ammo.gameObject.tag);
+		if (ammo.gameObject.tag == "Proiettile")
+				applyDamage (10);
 	}
 }

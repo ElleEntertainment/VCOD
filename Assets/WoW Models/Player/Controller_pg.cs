@@ -31,6 +31,8 @@ public class Controller_pg : MonoBehaviour
         long tempo_attacco;
         long tempo_ora_regen_health;
         long t;
+		Vector3 mousePosition;
+		public GameObject rightArm;
 		//--------------------------------
 
 
@@ -52,11 +54,17 @@ public class Controller_pg : MonoBehaviour
         tempo_attacco = UnixTimeNow();
         tempo_ora_regen_health = UnixTimeNow();
         t = UnixTimeNow();
+		mousePosition = Input.mousePosition;
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
+//		mousePosition = Input.mousePosition;
+//		float rotZ = ((mousePosition.x - Screen.height/2) / (Screen.height / 2)) * (45);
+//		float rotY = ((mousePosition.y - Screen.width/2) / (Screen.width / 2)) * (45);
+//		Vector3 newDir = Vector3.RotateTowards(rightArm.transform.forward, new Vector3(0,rotY, rotZ), 30, 1.0F);
+//		rightArm.transform.rotation = Quaternion.LookRotation(newDir);
 		AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo (0);
 		//Sistema di Rotazione (non ce n'è bisogno per ora)
 		if (Input.GetKey (KeyCode.A)) 
@@ -64,6 +72,7 @@ public class Controller_pg : MonoBehaviour
 		else
 		if (Input.GetKey (KeyCode.D))
 				transform.Rotate (Vector3.up, 1);
+	
 	
 		// FINE SISTEMA DI ROTAZIONE
 		if (Input.GetKeyDown (KeyCode.C)) {
