@@ -9,61 +9,33 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Data;
-using Mono.Data.Sqlite;
+using MySql.Data.MySqlClient;
 
 	public class DbManager
 	{
 	static float GAME_VERSION = 1.0f; //viene aggiornata ad ogni modifica sostanziale (per adesso possiamo aggiornarlo in base ai progressi nel db)
-	static SqliteConnection myConnection = null;
+	//static MySqlConnection myConnection = null;
+    static MySqlConnection myConnection = null;
 	private DbManager ()
 	{
-		if(!System.IO.File.Exists("Assets/DB/virus.sqlite"))
-			SqliteConnection.CreateFile ("Assets/DB/virus.sqlite");
-		myConnection = new SqliteConnection("URI=file:Assets/DB/virus.sqlite,version=3");
-		createTables ();
-		while (!update())  //---- ciclo di aggiornamenti fino alla versione corrente (return true se DB_VERSION = GAME_VERSION)
-						;
+        myConnection = new MySqlConnection("SERVER=localhost;DATABASE=scuola_progetto;UID=root;PASSWORD=ascent;");
 	}
 		
 	public static void setInstance(){
 		if(myConnection==null)
 			new DbManager();
 	}
-	private static void createTables(){
-		myConnection.Open ();
-		string playerTable = "CREATE TABLE IF NOT EXISTS player ( " +
-							"name varchar(20), " +
-							"level int, " +
-							"exp int, " +
-							"health int, " +
-							"maxhealth int, " +
-                            "position_x float, " +
-                            "position_y float, " +
-                            "position_z float, " +
-                            "orientation_x float, " +
-                            "orientation_y float, " +
-                            "orientation_z float, " +
-							"PRIMARY KEY (name)); " +
-							"CREATE TABLE IF NOT EXISTS version ( " +
-							"id int autoincrement, " +
-							"game_version numeric(12,4), " +
-							"db_version numeric(12,4), " +
-							"PRIMARY KEY(id));";
-		SqliteCommand com = new SqliteCommand (playerTable, myConnection);
-		com.ExecuteNonQuery ();
-		myConnection.Close ();
-	}
 	public static void savePlayer(string sql){
 		myConnection.Open ();
-		SqliteCommand com = new SqliteCommand (sql, myConnection);
+		MySqlCommand com = new MySqlCommand (sql, myConnection);
 		com.ExecuteNonQuery ();
 		myConnection.Close ();
 	}
 	public static string loadPlayer(string playerName){
 		myConnection.Open ();
         string sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "';";
-		SqliteCommand com = new SqliteCommand (sql, myConnection);
-		SqliteDataReader reader = com.ExecuteReader ();
+		MySqlCommand com = new MySqlCommand (sql, myConnection);
+		MySqlDataReader reader = com.ExecuteReader ();
 		string result = "";
 
 		if (reader.Read ()) {
@@ -74,17 +46,17 @@ using Mono.Data.Sqlite;
 	}
 	//La versione del game andrà di pari passo con quella del DB, quando ci sarà una versione di gioco diversa verrà di conseguenza aggiornato anche il db(anche se non ci sono
 	//aggiornamenti verrà comunque aggiornata la versione nel DB) questo metodo ci consente di tenere aggiornato il DB di qualsiasi versione di gioco e senza metter mano
-	//a client SQLite o mettere bottoni
+	//a client MySql o mettere bottoni
 	bool update(){
 		float currentGV = 0;
 		float currentDB = 0;
 		string sql = "SELECT * FROM version;";
-		SqliteCommand com = new SqliteCommand(sql, myConnection); 
-		SqliteDataReader reader = com.ExecuteReader ();
+		MySqlCommand com = new MySqlCommand(sql, myConnection); 
+		MySqlDataReader reader = com.ExecuteReader ();
 		//----- controlla se c'è già una riga nella tabella versione, se non c'è la inserisce con la versione di gioco corrente e db con solo le tabelle create
 		// e ritorna false per continuare il ciclo di aggiornamento
 		if (!reader.HasRows) {
-			SqliteCommand Ins = new SqliteCommand ("INSERT INTO version (game_version, db_version) VALUES(" + GAME_VERSION + ", 1.0);", myConnection);
+			MySqlCommand Ins = new MySqlCommand ("INSERT INTO version (game_version, db_version) VALUES(" + GAME_VERSION + ", 1.0);", myConnection);
 			Ins.ExecuteNonQuery();
 			if(GAME_VERSION > 1.0f)
 				return false;
@@ -95,7 +67,7 @@ using Mono.Data.Sqlite;
 				currentGV = reader.GetFloat(2);
 				currentDB = reader.GetFloat(3);
 				if(currentGV < GAME_VERSION){    //----- Aggiorna nel db la versione di gioco con quella corrente
-					SqliteCommand Ins = new SqliteCommand ("UPDATE version SET game_version = " + GAME_VERSION + ");" , myConnection);
+					MySqlCommand Ins = new MySqlCommand ("UPDATE version SET game_version = " + GAME_VERSION + ");" , myConnection);
 					Ins.ExecuteNonQuery();
 					currentGV = GAME_VERSION;
 				}
@@ -105,13 +77,13 @@ using Mono.Data.Sqlite;
 		if (currentGV > currentDB) {  //Qui all'interno ci andranno i diversi update per versione di gioco
 			if(currentDB == 1.0f){
 				//Qui vanno inseriti gli aggiornamenti poi con la query sotto viene aggiornata la versione del db
-				//SqliteCommand upda = new SqliteCommand ("UPDATE version SET db_version = 1.1 WHERE id = 1;", myConnection);
+				//MySqlCommand upda = new MySqlCommand ("UPDATE version SET db_version = 1.1 WHERE id = 1;", myConnection);
 				//upda.ExecuteNonQuery();
 				//currentDB = 1.1f;
 			}
 			else if(currentDB == 1.1f){
 				//Qui vanno inseriti gli aggiornamenti poi con la query sotto viene aggiornata la versione del db
-				//SqliteCommand upda = new SqliteCommand ("UPDATE version SET db_version = 1.2 WHERE id = 1;", myConnection);
+				//MySqlCommand upda = new MySqlCommand ("UPDATE version SET db_version = 1.2 WHERE id = 1;", myConnection);
 				//upda.ExecuteNonQuery();
 				//currentDB = 1.2f;
 			}
