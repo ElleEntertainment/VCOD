@@ -163,6 +163,9 @@
  <Reference Include="Mono.Data.Sqlite">
  <HintPath>C:/Progetti Unity/VCOD/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
+ <Reference Include="MySql.Data">
+ <HintPath>C:/Progetti Unity/VCOD/Assets/Plugins/MySql.Data.dll</HintPath>
+ </Reference>
  <Reference Include="System.Data">
  <HintPath>C:/Progetti Unity/VCOD/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
@@ -184,8 +187,6 @@
       <Project>{5D724F39-9F0E-7DEF-9628-D23DA15ECC60}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{1D285D9E-9632-1FD1-AFD6-FD3D8CAE1FBB}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{493366A7-27B0-F5E7-31C5-7462AABB7207}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
       <Project>{9193933B-11F4-C400-4C72-27807F9B7E73}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>

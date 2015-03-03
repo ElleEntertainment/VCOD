@@ -10,15 +10,20 @@
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using Mono.Data.Sqlite;
 
 	public class DbManager
 	{
 	static float GAME_VERSION = 1.0f; //viene aggiornata ad ogni modifica sostanziale (per adesso possiamo aggiornarlo in base ai progressi nel db)
-	//static MySqlConnection myConnection = null;
-    static MySqlConnection myConnection = null;
+    static SqliteConnection myConnection = null;
 	private DbManager ()
 	{
-        myConnection = new MySqlConnection("SERVER=localhost;DATABASE=scuola_progetto;UID=root;PASSWORD=ascent;");
+        if (!System.IO.File.Exists("Assets/DB/virus.sqlite"))
+            SqliteConnection.CreateFile("Assets/DB/virus.sqlite");
+        myConnection = new SqliteConnection("URI:file:Assets/DB/virus.sqlite,version=3");
+
+        while (!update()) //Ciclo di aggiornamenti fino alla versione corrente (return true se DB_VERSION = GAME_VERSION)
+            ;
 	}
 		
 	public static void setInstance(){
@@ -27,15 +32,15 @@ using MySql.Data.MySqlClient;
 	}
 	public static void savePlayer(string sql){
 		myConnection.Open ();
-		MySqlCommand com = new MySqlCommand (sql, myConnection);
+		SqliteCommand com = new SqliteCommand (sql, myConnection);
 		com.ExecuteNonQuery ();
 		myConnection.Close ();
 	}
 	public static string loadPlayer(string playerName){
 		myConnection.Open ();
         string sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "';";
-		MySqlCommand com = new MySqlCommand (sql, myConnection);
-		MySqlDataReader reader = com.ExecuteReader ();
+		SqliteCommand com = new SqliteCommand (sql, myConnection);
+		SqliteDataReader reader = com.ExecuteReader ();
 		string result = "";
 
 		if (reader.Read ()) {
@@ -51,12 +56,12 @@ using MySql.Data.MySqlClient;
 		float currentGV = 0;
 		float currentDB = 0;
 		string sql = "SELECT * FROM version;";
-		MySqlCommand com = new MySqlCommand(sql, myConnection); 
-		MySqlDataReader reader = com.ExecuteReader ();
+		SqliteCommand com = new SqliteCommand(sql, myConnection); 
+		SqliteDataReader reader = com.ExecuteReader ();
 		//----- controlla se c'è già una riga nella tabella versione, se non c'è la inserisce con la versione di gioco corrente e db con solo le tabelle create
 		// e ritorna false per continuare il ciclo di aggiornamento
 		if (!reader.HasRows) {
-			MySqlCommand Ins = new MySqlCommand ("INSERT INTO version (game_version, db_version) VALUES(" + GAME_VERSION + ", 1.0);", myConnection);
+			SqliteCommand Ins = new SqliteCommand ("INSERT INTO version (game_version, db_version) VALUES(" + GAME_VERSION + ", 1.0);", myConnection);
 			Ins.ExecuteNonQuery();
 			if(GAME_VERSION > 1.0f)
 				return false;
@@ -67,7 +72,7 @@ using MySql.Data.MySqlClient;
 				currentGV = reader.GetFloat(2);
 				currentDB = reader.GetFloat(3);
 				if(currentGV < GAME_VERSION){    //----- Aggiorna nel db la versione di gioco con quella corrente
-					MySqlCommand Ins = new MySqlCommand ("UPDATE version SET game_version = " + GAME_VERSION + ");" , myConnection);
+					SqliteCommand Ins = new SqliteCommand ("UPDATE version SET game_version = " + GAME_VERSION + ");" , myConnection);
 					Ins.ExecuteNonQuery();
 					currentGV = GAME_VERSION;
 				}
@@ -77,13 +82,13 @@ using MySql.Data.MySqlClient;
 		if (currentGV > currentDB) {  //Qui all'interno ci andranno i diversi update per versione di gioco
 			if(currentDB == 1.0f){
 				//Qui vanno inseriti gli aggiornamenti poi con la query sotto viene aggiornata la versione del db
-				//MySqlCommand upda = new MySqlCommand ("UPDATE version SET db_version = 1.1 WHERE id = 1;", myConnection);
+				//SqliteCommand upda = new SqliteCommand ("UPDATE version SET db_version = 1.1 WHERE id = 1;", myConnection);
 				//upda.ExecuteNonQuery();
 				//currentDB = 1.1f;
 			}
 			else if(currentDB == 1.1f){
 				//Qui vanno inseriti gli aggiornamenti poi con la query sotto viene aggiornata la versione del db
-				//MySqlCommand upda = new MySqlCommand ("UPDATE version SET db_version = 1.2 WHERE id = 1;", myConnection);
+				//SqliteCommand upda = new SqliteCommand ("UPDATE version SET db_version = 1.2 WHERE id = 1;", myConnection);
 				//upda.ExecuteNonQuery();
 				//currentDB = 1.2f;
 			}
