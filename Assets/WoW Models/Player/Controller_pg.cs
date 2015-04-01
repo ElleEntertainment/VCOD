@@ -8,8 +8,6 @@ public class Controller_pg : MonoBehaviour
 		//inizializzazione variabili
 		public Text_Manager TM;
 		float speed = 1;
-		Animator anim;
-		Rigidbody rig;
 		bool jump = false;
 		bool falling = false;
 		bool run = true;
@@ -43,8 +41,6 @@ public class Controller_pg : MonoBehaviour
 		level = 1;
 		exp = 0;
 		expToNextLevel = Mathf.RoundToInt(150 * 1.1F);
-		anim = GetComponent<Animator> ();
-		rig = GetComponent<Rigidbody> ();
 		jump = false;
 		run = true;
 		health = 250;
@@ -66,7 +62,7 @@ public class Controller_pg : MonoBehaviour
 			Vector3 newDir = Vector3.RotateTowards(Contenitore.transform.up, targetDir, 30, 1.0F);
 			rightArm.transform.rotation = Quaternion.LookRotation(newDir);
 		}
-		AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo (0);
+
 		//Sistema di Rotazione (non ce n'è bisogno per ora)
 		if (Input.GetKey (KeyCode.A)) 
 				transform.Rotate (Vector3.up, -1); //-1 sono i gradi di rotazione
@@ -76,10 +72,7 @@ public class Controller_pg : MonoBehaviour
 	
 	
 		// FINE SISTEMA DI ROTAZIONE
-		if (Input.GetKeyDown (KeyCode.C)) {
-				run = !run;
-				anim.SetBool ("canRun", run);
-		}
+
 
 		//Usiamo i tasti per muoverci
         if (Input.GetKey(KeyCode.K)) //Tasto per debuggare
@@ -91,33 +84,9 @@ public class Controller_pg : MonoBehaviour
             Debug.Log("Time.DeltaTime = " + Time.deltaTime);
             //Debug.Log("Rotazioneeeeeeeeeeeeeeee" + transform.rotation.y);
         }
-		if (Input.GetKey (KeyCode.W)) {
-				//anim.SetFloat("direction", move);
-				if (run) {
-						anim.SetBool ("run", true);
-						anim.SetBool ("walk", false);
-						transform.Translate (Vector3.left * speed / 15, Space.Self);
-				} else {
-						anim.SetBool ("run", false);
-						anim.SetBool ("walk", true);
-						transform.Translate (Vector3.left * speed / 30, Space.Self);
-				}
-				transform.Translate (Vector3.left * speed / 30, Space.Self); // diviso 30 per ridurre la velocità
-		}
-		if (Input.GetKey (KeyCode.S))
-				transform.Translate (Vector3.right * speed / 30, Space.Self);
-		/*if (Input.GetKey (KeyCode.A))
-				transform.Translate (Vector3.back * speed / 30, Space.Self);
-		if (Input.GetKey (KeyCode.D))
-				transform.Translate (Vector3.forward * speed / 30, Space.Self);*/
+
 		//Fine sistema di movimento semplice
-		//Ci sono gli if senza gli else per dare la possibilità di muoversi in più direzioni in una volta
-		if (Input.GetKeyUp (KeyCode.W)) { //quando si rilascia il tasto W il personaggio non deve più correre
-				if (run)
-						anim.SetBool ("run", false);
-				else
-						anim.SetBool ("walk", false);
-		}
+
 		if(Input.GetMouseButtonDown(0)){
 			if(currentTarget!=null){
 				currentTarget.stopParticle();
@@ -196,39 +165,6 @@ public class Controller_pg : MonoBehaviour
         }
         
 
-		}
-
-		void FixedUpdate ()
-		{
-				if (!jump && !falling) {
-						if (Input.GetKeyDown (KeyCode.Space)) {
-								jump = true;
-								YPos = transform.position.y;
-						}
-				}
-				do_jump ();
-		}
-
-		void do_jump ()
-		{
-				if (jump && !falling) {
-						if (YPos + jumpHeigth >= transform.position.y) {
-								Debug.Log ("Jumping");
-								rig.AddForce (Vector3.up * 200);
-								falling = true;
-								anim.SetBool("jump", true);
-						}
-				}
-		}
-
-		void OnCollisionEnter (Collision collision)
-		{
-				if (falling) {
-						Debug.Log ("Hit the ground");
-						falling = false;
-						jump = false;
-						anim.SetBool("jump", false);
-				}
 		}
 
 		void attackEnemy (Infetto target)
