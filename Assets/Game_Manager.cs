@@ -5,17 +5,17 @@ using System.Collections;
 //----------------------------------
 public class Game_Manager : MonoBehaviour {
 
-    public int num_infetti = 5;
+    //public int num_infetti = 5;
 	Infetto[] infetti = new Infetto[5];
 	public  Infetto infetto;
-	Vector3[] positions = new Vector3[5];
-	Quaternion[] rotations = new Quaternion[5];
+	//Vector3[] positions = new Vector3[5];
+	//Quaternion[] rotations = new Quaternion[5];
 	public Controller_pg player;
     
 	// Use this for initialization
 	void Start () {
 		//istanzio 5 infetti e assegno loro un id
-		for (int j = 0; j < num_infetti; j++) { 
+		/*for (int j = 0; j < num_infetti; j++) { 
 			positions[j] = new Vector3(Random.Range(750, 850), 0, Random.Range(750, 850));
 		}
 		for (int k = 0; k < num_infetti; k++) {
@@ -26,19 +26,41 @@ public class Game_Manager : MonoBehaviour {
 			inf.setId(i);
 			inf.setLevel(player.getLevel());
 			infetti[i] = inf;
-		}
+		}*/
+        DbManager.setInstance();
+        string[] data = DbManager.loadWorld();
+        if (data.Length > 0)
+        {
+            char[] carattereDivisore = { '-' };
+            string[] values;
+            for (int i = 0; i < data.Length; i++)
+            {
+                values = data[i].Split(carattereDivisore);
+                float position_x = (float)System.Convert.ToDouble(values[1]); //Metto System. davanti altrimenti mi da errori
+                float position_y = (float)System.Convert.ToDouble(values[2]);
+                float position_z = (float)System.Convert.ToDouble(values[3]);
+                Vector3 v = new Vector3(position_x, position_y, position_z);
+                float rotation_x = (float)System.Convert.ToDouble(values[4]);
+                float rotation_y = (float)System.Convert.ToDouble(values[5]);
+                float rotation_z = (float)System.Convert.ToDouble(values[6]);
+                Quaternion q = new Quaternion(rotation_x, rotation_y, rotation_z, 0);
+                Infetto inf = Instantiate(infetto, v, q) as Infetto;
+                inf.setId(System.Convert.ToInt32(values[0]));
+                inf.setLevel(player.getLevel());
+            }
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		for (int i = 0; i < infetti.Length; i++) {
+		/*for (int i = 0; i < infetti.Length; i++) {
 			if(infetti[i] != null){
 				if(infetti[i].isDead()){
 					Destroy(infetti[i].gameObject);
 					createNewInfetto(i);
 				}
 			}
-		}
+		}*/
 	}
 	//getter per array di infetti (servirà più avanti sicuramente)
 	public Infetto[] getInfettiInMap(){

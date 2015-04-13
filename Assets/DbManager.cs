@@ -20,10 +20,10 @@ using Mono.Data.Sqlite;
 	{
         if (!System.IO.File.Exists("Assets/DB/virus.sqlite"))
             SqliteConnection.CreateFile("Assets/DB/virus.sqlite");
-        myConnection = new SqliteConnection("URI:file:Assets/DB/virus.sqlite,version=3");
+        myConnection = new SqliteConnection("Data Source=Assets/DB/virus.sqlite, Version=3");
 
-        while (!update()) //Ciclo di aggiornamenti fino alla versione corrente (return true se DB_VERSION = GAME_VERSION)
-            ;
+        /*while (!update()) //Ciclo di aggiornamenti fino alla versione corrente (return true se DB_VERSION = GAME_VERSION)
+            ;*/
 	}
 		
 	public static void setInstance(){
@@ -36,6 +36,22 @@ using Mono.Data.Sqlite;
 		com.ExecuteNonQuery ();
 		myConnection.Close ();
 	}
+    public static string[] loadWorld()
+    {
+        myConnection.Open();
+        string query = "SELECT idSpawn, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM nemici_info;";
+        SqliteCommand com = new SqliteCommand(query, myConnection);
+        SqliteDataReader reader = com.ExecuteReader();
+        string[] result = new string[1];
+        int contatore = 0;
+        while (reader.Read())
+        {
+            result[contatore] = reader["idSpawn"] + "-" + reader["position_x"] + "-" + reader["position_y"] + "-" + reader["position_z"] + "-" + reader["orientation_x"] + "-" + reader["orientation_y"] + "-" + reader["orientation_z"];
+            contatore++;
+        }
+ 
+        return result;
+    }
 	public static string loadPlayer(string playerName){
 		myConnection.Open ();
         string sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "';";
@@ -52,7 +68,9 @@ using Mono.Data.Sqlite;
 	//La versione del game andrà di pari passo con quella del DB, quando ci sarà una versione di gioco diversa verrà di conseguenza aggiornato anche il db(anche se non ci sono
 	//aggiornamenti verrà comunque aggiornata la versione nel DB) questo metodo ci consente di tenere aggiornato il DB di qualsiasi versione di gioco e senza metter mano
 	//a client MySql o mettere bottoni
-	bool update(){
+
+    //commentato per via di errore fastidioso
+	/*bool update(){
 		float currentGV = 0;
 		float currentDB = 0;
 		string sql = "SELECT * FROM version;";
@@ -99,7 +117,7 @@ using Mono.Data.Sqlite;
 		
 	    return true;
 
-	}
+	}*/
 
 }
 
