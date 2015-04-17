@@ -286,7 +286,7 @@ public class Controller_pg : MonoBehaviour
             float pos_x = transform.position.x;
             float pos_y = transform.position.y;
             float pos_z = transform.position.z;
-            float ori_x = transform.rotation.x + 180;
+            float ori_x = transform.rotation.x;
             float ori_y = transform.rotation.y;
             float ori_z = transform.rotation.z;
             DbManager.setInstance();
