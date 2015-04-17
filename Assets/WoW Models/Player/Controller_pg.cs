@@ -32,6 +32,11 @@ public class Controller_pg : MonoBehaviour
 		Vector3 mousePosition;
 		public GameObject rightArm;
 		public GameObject Contenitore;
+        float camera_pos_x, camera_pos_y, camera_pos_z, camera_rot_x, camera_rot_y, camera_rot_z;
+        GameObject camera;
+        bool isTargetting;
+        GameObject doppietta;
+        float doppietta_pos_x, doppietta_pos_y, doppietta_pos_z, doppietta_rot_x, doppietta_rot_y, doppietta_rot_z;
 		//--------------------------------
 
 
@@ -52,6 +57,24 @@ public class Controller_pg : MonoBehaviour
         tempo_ora_regen_health = UnixTimeNow();
         t = UnixTimeNow();
 		mousePosition = Input.mousePosition;
+        load("player");
+        isTargetting = false;
+
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        camera_pos_x = camera.transform.position.x;
+        camera_pos_y = camera.transform.position.y;
+        camera_pos_z = camera.transform.position.z;
+        camera_rot_x = camera.transform.rotation.x;
+        camera_rot_y = camera.transform.rotation.y;
+        camera_rot_z = camera.transform.rotation.z;
+
+        doppietta = GameObject.FindGameObjectWithTag("Doppietta");
+        doppietta_pos_x = doppietta.transform.position.x;
+        doppietta_pos_y = doppietta.transform.position.y;
+        doppietta_pos_z = doppietta.transform.position.z;
+        doppietta_rot_x = doppietta.transform.rotation.x;
+        doppietta_rot_y = doppietta.transform.rotation.y;
+        doppietta_rot_z = doppietta.transform.rotation.z;
 		}
 
 		// Update is called once per frame
@@ -85,6 +108,31 @@ public class Controller_pg : MonoBehaviour
             //Debug.Log("Rotazioneeeeeeeeeeeeeeee" + transform.rotation.y);
         }
 
+        //tasto per spawnare npc
+        if (Input.GetKey(KeyCode.U))
+        {
+            insertNpc();
+        }
+        if (Input.GetKey(KeyCode.Mouse1)) //dx mouse
+        {
+            //sposta telecamera sull'arma
+            //TODO: eseguire questa funzione se il tasto è premuto, quando viene rilasciato isTargetting = false;
+            if (!isTargetting)
+            {
+                camera.transform.position = new Vector3(doppietta_pos_x, doppietta_pos_y, doppietta_pos_z);
+                camera.transform.rotation = new Quaternion(doppietta_rot_x, doppietta_rot_y, doppietta_rot_z, 0);
+                isTargetting = true;
+                Debug.Log("Camera spostata sull'arma");
+            }
+            else
+            {
+                camera.transform.position = new Vector3(camera_pos_x, camera_pos_y, camera_pos_z);
+                camera.transform.rotation = new Quaternion(camera_rot_x, camera_rot_y, camera_rot_z, 0);
+                isTargetting = false;
+                Debug.Log("Camera spostata sul personaggio");
+            }
+        }
+
 		//Fine sistema di movimento semplice
 
 		if(Input.GetMouseButtonDown(0)){
@@ -98,7 +146,7 @@ public class Controller_pg : MonoBehaviour
 			save ();
 		}
 		if (Input.GetKeyDown (KeyCode.M)) {
-			load ();
+			load ("player");
 		}
 
 		//Check morte del player
@@ -146,8 +194,8 @@ public class Controller_pg : MonoBehaviour
             /*
              * ********************************************
              * Health regeneration System
-             * *******************************************
-            tempo_ora_regen_health = UnixTimeNow(); //registro quando sono uscito fuori dal combat
+             * ********************************************/
+            /*tempo_ora_regen_health = UnixTimeNow(); //registro quando sono uscito fuori dal combat
             
             if ((tempo_ora_regen_health - t) >= 5)
             {
@@ -233,36 +281,57 @@ public class Controller_pg : MonoBehaviour
 						return null;
 				}
 		}
-		
-		void save(){
-		DbManager.setInstance ();
-        string myData = "INSERT OR REPLACE INTO player VALUES('player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ");";
-		Debug.Log (myData);
-		DbManager.savePlayer(myData);
+
+        void insertNpc() {
+            float pos_x = transform.position.x;
+            float pos_y = transform.position.y;
+            float pos_z = transform.position.z;
+            float ori_x = transform.rotation.x + 180;
+            float ori_y = transform.rotation.y;
+            float ori_z = transform.rotation.z;
+            DbManager.setInstance();
+            string npc = "INSERT INTO nemici_info(position_x, position_y, position_z, orientation_x, orientation_y, orientation_z) VALUES(" + pos_x + ", " + pos_y + ", " + pos_z + ", " + ori_x + ", " + ori_y + ", " + ori_z + ");";
+            Debug.Log(npc);
+            DbManager.executeQuery(npc);
+            Debug.Log("npc aggiunto nel db");
+        }
+		void save()
+        {
+		    DbManager.setInstance ();
+            string myData = "INSERT OR REPLACE INTO player VALUES('player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ");";
+		    Debug.Log (myData);
+		    DbManager.executeQuery(myData);
 		}
-		void load(){
-		DbManager.setInstance ();
-		string myData = DbManager.loadPlayer ("player");
-		Debug.Log (myData);
-		if (!myData.Equals ("")) {
-				char[] del = {'-'};
-				string[] values = myData.Split (del);
-				level = Convert.ToInt32 (values [0]);
-				exp = Convert.ToInt32 (values [1]);
-				health = Convert.ToInt32 (values [2]);
-				maxHealth = Convert.ToInt32 (values [3]);
+        public void load(string s)
+        {
+            DbManager.setInstance();
+            string myData = DbManager.loadPlayer(s);
+            Debug.Log(myData);
+            if (!myData.Equals(""))
+            {
+                char[] del = { '|' };
+                string[] values = myData.Split(del);
+                level = Convert.ToInt32(values[0]);
+                exp = Convert.ToInt32(values[1]);
+                health = Convert.ToInt32(values[2]);
+                maxHealth = Convert.ToInt32(values[3]);
                 spawnPos.x = (float)Convert.ToDouble(values[4]);
                 spawnPos.y = (float)Convert.ToDouble(values[5]);
                 spawnPos.z = (float)Convert.ToDouble(values[6]);
                 transform.position = spawnPos;
                 transform.Rotate((float)Convert.ToDouble(values[7]), (float)Convert.ToDouble(values[8]), (float)Convert.ToDouble(values[9]));
-				expToNextLevel  = Mathf.RoundToInt((level * 150) * 1.1F);
-				TM.SendMessage ("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
-		}
-		}
+                expToNextLevel = Mathf.RoundToInt((level * 150) * 1.1F);
+                TM.SendMessage("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
+            }
+        }
         public long UnixTimeNow()
         {
             var timeSpan = (System.DateTime.UtcNow - new System.DateTime(1970, 1, 1, 0, 0, 0));
             return (long)timeSpan.TotalSeconds;
+        }
+
+        public Controller_pg getPlayer()
+        {
+            return this;
         }
 }

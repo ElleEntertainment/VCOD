@@ -200,14 +200,6 @@ public class Infetto : MonoBehaviour {
         Debug.Log("Danno player to infetto = " + damage);
 	}
 
-	//------setta il target del player quando viene cliccato il tasto destro del mouse
-	void OnMouseOver(){
-		if (Vector3.Distance (transform.position, player.transform.position) <= 500) {
-			if(Input.GetMouseButtonUp(1)){
-				player.SendMessage("setTarget", this);
-			}
-		}
-	}
 	//collisione del proiettile con l'infetto
 	void OnCollisionEnter (Collision collision)
 	{

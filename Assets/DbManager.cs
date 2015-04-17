@@ -11,6 +11,7 @@ using System;
 using System.Data;
 using MySql.Data.MySqlClient;
 using Mono.Data.Sqlite;
+using UnityEngine;
 
 	public class DbManager
 	{
@@ -20,7 +21,7 @@ using Mono.Data.Sqlite;
 	{
         if (!System.IO.File.Exists("Assets/DB/virus.sqlite"))
             SqliteConnection.CreateFile("Assets/DB/virus.sqlite");
-        myConnection = new SqliteConnection("Data Source=Assets/DB/virus.sqlite, Version=3");
+        myConnection = new SqliteConnection("URI=file:Assets/DB/virus.sqlite, version=3");
 
         /*while (!update()) //Ciclo di aggiornamenti fino alla versione corrente (return true se DB_VERSION = GAME_VERSION)
             ;*/
@@ -30,37 +31,41 @@ using Mono.Data.Sqlite;
 		if(myConnection==null)
 			new DbManager();
 	}
-	public static void savePlayer(string sql){
-		myConnection.Open ();
-		SqliteCommand com = new SqliteCommand (sql, myConnection);
-		com.ExecuteNonQuery ();
-		myConnection.Close ();
-	}
+    public static void executeQuery(string sql)
+    {
+        myConnection.Open();
+        SqliteCommand com = new SqliteCommand(sql, myConnection);
+        com.ExecuteNonQuery();
+        myConnection.Close();
+    }
     public static string[] loadWorld()
     {
         myConnection.Open();
         string query = "SELECT idSpawn, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM nemici_info;";
         SqliteCommand com = new SqliteCommand(query, myConnection);
         SqliteDataReader reader = com.ExecuteReader();
-        string[] result = new string[1];
+        string[] result = new string[6];
         int contatore = 0;
         while (reader.Read())
         {
-            result[contatore] = reader["idSpawn"] + "-" + reader["position_x"] + "-" + reader["position_y"] + "-" + reader["position_z"] + "-" + reader["orientation_x"] + "-" + reader["orientation_y"] + "-" + reader["orientation_z"];
+            result[contatore] = reader["idSpawn"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+            Debug.Log(result[contatore]);
             contatore++;
         }
- 
+        myConnection.Close();
+        
         return result;
+        
     }
 	public static string loadPlayer(string playerName){
-		myConnection.Open ();
+        myConnection.Open();
         string sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "';";
 		SqliteCommand com = new SqliteCommand (sql, myConnection);
 		SqliteDataReader reader = com.ExecuteReader ();
 		string result = "";
 
 		if (reader.Read ()) {
-            result = reader["level"] + "-" + reader["exp"] + "-" + reader["health"] + "-" + reader["maxhealth"] + "-" + reader["position_x"] + "-" + reader["position_y"] + "-" + reader["position_z"] + "-" + reader["orientation_x"] + "-" + reader["orientation_y"] + "-" + reader["orientation_z"];
+            result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
 		}
 		myConnection.Close ();
 		return result;
