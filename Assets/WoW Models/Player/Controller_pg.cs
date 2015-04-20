@@ -113,28 +113,29 @@ public class Controller_pg : MonoBehaviour
         {
             insertNpc();
         }
-        if (Input.GetKey(KeyCode.Mouse1)) //dx mouse
-        {
-            //sposta telecamera sull'arma
-            //TODO: eseguire questa funzione se il tasto è premuto, quando viene rilasciato isTargetting = false;
-            if (!isTargetting)
-            {
-                camera.transform.position = new Vector3(doppietta_pos_x, doppietta_pos_y, doppietta_pos_z);
-                camera.transform.rotation = new Quaternion(doppietta_rot_x, doppietta_rot_y, doppietta_rot_z, 0);
-                isTargetting = true;
-                Debug.Log("Camera spostata sull'arma");
-            }
-            else
-            {
-                camera.transform.position = new Vector3(camera_pos_x, camera_pos_y, camera_pos_z);
-                camera.transform.rotation = new Quaternion(camera_rot_x, camera_rot_y, camera_rot_z, 0);
-                isTargetting = false;
-                Debug.Log("Camera spostata sul personaggio");
-            }
-        }
+
+		if (Input.GetMouseButtonDown (1)) {
+			if (!isTargetting)
+			{
+				camera.transform.position = new Vector3(doppietta_pos_x, doppietta_pos_y, doppietta_pos_z);
+				camera.transform.rotation = new Quaternion(doppietta_rot_x, doppietta_rot_y, doppietta_rot_z, 0);
+				isTargetting = true;
+				Debug.Log("Camera spostata sull'arma");
+			}
+		}
+		if(Input.GetMouseButtonUp(1)){
+			if(isTargetting)
+			{
+				camera.transform.position = new Vector3(camera_pos_x, camera_pos_y, camera_pos_z);
+				camera.transform.rotation = new Quaternion(camera_rot_x, camera_rot_y, camera_rot_z, 0);
+				isTargetting = false;
+				Debug.Log("Camera spostata sul personaggio");
+			}
+		}
+
 
 		//Fine sistema di movimento semplice
-
+		/*
 		if(Input.GetMouseButtonDown(0)){
 			if(currentTarget!=null){
 				currentTarget.stopParticle();
@@ -142,6 +143,7 @@ public class Controller_pg : MonoBehaviour
 				TM.setTargetTrue(false);
 			}
 		}
+		*/
 		if (Input.GetKeyDown (KeyCode.L)) {
 			save ();
 		}
