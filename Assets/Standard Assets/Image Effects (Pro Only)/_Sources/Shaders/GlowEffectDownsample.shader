@@ -9,7 +9,7 @@ CGINCLUDE
 #include "UnityCG.cginc"
 
 struct v2f {
-	float4 pos : SV_POSITION;
+	float4 pos : POSITION;
 	float4 uv[4] : TEXCOORD0;
 };
 
@@ -43,7 +43,7 @@ Category {
 	ZTest Always Cull Off ZWrite Off Fog { Mode Off }
 	
 	// -----------------------------------------------------------
-	// DX9+ level
+	// ARB fragment program
 	
 	Subshader { 
 		Pass {
@@ -56,7 +56,7 @@ CGPROGRAM
 sampler2D _MainTex;
 fixed4 _Color;
 
-fixed4 frag( v2f i ) : SV_Target
+fixed4 frag( v2f i ) : COLOR
 {
 	fixed4 c;
 	c  = tex2D( _MainTex, i.uv[0].xy );
@@ -75,7 +75,7 @@ ENDCG
 	}
 			
 	// -----------------------------------------------------------
-	// DX8 level
+	// Radeon 9000
 	
 	Subshader {
 		Pass {
@@ -83,7 +83,7 @@ ENDCG
 
 CGPROGRAM
 #pragma vertex vert
-#pragma exclude_renderers shaderonly
+#pragma exclude_renderers gles xbox360 ps3
 // use the same vertex program as in FP path
 ENDCG
 

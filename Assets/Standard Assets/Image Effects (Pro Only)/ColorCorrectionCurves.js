@@ -1,7 +1,7 @@
 
 #pragma strict
 @script ExecuteInEditMode
-@script AddComponentMenu ("Image Effects/Color Adjustments/Color Correction (Curves, Saturation)")
+@script AddComponentMenu ("Image Effects/Color Correction")
 
 enum ColorCorrectionMode {
 	Simple = 0,
@@ -29,8 +29,6 @@ class ColorCorrectionCurves extends PostEffectsBase
 	private var rgbDepthChannelTex : Texture2D;
 	private var zCurveTex : Texture2D;
 	
-	public var saturation : float = 1.0f;
-
 	public var selectiveCc : boolean = false;
 	
 	public var selectiveFromColor : Color = Color.white;
@@ -81,9 +79,7 @@ class ColorCorrectionCurves extends PostEffectsBase
 	}	
 	
 	public function UpdateParameters () 
-	{
-		CheckResources(); // textures might not be created if we're tweaking UI while disabled
-		
+	{			
 		if (redChannel && greenChannel && blueChannel) {		
 			for (var i : float = 0.0f; i <= 1.0f; i += 1.0f / 255.0f) {
 				var rCh : float = Mathf.Clamp (redChannel.Evaluate(i), 0.0f, 1.0f);
@@ -141,14 +137,11 @@ class ColorCorrectionCurves extends PostEffectsBase
 			ccDepthMaterial.SetTexture ("_RgbTex", rgbChannelTex);
 			ccDepthMaterial.SetTexture ("_ZCurve", zCurveTex);
 			ccDepthMaterial.SetTexture ("_RgbDepthTex", rgbDepthChannelTex);
-			ccDepthMaterial.SetFloat ("_Saturation", saturation);
 	
 			Graphics.Blit (source, renderTarget2Use, ccDepthMaterial); 	
 		} 
 		else {
 			ccMaterial.SetTexture ("_RgbTex", rgbChannelTex);
-			ccMaterial.SetFloat ("_Saturation", saturation);
-			
 			Graphics.Blit (source, renderTarget2Use, ccMaterial); 			
 		}
 		

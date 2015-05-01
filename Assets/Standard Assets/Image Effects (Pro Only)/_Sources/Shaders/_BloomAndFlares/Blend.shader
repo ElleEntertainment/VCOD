@@ -9,11 +9,11 @@ Shader "Hidden/Blend" {
 	#include "UnityCG.cginc"
 	
 	struct v2f {
-		float4 pos : SV_POSITION;
+		float4 pos : POSITION;
 		float2 uv[2] : TEXCOORD0;
 	};
 	struct v2f_mt {
-		float4 pos : SV_POSITION;
+		float4 pos : POSITION;
 		float2 uv[4] : TEXCOORD0;
 	};
 			
@@ -30,7 +30,7 @@ Shader "Hidden/Blend" {
 		o.uv[0] =  v.texcoord.xy;
 		o.uv[1] =  v.texcoord.xy;
 		
-		#if UNITY_UV_STARTS_AT_TOP
+		#if SHADER_API_D3D9 || SHADER_API_XBOX360 || SHADER_API_D3D11
 		if (_ColorBuffer_TexelSize.y < 0) 
 			o.uv[1].y = 1-o.uv[1].y;
 		#endif	
@@ -48,20 +48,20 @@ Shader "Hidden/Blend" {
 		return o;
 	}
 	
-	half4 fragScreen (v2f i) : SV_Target {
+	half4 fragScreen (v2f i) : COLOR {
 		half4 toBlend = saturate (tex2D(_MainTex, i.uv[0]) * _Intensity);
 		return 1-(1-toBlend)*(1-tex2D(_ColorBuffer, i.uv[1]));
 	}
 
-	half4 fragAdd (v2f i) : SV_Target {
+	half4 fragAdd (v2f i) : COLOR {
 		return tex2D(_MainTex, i.uv[0].xy) * _Intensity + tex2D(_ColorBuffer, i.uv[1]);
 	}
 
-	half4 fragVignetteBlend (v2f i) : SV_Target {
+	half4 fragVignetteBlend (v2f i) : COLOR {
 		return tex2D(_MainTex, i.uv[0].xy) * tex2D(_ColorBuffer, i.uv[0]);
 	}
 	
-	half4 fragMultiTap (v2f_mt i) : SV_Target {
+	half4 fragMultiTap (v2f_mt i) : COLOR {
 		half4 outColor = tex2D(_MainTex, i.uv[0].xy);
 		outColor += tex2D(_MainTex, i.uv[1].xy);
 		outColor += tex2D(_MainTex, i.uv[2].xy);

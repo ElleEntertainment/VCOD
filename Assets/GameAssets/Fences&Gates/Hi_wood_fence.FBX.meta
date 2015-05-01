@@ -1,0 +1,104 @@
+fileFormatVersion: 2
+guid: dc7ba86858f6bea40bfa94a7a6e1dee0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Hi_wood_STOLB
+    100004: Hi_wood_k
+    100006: Hi_wood_fence_05
+    100008: Hi_wood_fence_04
+    100010: Hi_wood_fence_03
+    100012: Hi_wood_fence_02
+    100014: Hi_wood_fence_01
+    400000: //RootNode
+    400002: Hi_wood_STOLB
+    400004: Hi_wood_k
+    400006: Hi_wood_fence_05
+    400008: Hi_wood_fence_04
+    400010: Hi_wood_fence_03
+    400012: Hi_wood_fence_02
+    400014: Hi_wood_fence_01
+    2300000: Hi_wood_STOLB
+    2300002: Hi_wood_k
+    2300004: Hi_wood_fence_05
+    2300006: Hi_wood_fence_04
+    2300008: Hi_wood_fence_03
+    2300010: Hi_wood_fence_02
+    2300012: Hi_wood_fence_01
+    3300000: Hi_wood_STOLB
+    3300002: Hi_wood_k
+    3300004: Hi_wood_fence_05
+    3300006: Hi_wood_fence_04
+    3300008: Hi_wood_fence_03
+    3300010: Hi_wood_fence_02
+    3300012: Hi_wood_fence_01
+    4300000: Hi_wood_fence_01
+    4300002: Hi_wood_fence_02
+    4300004: Hi_wood_fence_03
+    4300006: Hi_wood_fence_04
+    4300008: Hi_wood_fence_05
+    4300010: Hi_wood_k
+    4300012: Hi_wood_STOLB
+    6400000: Hi_wood_STOLB
+    6400002: Hi_wood_k
+    6400004: Hi_wood_fence_01
+    6400006: Hi_wood_fence_03
+    6400008: Hi_wood_fence_02
+    6400010: Hi_wood_fence_04
+    6400012: Hi_wood_fence_05
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.29999995
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 1
+  userData: 
