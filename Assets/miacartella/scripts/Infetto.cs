@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 
 public class Infetto : MonoBehaviour {
 
@@ -45,6 +45,8 @@ public class Infetto : MonoBehaviour {
 			Debug.Log(r.name + " disabilitato");
 		}
 		sphere.GetComponent<Light> ().enabled = false;
+
+        
 	}
 	public void setId(int id){
 		ID = id;
@@ -84,6 +86,7 @@ public class Infetto : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+        
 		if (!dead) {
 			Vector3 posToFace;
 

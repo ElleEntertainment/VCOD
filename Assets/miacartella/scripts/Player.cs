@@ -35,8 +35,8 @@ public class Player : MonoBehaviour
     float camera_pos_x, camera_pos_y, camera_pos_z, camera_rot_x, camera_rot_y, camera_rot_z;
     GameObject camera;
     bool isTargetting;
-    GameObject doppietta;
-    float doppietta_pos_x, doppietta_pos_y, doppietta_pos_z, doppietta_rot_x, doppietta_rot_y, doppietta_rot_z;
+    //GameObject doppietta;
+    //float doppietta_pos_x, doppietta_pos_y, doppietta_pos_z, doppietta_rot_x, doppietta_rot_y, doppietta_rot_z;
     //--------------------------------
 
 
@@ -68,13 +68,13 @@ public class Player : MonoBehaviour
         camera_rot_y = camera.transform.rotation.y;
         camera_rot_z = camera.transform.rotation.z;
 
-        doppietta = GameObject.FindGameObjectWithTag("Doppietta");
+        /*doppietta = GameObject.FindGameObjectWithTag("Doppietta");
         doppietta_pos_x = doppietta.transform.position.x;
         doppietta_pos_y = doppietta.transform.position.y;
         doppietta_pos_z = doppietta.transform.position.z;
         doppietta_rot_x = doppietta.transform.rotation.x;
         doppietta_rot_y = doppietta.transform.rotation.y;
-        doppietta_rot_z = doppietta.transform.rotation.z;
+        doppietta_rot_z = doppietta.transform.rotation.z;*/
     }
 
     // Update is called once per frame
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
             insertNpc();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             if (!isTargetting)
             {
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Camera spostata sul personaggio");
             }
         }
-
+        */
 
         //Fine sistema di movimento semplice
         /*

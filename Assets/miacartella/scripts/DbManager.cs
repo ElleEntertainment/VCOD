@@ -43,7 +43,7 @@ using UnityEngine;
         string query = "SELECT idSpawn, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM nemici_info;";
         SqliteCommand com = new SqliteCommand(query, myConnection);
         SqliteDataReader reader = com.ExecuteReader();
-        string[] result = new string[4];
+        string[] result = new string[6];
         int contatore = 0;
         while (reader.Read())
         {
