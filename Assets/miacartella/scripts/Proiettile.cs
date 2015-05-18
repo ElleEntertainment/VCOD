@@ -10,8 +10,8 @@ public class Proiettile : MonoBehaviour {
     float attesa = 3f;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +25,8 @@ public class Proiettile : MonoBehaviour {
             //Serve il cast perchè il metodo restituisce un generico Object
             //                                                     posizione doppietta
             GameObject clone = (GameObject)Instantiate(proiettile, transform.position, transform.rotation);
-
+            //Debug.Log("x: " + transform.position.x + "y: " + transform.position.y + "z: " + (transform.position.z + 180));
+            //Debug.Log("x: " + transform.position.x + "y: " + transform.position.y + "z: " + transform.position.z);
             //applico una forza per far andare in avanti e velocemente il proiettile
             //il RELATIVE fa considerare il vettore di forza relativo all'oggetto, non usa le coordinate globali
             //in questo modo però se metto a forzaSparo un valore alto, il motore di unity potrebbe non capire che c'è stata una collisione
