@@ -32,11 +32,9 @@ public class Player : MonoBehaviour
     Vector3 mousePosition;
     public GameObject rightArm;
     public GameObject Contenitore;
-    float camera_pos_x, camera_pos_y, camera_pos_z, camera_rot_x, camera_rot_y, camera_rot_z;
     GameObject camera;
     bool isTargetting;
-    //GameObject doppietta;
-    //float doppietta_pos_x, doppietta_pos_y, doppietta_pos_z, doppietta_rot_x, doppietta_rot_y, doppietta_rot_z;
+    GameObject armacamera;
     //--------------------------------
 
 
@@ -61,20 +59,8 @@ public class Player : MonoBehaviour
         isTargetting = false;
 
         camera = GameObject.FindGameObjectWithTag("MainCamera");
-        camera_pos_x = camera.transform.position.x;
-        camera_pos_y = camera.transform.position.y;
-        camera_pos_z = camera.transform.position.z;
-        camera_rot_x = camera.transform.rotation.x;
-        camera_rot_y = camera.transform.rotation.y;
-        camera_rot_z = camera.transform.rotation.z;
-
-        /*doppietta = GameObject.FindGameObjectWithTag("Doppietta");
-        doppietta_pos_x = doppietta.transform.position.x;
-        doppietta_pos_y = doppietta.transform.position.y;
-        doppietta_pos_z = doppietta.transform.position.z;
-        doppietta_rot_x = doppietta.transform.rotation.x;
-        doppietta_rot_y = doppietta.transform.rotation.y;
-        doppietta_rot_z = doppietta.transform.rotation.z;*/
+        armacamera = GameObject.FindGameObjectWithTag("ArmaCamera");
+        armacamera.camera.active = false;
     }
 
     // Update is called once per frame
@@ -115,12 +101,12 @@ public class Player : MonoBehaviour
             insertNpc();
         }
 
-        /*if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
             if (!isTargetting)
             {
-                camera.transform.position = new Vector3(doppietta_pos_x, doppietta_pos_y, doppietta_pos_z);
-                camera.transform.rotation = new Quaternion(doppietta_rot_x, doppietta_rot_y, doppietta_rot_z, 0);
+                camera.SetActive(false);
+                armacamera.SetActive(true);
                 isTargetting = true;
                 Debug.Log("Camera spostata sull'arma");
             }
@@ -129,13 +115,13 @@ public class Player : MonoBehaviour
         {
             if (isTargetting)
             {
-                camera.transform.position = new Vector3(camera_pos_x, camera_pos_y, camera_pos_z);
-                camera.transform.rotation = new Quaternion(camera_rot_x, camera_rot_y, camera_rot_z, 0);
+                camera.SetActive(true);
+                armacamera.SetActive(false);
                 isTargetting = false;
                 Debug.Log("Camera spostata sul personaggio");
             }
         }
-        */
+        
 
         //Fine sistema di movimento semplice
         /*

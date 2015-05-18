@@ -1,93 +1,9 @@
 Base path: E:/Programmi/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-2-2728
+Pipe name: \\.\pipe\UnityShaderCompiler-2-2668
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=8 type=0 insize=995 outsize=1438 kw= ok=1
 Cmd: compileSnippet
   error: 2 plat 8 at frag_ao.cginc(2): 'samples': array dimensions of function parameters must be explicit
   api=8 type=0 insize=1817 outsize=0 kw= ok=0
-Cmd: compileSnippet
-  api=0 type=0 insize=10214 outsize=5568 kw=WATER_VERTEX_DISPLACEMENT_ON WATER_REFLECTIVE WATER_EDGEBLEND_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=10214 outsize=627 kw=WATER_REFLECTIVE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=10214 outsize=6 kw=WATER_VERTEX_DISPLACEMENT_ON WATER_EDGEBLEND_ON WATER_REFLECTIVE ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=10214 outsize=1826 kw=WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=10214 outsize=6 kw=WATER_SIMPLE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=10218 outsize=4979 kw=WATER_VERTEX_DISPLACEMENT_ON WATER_REFLECTIVE WATER_EDGEBLEND_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=10218 outsize=484 kw=WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=10218 outsize=2330 kw=WATER_EDGEBLEND_ON WATER_SIMPLE WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=10218 outsize=2330 kw=WATER_SIMPLE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=10218 outsize=6 kw=WATER_VERTEX_DISPLACEMENT_ON WATER_REFLECTIVE WATER_EDGEBLEND_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=10218 outsize=3305 kw=WATER_VERTEX_DISPLACEMENT_ON WATER_SIMPLE WATER_EDGEBLEND_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=10218 outsize=6 kw=WATER_SIMPLE WATER_EDGEBLEND_OFF WATER_VERTEX_DISPLACEMENT_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=9960 outsize=566 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=1998 outsize=1325 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=2009 outsize=1577 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=968 outsize=1438 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=968 outsize=1503 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=1827 outsize=1698 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=2794 outsize=2438 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=2805 outsize=474 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=7294 outsize=1997 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=7294 outsize=2076 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=7294 outsize=3768 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=7294 outsize=687 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=7294 outsize=2762 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4861 outsize=1524 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=4861 outsize=1203 kw=DIRECTIONAL_COOKIE ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4861 outsize=5361 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4306 outsize=1125 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=6704 outsize=1183 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6704 outsize=3387 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6704 outsize=3768 kw=LIGHTMAP_ON DIRLIGHTMAP_ON HDR_LIGHT_PREPASS_ON ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6704 outsize=3265 kw=LIGHTMAP_ON DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=1607 outsize=695 kw= ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=3319 outsize=329 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=3328 outsize=2909 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=3328 outsize=3210 kw= ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=3323 outsize=462 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=887 outsize=1438 kw= ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=714 outsize=132 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=714 outsize=1008 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=Pipe terminata.
 
 
