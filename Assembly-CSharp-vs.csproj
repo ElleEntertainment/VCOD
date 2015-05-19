@@ -46,13 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\miacartella\Menu\menumanager.cs" />
      <Compile Include="Assets\miacartella\scripts\DbManager.cs" />
      <Compile Include="Assets\miacartella\scripts\Game_Manager.cs" />
      <Compile Include="Assets\miacartella\scripts\Infetto.cs" />
      <Compile Include="Assets\miacartella\scripts\Player.cs" />
      <Compile Include="Assets\miacartella\scripts\Proiettile.cs" />
      <Compile Include="Assets\miacartella\scripts\Text_Manager.cs" />
+     <Compile Include="Assets\miacartella\scripts\menumanager.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
@@ -83,6 +83,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
+     <None Include="Assets\miacartella\ZombiesToAssetstore\readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
