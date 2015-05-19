@@ -26,7 +26,7 @@ public class Infetto : MonoBehaviour {
 	void Start () {
 		attackAnimationDuration = 0.79F;
 		attackSpeed = 1.5F;
-		maxHealth = 150;
+		maxHealth = 20;
 		health = maxHealth;
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
 		anim = GetComponent<Animator>();
@@ -87,6 +87,8 @@ public class Infetto : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        Debug.Log(isDead());
+
         if (!isDead())
         {
             Vector3 posToFace;
@@ -97,12 +99,7 @@ public class Infetto : MonoBehaviour {
             {
                 isInCombat = true;
                 anim.SetBool("run", true);
-
-
             }
-            //-------setta il target del player
-
-
 
             //------ posiziona il mob verso la direzione del player
             if (isInCombat)
@@ -114,7 +111,6 @@ public class Infetto : MonoBehaviour {
                 posToFace = initialPos;
             }
             facePosition(posToFace);
-            //-------------------------------------------------------
 
             // se il mob è in combat e la distanza è maggiore o uguale a 2 si muove verso il player e non attacca
             if (isInCombat && distanceFromPlayer >= 2)
@@ -149,7 +145,7 @@ public class Infetto : MonoBehaviour {
                     Debug.Log("La velocità dell'animazione è " + anim.speed);
                 }
             }
-            //------------
+
             //Se è in combat ma la distanza dal punto di spawn è maggiore o uguale a 25 torna al punto di spawn e resetto l'aggro
             if (isInCombat && distanceFromHome >= 25)
             {
@@ -157,8 +153,7 @@ public class Infetto : MonoBehaviour {
                 backHome = true;
                 isAttacking = false;
             }
-            //-----------------------------
-            //questo confronto non l'ho capito
+
             //backHome è true quando l'infetto ha disingaggiato il player, questo controllo serve per far
             //tornare alla posizione iniziale l'infetto.
             if (backHome && distanceFromHome > 0)
@@ -182,10 +177,11 @@ public class Infetto : MonoBehaviour {
             {
                 anim.speed = 1;
             }
+
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject, 2.0f);
         }
 
 	}
@@ -200,6 +196,11 @@ public class Infetto : MonoBehaviour {
 		}
 	}
 	public bool isDead(){
+        if (health <= 0)
+        {
+            dead = true;
+            player.SendMessage("setExp", level * 15);
+        }
 		return dead;
 	}
 	void attackPlayer(){
@@ -214,10 +215,6 @@ public class Infetto : MonoBehaviour {
 
 	void applyDamage(int damage){
 		health -= damage;
-		if (health <= 0) {
-			dead = true;
-			player.SendMessage("setExp", level * 15);
-		}
 		damageRec = "<b>" + damage + "</b>";
         Debug.Log("Danno player to infetto = " + damage);
 	}
@@ -225,10 +222,12 @@ public class Infetto : MonoBehaviour {
 	//collisione del proiettile con l'infetto
 	void OnCollisionEnter (Collision collision)
 	{
-
-		Collider ammo = collision.collider;
+        Collider ammo = collision.collider;
 		Debug.Log (ammo.gameObject.tag);
-		if (ammo.gameObject.tag == "Proiettile")
-				applyDamage (10);
+        if (ammo.gameObject.tag == "Proiettile")
+        {
+            applyDamage(10);
+            Destroy(ammo.gameObject);
+        }
 	}
 }

@@ -41,20 +41,18 @@ public class Game_Manager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		/*for (int i = 0; i < nInfetti; i++) {
-			//check death
-            if(infetti[i].isDead()){
-				Destroy(infetti[i].gameObject);
-			}
-            //check collision
-            
-		}*/
+	void Update ()
+    {
+		
 	}
 	//getter per array di infetti (servirà più avanti sicuramente)
 	public Infetto[] getInfettiInMap(){
 		return infetti;
 	}
+    public Infetto getInfettiMorti() {
+
+        return infetto;
+    }
     public Player getPgInMap()
     {
         return player;
