@@ -7,7 +7,6 @@ public class Infetto : MonoBehaviour {
 	int health;
 	int maxHealth;
 	GameObject player;
-	Animator anim;
 	bool isInCombat;
 	bool isAttacking;
 	bool backHome;
@@ -29,7 +28,6 @@ public class Infetto : MonoBehaviour {
 		maxHealth = 20;
 		health = maxHealth;
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
-		anim = GetComponent<Animator>();
 		initialPos = transform.position;
 		damageRec = "";
 		attackTime = attackAnimationDuration;
@@ -96,7 +94,7 @@ public class Infetto : MonoBehaviour {
             if (distanceFromPlayer <= 8 && distanceFromPlayer >= 2 && !isInCombat && !backHome)
             {
                 isInCombat = true;
-                anim.SetBool("run", true);
+                transform.animation.Play("zombieRun");
             }
 
             //------ posiziona il mob verso la direzione del player
@@ -128,19 +126,17 @@ public class Infetto : MonoBehaviour {
             //isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
             //anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
             //in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
-            if (anim.GetBool("attack") != isAttacking)
+            if (!animation.IsPlaying("attack1") && isAttacking /*anim.GetBool("attack") != isAttacking*/)
             {
-                anim.SetBool("attack", isAttacking);
+                animation.Stop("zombieRun");
+                animation.Play("attack1");
                 if (isAttacking)
                 {
-                    AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
                     float duration = 0.79F;
-                    float curSpeed = anim.speed;
-                    anim.speed = duration / attackSpeed;
-                    AnimationInfo[] aniInfo = anim.GetCurrentAnimationClipState(0);
-                    AnimationClip clip = aniInfo[0].clip;
+                    float curSpeed = animation["attack1"].speed;
+                    animation["attack1"].speed = duration / attackSpeed;
 
-                    Debug.Log("La velocità dell'animazione è " + anim.speed);
+                    Debug.Log("La velocità dell'animazione è " + animation["attack1"].speed);
                 }
             }
 
@@ -150,6 +146,8 @@ public class Infetto : MonoBehaviour {
                 isInCombat = false;
                 backHome = true;
                 isAttacking = false;
+                animation.Stop("attack1");
+                
             }
 
             //backHome è true quando l'infetto ha disingaggiato il player, questo controllo serve per far
@@ -157,10 +155,11 @@ public class Infetto : MonoBehaviour {
             if (backHome && distanceFromHome > 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.05F);
+                animation.Play("zombieRun");
                 if (distanceFromHome <= 1)
                 {
                     backHome = false;
-                    anim.SetBool("run", false);
+                    animation.Stop("zombieRun");
                     health = maxHealth;
                 }
 
@@ -170,10 +169,6 @@ public class Infetto : MonoBehaviour {
             if (isAttacking)
             {
                 attackPlayer();
-            }
-            else
-            {
-                anim.speed = 1;
             }
 
         }
