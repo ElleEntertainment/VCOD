@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     GameObject camera;
     bool isTargetting;
     GameObject armacamera;
+    string query = "";
     //--------------------------------
 
 
@@ -60,7 +61,7 @@ public class Player : MonoBehaviour
 
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         armacamera = GameObject.FindGameObjectWithTag("ArmaCamera");
-        armacamera.camera.active = false;
+        armacamera.SetActive(false);
     }
 
     // Update is called once per frame
@@ -140,6 +141,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             load("player");
+        }
+
+        //andare nel menù
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            DbManager.setInstance();
+            query = "INSERT INTO player(id, name, level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z, savetype) VALUES(2, 'player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ", 1);";
+            DbManager.executeQuery(query);
+            Debug.Log(query);
+            Application.LoadLevel("menu");
         }
 
         //Check morte del player
@@ -300,7 +311,7 @@ public class Player : MonoBehaviour
     void save()
     {
         DbManager.setInstance();
-        string myData = "INSERT OR REPLACE INTO player VALUES('player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ");";
+        string myData = "INSERT OR REPLACE INTO player VALUES(1, 'player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ", 0);";
         Debug.Log(myData);
         DbManager.executeQuery(myData);
     }

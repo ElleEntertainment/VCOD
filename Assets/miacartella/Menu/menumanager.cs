@@ -11,7 +11,7 @@ public class menumanager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	}
-    void accedi()
+    public void accedi()
     {
         Application.LoadLevel("final");
     }

@@ -87,8 +87,6 @@ public class Infetto : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log(isDead());
-
         if (!isDead())
         {
             Vector3 posToFace;

@@ -58,15 +58,47 @@ using UnityEngine;
     }
 	public static string loadPlayer(string playerName){
         myConnection.Open();
-        string sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "';";
-		SqliteCommand com = new SqliteCommand (sql, myConnection);
-		SqliteDataReader reader = com.ExecuteReader ();
-		string result = "";
+        string sql = "SELECT id FROM player WHERE savetype = 1;";
+        SqliteCommand com = new SqliteCommand(sql, myConnection);
+        SqliteDataReader l = com.ExecuteReader();
+        int c = 0;
+        while (l.Read())
+        {
+            c++;
+        }
+        l.Close();
+        string result = "";
+        if (c > 0)
+        {
+            Debug.Log("si dal menù");
+            //il player torna dal menù
+            sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 1;";
+            SqliteCommand comm = new SqliteCommand(sql, myConnection);
+            SqliteDataReader reader = comm.ExecuteReader();
 
-		if (reader.Read ()) {
-            result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
-		}
-		myConnection.Close ();
+            if (reader.Read())
+            {
+                result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+            }
+            reader.Close();
+            //cancello il salvataggio perchè non mi serve più.
+            SqliteCommand cancella = new SqliteCommand("DELETE FROM player WHERE savetype = 1;", myConnection);
+            cancella.ExecuteNonQuery();
+        }
+        else
+        {
+            Debug.Log("no dal menù");
+            sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 0;";
+            SqliteCommand comm = new SqliteCommand(sql, myConnection);
+            SqliteDataReader reader = comm.ExecuteReader();
+
+            if (reader.Read())
+            {
+                result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+            }
+            reader.Close();
+        }
+		myConnection.Close();
 		return result;
 	}
 	//La versione del game andrà di pari passo con quella del DB, quando ci sarà una versione di gioco diversa verrà di conseguenza aggiornato anche il db(anche se non ci sono
