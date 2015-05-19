@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Infetto : MonoBehaviour {
 
+    Animation anim;
 	int health;
 	int maxHealth;
 	GameObject player;
@@ -12,7 +13,7 @@ public class Infetto : MonoBehaviour {
 	bool backHome;
 	bool dead;
 	float attackTime;
-	float attackAnimationDuration;
+	float attackanimDuration;
 	float attackSpeed;
 	bool attackRec;
 	string damageRec;
@@ -23,14 +24,15 @@ public class Infetto : MonoBehaviour {
 	int ID = 0;
 	// Use this for initialization
 	void Start () {
-		attackAnimationDuration = 0.79F;
+        anim = GetComponent<Animation>();
+		attackanimDuration = 0.79F;
 		attackSpeed = 1.5F;
 		maxHealth = 20;
 		health = maxHealth;
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
 		initialPos = transform.position;
 		damageRec = "";
-		attackTime = attackAnimationDuration;
+		attackTime = attackanimDuration;
 		isInCombat = false;
 		isAttacking = false;
 		backHome = false;
@@ -94,7 +96,7 @@ public class Infetto : MonoBehaviour {
             if (distanceFromPlayer <= 8 && distanceFromPlayer >= 2 && !isInCombat && !backHome)
             {
                 isInCombat = true;
-                transform.animation.Play("zombieRun");
+                anim.Play("zombieRun");
             }
 
             //------ posiziona il mob verso la direzione del player
@@ -126,17 +128,17 @@ public class Infetto : MonoBehaviour {
             //isAttacking è un booleano dell'infetto che viene messo a true se sta attaccando
             //anim.getBool o anim.setBool sono i metodi che prendono o settano un booleano all'animazione
             //in sostanza qui viene attivata o disattivata l'animazione in base al valore di isAttacking
-            if (!animation.IsPlaying("attack1") && isAttacking /*anim.GetBool("attack") != isAttacking*/)
+            if (!anim.IsPlaying("attack1") && isAttacking /*anim.GetBool("attack") != isAttacking*/)
             {
-                animation.Stop("zombieRun");
-                animation.Play("attack1");
+                anim.Stop("zombieRun");
+                anim.Play("attack1");
                 if (isAttacking)
                 {
                     float duration = 0.79F;
-                    float curSpeed = animation["attack1"].speed;
-                    animation["attack1"].speed = duration / attackSpeed;
+                    float curSpeed = anim["attack1"].speed;
+                    anim["attack1"].speed = duration / attackSpeed;
 
-                    Debug.Log("La velocità dell'animazione è " + animation["attack1"].speed);
+                    Debug.Log("La velocità dell'animazione è " + anim["attack1"].speed);
                 }
             }
 
@@ -146,7 +148,7 @@ public class Infetto : MonoBehaviour {
                 isInCombat = false;
                 backHome = true;
                 isAttacking = false;
-                animation.Stop("attack1");
+                anim.Stop("attack1");
                 
             }
 
@@ -155,11 +157,11 @@ public class Infetto : MonoBehaviour {
             if (backHome && distanceFromHome > 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.05F);
-                animation.Play("zombieRun");
+                anim.Play("zombieRun");
                 if (distanceFromHome <= 1)
                 {
                     backHome = false;
-                    animation.Stop("zombieRun");
+                    anim.Stop("zombieRun");
                     health = maxHealth;
                 }
 
