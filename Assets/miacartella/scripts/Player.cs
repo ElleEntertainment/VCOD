@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             DbManager.setInstance();
-            query = "INSERT INTO player(id, name, level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z, savetype) VALUES(2, 'player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ", 1);";
+            query = "INSERT INTO player(id, name, level, exp, expToNextLvl, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z, savetype) VALUES(2, 'player', " + level + ", " + exp + ", " + expToNextLevel + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ", 1);";
             DbManager.executeQuery(query);
             Debug.Log(query);
             Application.LoadLevel("menu");
