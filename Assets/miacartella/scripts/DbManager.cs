@@ -48,7 +48,6 @@ using UnityEngine;
         while (reader.Read())
         {
             result[contatore] = reader["idSpawn"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
-            Debug.Log(result[contatore]);
             contatore++;
         }
         myConnection.Close();
@@ -70,7 +69,6 @@ using UnityEngine;
         string result = "";
         if (c > 0)
         {
-            Debug.Log("si dal menù");
             //il player torna dal menù
             sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 1;";
             SqliteCommand comm = new SqliteCommand(sql, myConnection);
@@ -87,7 +85,6 @@ using UnityEngine;
         }
         else
         {
-            Debug.Log("no dal menù");
             sql = "SELECT level, exp, expToNextLvl, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 0;";
             SqliteCommand comm = new SqliteCommand(sql, myConnection);
             SqliteDataReader reader = comm.ExecuteReader();

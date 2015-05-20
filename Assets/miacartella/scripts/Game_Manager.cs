@@ -30,7 +30,6 @@ public class Game_Manager : MonoBehaviour {
                 float rotation_x = (float)System.Convert.ToDouble(values[4]);
                 float rotation_y = (float)System.Convert.ToDouble(values[5]);
                 float rotation_z = (float)System.Convert.ToDouble(values[6]);
-                Debug.Log("x: " + position_x + " | y: " + position_x + " | z: " + position_z + " | ox: " + rotation_x + " | oy: " + rotation_y + " | oz: " + rotation_z);
                 Quaternion q = new Quaternion(rotation_x, rotation_y, rotation_z, 0);
                 Infetto inf = Instantiate(infetto, v, q) as Infetto;
                 inf.setId(System.Convert.ToInt32(values[0]));

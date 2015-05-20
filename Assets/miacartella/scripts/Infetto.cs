@@ -204,7 +204,6 @@ public class Infetto : MonoBehaviour {
 		attackTime -= Time.deltaTime;
 		if (attackTime  < 0.0F) {
 			int dam = Mathf.RoundToInt(Random.Range(5, 15));
-			Debug.Log("Player Attacked da " + ID);
 			player.SendMessage("applyDamage", dam);
 			attackTime = attackSpeed;
 		} 
@@ -213,14 +212,12 @@ public class Infetto : MonoBehaviour {
 	void applyDamage(int damage){
 		health -= damage;
 		damageRec = "<b>" + damage + "</b>";
-        Debug.Log("Danno player to infetto = " + damage);
 	}
 
 	//collisione del proiettile con l'infetto
 	void OnCollisionEnter (Collision collision)
 	{
         Collider ammo = collision.collider;
-		Debug.Log (ammo.gameObject.tag);
         if (ammo.gameObject.tag == "Proiettile")
         {
             applyDamage(10);

@@ -32,8 +32,6 @@ public class Proiettile : MonoBehaviour {
             clone.rigidbody.AddRelativeForce(Vector3.forward * forzaSparo /* 1 * variabile*/ , ForceMode.Impulse);
             
             Destroy(clone, attesa);
-            
-			Debug.Log("Sparato e cancellato");
 
         }
 	

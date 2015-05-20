@@ -84,10 +84,6 @@ public class Player : MonoBehaviour
         {
             long tempo_now = UnixTimeNow();
             long t = tempo_now - tempo_attacco;
-            Debug.Log("Differenza tempo = " + t);
-
-            Debug.Log("Time.DeltaTime = " + Time.deltaTime);
-            //Debug.Log("Rotazioneeeeeeeeeeeeeeee" + transform.rotation.y);
         }
 
         //tasto per spawnare npc
@@ -142,8 +138,6 @@ public class Player : MonoBehaviour
         {
             DbManager.setInstance();
             query = "INSERT INTO player(id, name, level, exp, expToNextLvl, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z, savetype) VALUES(2, 'player', " + level + ", " + exp + ", " + expToNextLevel + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ", 1);";
-            DbManager.executeQuery(query);
-            Debug.Log(query);
             Application.LoadLevel("menu");
         }
 
@@ -289,7 +283,6 @@ public class Player : MonoBehaviour
             return currentTarget;
         else
         {
-            Debug.Log("Nessun target selezionato");
             return null;
         }
     }
@@ -304,7 +297,6 @@ public class Player : MonoBehaviour
         float ori_z = transform.rotation.z;
         DbManager.setInstance();
         string npc = "INSERT INTO nemici_info(position_x, position_y, position_z, orientation_x, orientation_y, orientation_z) VALUES(" + pos_x + ", " + pos_y + ", " + pos_z + ", " + ori_x + ", " + ori_y + ", " + ori_z + ");";
-        Debug.Log(npc);
         DbManager.executeQuery(npc);
         Debug.Log("npc aggiunto nel db");
     }
@@ -312,7 +304,6 @@ public class Player : MonoBehaviour
     {
         DbManager.setInstance();
         string myData = "INSERT OR REPLACE INTO player VALUES(1, 'player', " + level + ", " + exp + ", " + health + ", " + maxHealth + ", " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z + ", " + transform.rotation.x + ", " + transform.rotation.y + ", " + transform.rotation.z + ", 0);";
-        Debug.Log(myData);
         DbManager.executeQuery(myData);
     }
     public void load(string s)

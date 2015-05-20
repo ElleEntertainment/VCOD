@@ -70,7 +70,6 @@ public class Text_Manager : MonoBehaviour {
 		float curh = (float)Convert.ToInt32 (playerCurHealth);
 		float toth = (float)Convert.ToInt32 (playerToTHealth);
 		int percent = Mathf.RoundToInt((curh/toth) * 100);
-		//Debug.Log (percent);
 		GUI.skin = customSkin;
 		GUI.color = Color.black;
 		GUI.Box (buttonRect, "");
@@ -101,7 +100,6 @@ public class Text_Manager : MonoBehaviour {
 						float tcurh = (float)Convert.ToInt32 (targetCurHealth);
 						float ttoth = (float)Convert.ToInt32 (targetTotHealth);
 						int tpercent = Mathf.RoundToInt ((tcurh / ttoth) * 100);
-						//Debug.Log (percent);
 						GUI.color = Color.black;
 						GUI.Box (tbuttonRect, " ");
 						GUI.color= Color.red;
