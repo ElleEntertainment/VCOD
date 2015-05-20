@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     {
         level = 1;
         exp = 0;
-        expToNextLevel = Mathf.RoundToInt(150 * 1.1F);
+        expToNextLevel = Mathf.RoundToInt(150 * 1F);
         jump = false;
         run = true;
         health = 250;

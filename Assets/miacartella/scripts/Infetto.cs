@@ -38,13 +38,14 @@ public class Infetto : MonoBehaviour {
 		backHome = false;
 		dead = false;
 		attackRec = false;
-		sphere = transform.GetChild (2).gameObject;
+        level = 15;
+		/*sphere = transform.GetChild (2).gameObject;
 		Component[] comp = sphere.GetComponents <Renderer>();
 		foreach (Renderer r in comp){
 			r.enabled = false;
 			Debug.Log(r.name + " disabilitato");
 		}
-		sphere.GetComponent<Light> ().enabled = false;
+		sphere.GetComponent<Light> ().enabled = false;*/
 
         
 	}
@@ -191,10 +192,11 @@ public class Infetto : MonoBehaviour {
 		}
 	}
 	public bool isDead(){
+        
         if (health <= 0)
         {
             dead = true;
-            player.SendMessage("setExp", level * 15);
+            //player.SendMessage("setExp", level);
         }
 		return dead;
 	}

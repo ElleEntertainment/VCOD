@@ -43,7 +43,18 @@ public class Game_Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
+        for (int i = 0; i < infetti.Length; i++)
+        {
+            if (infetti[i] != null)
+            {
+                if (infetti[i].isDead())
+                {
+                    infetti[i] = null;
+                    player.SendMessage("setExp", 15);
+                    break;
+                }
+            }
+        }
 	}
 	//getter per array di infetti (servirà più avanti sicuramente)
 	public Infetto[] getInfettiInMap(){
