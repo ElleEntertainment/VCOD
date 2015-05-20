@@ -88,13 +88,13 @@ using UnityEngine;
         else
         {
             Debug.Log("no dal menù");
-            sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 0;";
+            sql = "SELECT level, exp, expToNextLvl, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 0;";
             SqliteCommand comm = new SqliteCommand(sql, myConnection);
             SqliteDataReader reader = comm.ExecuteReader();
 
             if (reader.Read())
             {
-                result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+                result = reader["level"] + "|" + reader["exp"] + "|" + reader["expToNextLvl"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
             }
             reader.Close();
         }

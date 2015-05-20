@@ -51,6 +51,7 @@ public class Game_Manager : MonoBehaviour {
                 {
                     infetti[i] = null;
                     player.SendMessage("setExp", 15);
+                    player.SendMessage("updateExp");
                     break;
                 }
             }

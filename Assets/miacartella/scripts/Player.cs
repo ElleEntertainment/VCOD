@@ -42,21 +42,15 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        level = 1;
-        exp = 0;
-        expToNextLevel = Mathf.RoundToInt(150 * 1F);
         jump = false;
         run = true;
-        health = 250;
-        maxHealth = health;
-        spawnPos = transform.position;
-        TM.SendMessage("playerText", health + "-" + maxHealth + "-" + " " + "-" + level + "-" + exp + "-" + expToNextLevel);
         isAttacking = false;
         tempo_attacco = UnixTimeNow();
         tempo_ora_regen_health = UnixTimeNow();
         t = UnixTimeNow();
         mousePosition = Input.mousePosition;
         load("player");
+        
         isTargetting = false;
 
         camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -269,6 +263,12 @@ public class Player : MonoBehaviour
         Debug.Log("L'id del target è " + inf.getId());
         currentTarget.startParticle();
     }
+    void updateExp()
+    {
+        DbManager.setInstance();
+        query = "UPDATE player SET exp = "+exp+", expToNextLvl = "+expToNextLevel+", level = "+level+" WHERE name = 'player';";
+        DbManager.executeQuery(query);
+    }
     void setExp(int experience)
     {
         exp = exp + experience;
@@ -276,7 +276,7 @@ public class Player : MonoBehaviour
         {
             level++;
             exp = 0;
-            expToNextLevel = Mathf.RoundToInt((level * 150) * 1.1F);
+            expToNextLevel = Mathf.RoundToInt((level * 150) * 1F);
         }
         string targetInfo = " - - - -" + experience;
         TM.SendMessage("targetText", targetInfo);
@@ -326,13 +326,14 @@ public class Player : MonoBehaviour
             string[] values = myData.Split(del);
             level = Convert.ToInt32(values[0]);
             exp = Convert.ToInt32(values[1]);
-            health = Convert.ToInt32(values[2]);
-            maxHealth = Convert.ToInt32(values[3]);
-            spawnPos.x = (float)Convert.ToDouble(values[4]);
-            spawnPos.y = (float)Convert.ToDouble(values[5]);
-            spawnPos.z = (float)Convert.ToDouble(values[6]);
+            expToNextLevel = Convert.ToInt32(values[2]);
+            health = Convert.ToInt32(values[3]);
+            maxHealth = Convert.ToInt32(values[4]);
+            spawnPos.x = (float)Convert.ToDouble(values[5]);
+            spawnPos.y = (float)Convert.ToDouble(values[6]);
+            spawnPos.z = (float)Convert.ToDouble(values[7]);
             transform.position = spawnPos;
-            transform.Rotate((float)Convert.ToDouble(values[7]), (float)Convert.ToDouble(values[8]), (float)Convert.ToDouble(values[9]));
+            transform.Rotate((float)Convert.ToDouble(values[8]), (float)Convert.ToDouble(values[9]), (float)Convert.ToDouble(values[10]));
             expToNextLevel = Mathf.RoundToInt((level * 150) * 1.1F);
             TM.SendMessage("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
         }
