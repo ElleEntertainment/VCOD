@@ -325,7 +325,6 @@ public class Player : MonoBehaviour
             spawnPos.z = (float)Convert.ToDouble(values[7]);
             transform.position = spawnPos;
             transform.Rotate((float)Convert.ToDouble(values[8]), (float)Convert.ToDouble(values[9]), (float)Convert.ToDouble(values[10]));
-            expToNextLevel = Mathf.RoundToInt((level * 150) * 1.1F);
             TM.SendMessage("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
         }
     }
