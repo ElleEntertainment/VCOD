@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     bool isTargetting;
     GameObject armacamera;
     string query = "";
+    float armacamera_p_x, armacamera_p_y, armacamera_p_z, armacamera_o_x, armacamera_o_y, armacamera_o_z, camera_p_x, camera_p_y, camera_p_z, camera_o_x, camera_o_y, camera_o_z; 
     //--------------------------------
 
 
@@ -56,6 +57,19 @@ public class Player : MonoBehaviour
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         armacamera = GameObject.FindGameObjectWithTag("ArmaCamera");
         armacamera.SetActive(false);
+        armacamera_p_x = armacamera.transform.position.x;
+        armacamera_p_y = armacamera.transform.position.y;
+        armacamera_p_z = armacamera.transform.position.z;
+        armacamera_o_x = armacamera.transform.rotation.x;
+        armacamera_o_y = armacamera.transform.rotation.y;
+        armacamera_o_z = armacamera.transform.rotation.z;
+
+        camera_p_x = camera.transform.position.x;
+        camera_p_y = camera.transform.position.y;
+        camera_p_z = camera.transform.position.z;
+        camera_o_x = camera.transform.rotation.x;
+        camera_o_y = camera.transform.rotation.y;
+        camera_o_z = camera.transform.rotation.z;
     }
 
     // Update is called once per frame
@@ -96,8 +110,8 @@ public class Player : MonoBehaviour
         {
             if (!isTargetting)
             {
-                camera.SetActive(false);
-                armacamera.SetActive(true);
+                camera.transform.position = new Vector3(armacamera_p_x, armacamera_p_y, armacamera_p_z);
+                camera.transform.rotation = new Quaternion(armacamera_o_x, armacamera_o_y, armacamera_o_z, 0);
                 isTargetting = true;
                 Debug.Log("Camera spostata sull'arma");
             }
@@ -106,8 +120,8 @@ public class Player : MonoBehaviour
         {
             if (isTargetting)
             {
-                camera.SetActive(true);
-                armacamera.SetActive(false);
+                camera.transform.position = new Vector3(camera_p_x, camera_p_y, camera_p_z);
+                camera.transform.rotation = new Quaternion(camera_o_x, camera_o_y, camera_o_z, 0);
                 isTargetting = false;
                 Debug.Log("Camera spostata sul personaggio");
             }
