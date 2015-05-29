@@ -49,6 +49,7 @@
      <Compile Include="Assets\miacartella\scripts\DbManager.cs" />
      <Compile Include="Assets\miacartella\scripts\Game_Manager.cs" />
      <Compile Include="Assets\miacartella\scripts\Infetto.cs" />
+     <Compile Include="Assets\miacartella\scripts\LifeChest.cs" />
      <Compile Include="Assets\miacartella\scripts\Player.cs" />
      <Compile Include="Assets\miacartella\scripts\Proiettile.cs" />
      <Compile Include="Assets\miacartella\scripts\Text_Manager.cs" />

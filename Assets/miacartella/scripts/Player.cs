@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     int maxHealth;
     string damageRec = "";
     bool attackRec = false;
-    public GUISkin customSkin;
     Infetto currentTarget = null;
     bool wasDead = false;
     bool isAttacking;
@@ -30,8 +29,6 @@ public class Player : MonoBehaviour
     long tempo_ora_regen_health;
     long t;
     Vector3 mousePosition;
-    public GameObject rightArm;
-    public GameObject Contenitore;
     GameObject camera;
     bool isTargetting;
     GameObject armacamera;
@@ -75,12 +72,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentTarget != null)
-        {
-            Vector3 targetDir = currentTarget.transform.position - Contenitore.transform.position;
-            Vector3 newDir = Vector3.RotateTowards(Contenitore.transform.up, targetDir, 30, 1.0F);
-            rightArm.transform.rotation = Quaternion.LookRotation(newDir);
-        }
 
         //Sistema di Rotazione (non ce n'è bisogno per ora)
         if (Input.GetKey(KeyCode.A))
@@ -260,6 +251,24 @@ public class Player : MonoBehaviour
     public int getLevel()
     {
         return level;
+    }
+
+    void updateHealth(int healthToAdd)
+    {
+        int currentHealth = getHealthPlayer();
+        int newHealth = 0;
+        if (currentHealth < getMaxHealthPlayer())
+        {
+            if ((getMaxHealthPlayer() - currentHealth) < 10)
+                newHealth = getMaxHealthPlayer();
+            else
+            {
+                newHealth = currentHealth + healthToAdd;
+            }
+
+        }
+        TM.SendMessage("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
+
     }
 
     void setTarget(Infetto inf)
