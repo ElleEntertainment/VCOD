@@ -255,15 +255,14 @@ public class Player : MonoBehaviour
 
     void updateHealth(int healthToAdd)
     {
-        int currentHealth = getHealthPlayer();
-        int newHealth = 0;
-        if (currentHealth < getMaxHealthPlayer())
+        int currentHealth = health;
+        if (currentHealth < maxHealth)
         {
-            if ((getMaxHealthPlayer() - currentHealth) < 10)
-                newHealth = getMaxHealthPlayer();
+            if ((maxHealth - currentHealth) < 10)
+                health = maxHealth;
             else
             {
-                newHealth = currentHealth + healthToAdd;
+                health = currentHealth + healthToAdd;
             }
 
         }

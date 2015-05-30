@@ -15,8 +15,8 @@ public class LifeChest : MonoBehaviour {
         if (chestHit == 3)
         {
             chestHit = 0;
-            Destroy(this.gameObject);
             p.SendMessage("updateHealth", 10);
+            Destroy(this.gameObject);
         }
 	}
 
