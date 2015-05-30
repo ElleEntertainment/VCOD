@@ -270,15 +270,6 @@ public class Player : MonoBehaviour
 
     }
 
-    void setTarget(Infetto inf)
-    {
-        if (currentTarget != null)
-            currentTarget.stopParticle();
-        if (inf != currentTarget)
-            currentTarget = inf;
-        Debug.Log("L'id del target è " + inf.getId());
-        currentTarget.startParticle();
-    }
     void updateExp()
     {
         DbManager.setInstance();
