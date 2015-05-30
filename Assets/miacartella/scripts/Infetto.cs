@@ -39,15 +39,6 @@ public class Infetto : MonoBehaviour {
 		dead = false;
 		attackRec = false;
         level = 15;
-		/*sphere = transform.GetChild (2).gameObject;
-		Component[] comp = sphere.GetComponents <Renderer>();
-		foreach (Renderer r in comp){
-			r.enabled = false;
-			Debug.Log(r.name + " disabilitato");
-		}
-		sphere.GetComponent<Light> ().enabled = false;*/
-
-        
 	}
 	public void setId(int id){
 		ID = id;
@@ -66,24 +57,6 @@ public class Infetto : MonoBehaviour {
 	}
 	public int getMaxHealth(){
 		return maxHealth;
-	}
-	public void startParticle(){
-		sphere.renderer.enabled = true;
-		Component[] comp = sphere.GetComponents <Renderer>();
-		foreach (Renderer r in comp){
-			r.enabled = true;
-			Debug.Log(r.name + " abilitato");
-		}
-		sphere.GetComponent<Light> ().enabled = true;
-	}
-	public void stopParticle(){
-		sphere.renderer.enabled = false;
-		Component[] comp = sphere.GetComponents <Renderer>();
-		foreach (Renderer r in comp){
-			r.enabled = false;
-			Debug.Log(r.name + " disabilitato");
-		}
-		sphere.GetComponent<Light> ().enabled = false;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -114,7 +87,7 @@ public class Infetto : MonoBehaviour {
             // se il mob è in combat e la distanza è maggiore o uguale a 2 si muove verso il player e non attacca
             if (isInCombat && distanceFromPlayer >= 2)
             {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.05F);
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.13F);
                 isAttacking = false;
                 attackTime -= Time.deltaTime;
             }
@@ -157,7 +130,7 @@ public class Infetto : MonoBehaviour {
             //tornare alla posizione iniziale l'infetto.
             if (backHome && distanceFromHome > 0)
             {
-                transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.05F);
+                transform.position = Vector3.MoveTowards(transform.position, initialPos, 0.13F);
                 anim.Play("zombieRun");
                 if (distanceFromHome <= 1)
                 {
