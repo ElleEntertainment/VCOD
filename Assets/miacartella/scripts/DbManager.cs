@@ -63,7 +63,7 @@ using UnityEngine;
         return j;
         
     }
-	public static string loadPlayer(string playerName){
+	public static JSONObject loadPlayer(string playerName){
         myConnection.Open();
         string sql = "SELECT id FROM player WHERE savetype = 1;";
         SqliteCommand com = new SqliteCommand(sql, myConnection);
@@ -75,16 +75,28 @@ using UnityEngine;
         }
         l.Close();
         string result = "";
+        JSONObject json = new JSONObject();
         if (c > 0)
         {
             //il player torna dal menù
-            sql = "SELECT level, exp, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 1;";
+            sql = "SELECT level, exp, expToNextLvl, health, maxhealth, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM player WHERE name='" + playerName + "' AND savetype = 1;";
             SqliteCommand comm = new SqliteCommand(sql, myConnection);
             SqliteDataReader reader = comm.ExecuteReader();
 
             if (reader.Read())
             {
-                result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+                json.AddField("level", reader["level"].ToString());
+                json.AddField("exp", reader["exp"].ToString());
+                json.AddField("expToNextLvl", reader["expToNextLvl"].ToString());
+                json.AddField("health", reader["health"].ToString());
+                json.AddField("maxhealth", reader["maxhealth"].ToString());
+                json.AddField("position_x", reader["position_x"].ToString());
+                json.AddField("position_y", reader["position_y"].ToString());
+                json.AddField("position_z", reader["position_z"].ToString());
+                json.AddField("orientation_x", reader["orientation_x"].ToString());
+                json.AddField("orientation_y", reader["orientation_y"].ToString());
+                json.AddField("orientation_z", reader["orientation_z"].ToString());
+                //result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
             }
             reader.Close();
             //cancello il salvataggio perchè non mi serve più.
@@ -99,12 +111,23 @@ using UnityEngine;
 
             if (reader.Read())
             {
-                result = reader["level"] + "|" + reader["exp"] + "|" + reader["expToNextLvl"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+                json.AddField("level", reader["level"].ToString());
+                json.AddField("exp", reader["exp"].ToString());
+                json.AddField("expToNextLvl", reader["expToNextLvl"].ToString());
+                json.AddField("health", reader["health"].ToString());
+                json.AddField("maxhealth", reader["maxhealth"].ToString());
+                json.AddField("position_x", reader["position_x"].ToString());
+                json.AddField("position_y", reader["position_y"].ToString());
+                json.AddField("position_z", reader["position_z"].ToString());
+                json.AddField("orientation_x", reader["orientation_x"].ToString());
+                json.AddField("orientation_y", reader["orientation_y"].ToString());
+                json.AddField("orientation_z", reader["orientation_z"].ToString());
+                //result = reader["level"] + "|" + reader["exp"] + "|" + reader["expToNextLvl"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
             }
             reader.Close();
         }
 		myConnection.Close();
-		return result;
+		return json;
 	}
 	//La versione del game andrà di pari passo con quella del DB, quando ci sarà una versione di gioco diversa verrà di conseguenza aggiornato anche il db(anche se non ci sono
 	//aggiornamenti verrà comunque aggiornata la versione nel DB) questo metodo ci consente di tenere aggiornato il DB di qualsiasi versione di gioco e senza metter mano

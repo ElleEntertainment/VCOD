@@ -322,22 +322,22 @@ public class Player : MonoBehaviour
     public void load(string s)
     {
         DbManager.setInstance();
-        string myData = DbManager.loadPlayer(s);
+        JSONObject myData = DbManager.loadPlayer(s);
         Debug.Log(myData);
-        if (!myData.Equals(""))
+        if (myData.Count > 0)
         {
-            char[] del = { '|' };
-            string[] values = myData.Split(del);
-            level = Convert.ToInt32(values[0]);
-            exp = Convert.ToInt32(values[1]);
-            expToNextLevel = Convert.ToInt32(values[2]);
-            health = Convert.ToInt32(values[3]);
-            maxHealth = Convert.ToInt32(values[4]);
-            spawnPos.x = (float)Convert.ToDouble(values[5]);
-            spawnPos.y = (float)Convert.ToDouble(values[6]);
-            spawnPos.z = (float)Convert.ToDouble(values[7]);
+            /*char[] del = { '|' };
+            string[] values = myData.Split(del);*/
+            level = Convert.ToInt32(myData.GetField("level"));
+            exp = Convert.ToInt32(myData.GetField("exp"));
+            expToNextLevel = Convert.ToInt32(myData.GetField("expToNextLvl"));
+            health = Convert.ToInt32(myData.GetField("health"));
+            maxHealth = Convert.ToInt32(myData.GetField("maxhealth"));
+            spawnPos.x = (float)Convert.ToDouble(myData.GetField("position_x"));
+            spawnPos.y = (float)Convert.ToDouble(myData.GetField("position_y"));
+            spawnPos.z = (float)Convert.ToDouble(myData.GetField("position_z"));
             transform.position = spawnPos;
-            transform.Rotate((float)Convert.ToDouble(values[8]), (float)Convert.ToDouble(values[9]), (float)Convert.ToDouble(values[10]));
+            transform.Rotate((float)Convert.ToDouble(myData.GetField("orientation_x")), (float)Convert.ToDouble(myData.GetField("orientation_y")), (float)Convert.ToDouble(myData.GetField("orientation_z")));
             TM.SendMessage("playerText", health + "-" + maxHealth + "-" + "" + "-" + level + "-" + exp + "-" + expToNextLevel);
         }
     }
