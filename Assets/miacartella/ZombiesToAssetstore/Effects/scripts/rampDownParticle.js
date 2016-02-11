@@ -7,9 +7,9 @@ var origMaxEmission:float;
 
 function Start () {
 
-origMinEmission=particleEmitter.minEmission;
-origMaxEmission=particleEmitter.maxEmission;
-particleEmitter.emit=false;
+origMinEmission=GetComponent.<ParticleEmitter>().minEmission;
+origMaxEmission=GetComponent.<ParticleEmitter>().maxEmission;
+GetComponent.<ParticleEmitter>().emit=false;
 
 }
 
@@ -17,12 +17,12 @@ function Update () {
 if((delayTime+delayPlusTime)>0) delayTime-=Time.deltaTime;
 
 
-if(delayTime<=0 && particleEmitter.emit==false) particleEmitter.emit=true;
+if(delayTime<=0 && GetComponent.<ParticleEmitter>().emit==false) GetComponent.<ParticleEmitter>().emit=true;
 
 
 if((delayTime+delayPlusTime)<=0){
-particleEmitter.minEmission=origMinEmission*rampDownTime;
-particleEmitter.maxEmission=origMaxEmission*rampDownTime;
+GetComponent.<ParticleEmitter>().minEmission=origMinEmission*rampDownTime;
+GetComponent.<ParticleEmitter>().maxEmission=origMaxEmission*rampDownTime;
 rampDownTime-=Time.deltaTime;
 if(rampDownTime<0){ rampDownTime=0;}
 }

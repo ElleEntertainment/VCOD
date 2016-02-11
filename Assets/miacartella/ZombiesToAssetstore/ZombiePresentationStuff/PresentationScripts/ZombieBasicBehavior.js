@@ -1,4 +1,4 @@
-var zombieState:int;  // 0 - idle áll 1 - shambe 
+var zombieState:int;  // 0 - idle Ã¡ll 1 - shambe 
 var newZombieState:int;
 var stateChangerCD:float;
 var rndNr:float;
@@ -30,7 +30,7 @@ if(stateChangerCD<0)
 		{
 		stateChangerCD=1.5+Random.value;
 		
-		if(zombieState==0){ //ha idlézett
+		if(zombieState==0){ //ha idlÃ©zett
 		rndNr=Random.value*100;
 		if(rndNr<20){newZombieState=0;} //marad idle
 		if((rndNr>=20)&&(rndNr<=30)){newZombieState=1;} //shambling
@@ -119,9 +119,9 @@ Destroy(gameObject, 1.3);
 
 if(zombieState==0)
 	{
-	if (!Zombie.animation.IsPlaying("idle"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("idle"))
 		{
-		Zombie.animation.CrossFade("idle", 0.3);
+		Zombie.GetComponent.<Animation>().CrossFade("idle", 0.3);
 		}
 	
 	}
@@ -132,9 +132,9 @@ if(zombieState==1)
 	transform.Translate(0,0,1*Time.deltaTime);
 
 	
-	if (!Zombie.animation.IsPlaying("shamble"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("shamble"))
 		{
-		Zombie.animation.CrossFade("shamble", 0.3);
+		Zombie.GetComponent.<Animation>().CrossFade("shamble", 0.3);
 		}
 	
 	}
@@ -143,9 +143,9 @@ if(zombieState==2)
 	{
 	transform.Translate(0,0,1*Time.deltaTime);
 	
-	if (!Zombie.animation.IsPlaying("walk"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("walk"))
 		{
-		Zombie.animation.CrossFade("walk", 0.3);
+		Zombie.GetComponent.<Animation>().CrossFade("walk", 0.3);
 		}
 	
 	}
@@ -154,9 +154,9 @@ if(zombieState==2)
 if(zombieState==3)
 	{
 		
-	if (!Zombie.animation.IsPlaying("fallToFace"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("fallToFace"))
 		{
-		Zombie.animation.CrossFade("fallToFace", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("fallToFace", 0.1);
 		}
 	
 	}
@@ -164,9 +164,9 @@ if(zombieState==3)
 if(zombieState==4)
 	{
 		
-	if (!Zombie.animation.IsPlaying("beginToCrawl"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("beginToCrawl"))
 		{
-		Zombie.animation.CrossFade("beginToCrawl", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("beginToCrawl", 0.1);
 		}
 	
 	}
@@ -175,9 +175,9 @@ if(zombieState==5)
 	{
 	transform.Translate(0,0,1*Time.deltaTime);
 	
-	if (!Zombie.animation.IsPlaying("crawl"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("crawl"))
 		{
-		Zombie.animation.CrossFade("crawl", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("crawl", 0.1);
 		}
 	
 	}
@@ -187,9 +187,9 @@ if(zombieState==6)
 	{
 	
 	
-	if (!Zombie.animation.IsPlaying("standUp"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("standUp"))
 		{
-		Zombie.animation.CrossFade("standUp", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("standUp", 0.1);
 		}
 	
 	}
@@ -199,9 +199,9 @@ if(zombieState==7)
 	{
 	
 	
-	if (!Zombie.animation.IsPlaying("fallBack"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("fallBack"))
 		{
-		Zombie.animation.CrossFade("fallBack", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("fallBack", 0.1);
 		}
 	
 	}
@@ -209,18 +209,18 @@ if(zombieState==7)
 	if(zombieState==8)
 	{
 
-	if (!Zombie.animation.IsPlaying("hit1"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("hit1"))
 		{
-		Zombie.animation.CrossFade("hit1", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("hit1", 0.1);
 		}
 	}
 	
 	if(zombieState==9)
 	{
 
-	if (!Zombie.animation.IsPlaying("hit2"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("hit2"))
 		{
-		Zombie.animation.CrossFade("hit2", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("hit2", 0.1);
 		}
 	}
 
@@ -228,18 +228,18 @@ if(zombieState==7)
 	if(zombieState==10)
 	{
 
-	if (!Zombie.animation.IsPlaying("attack1"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("attack1"))
 		{
-		Zombie.animation.CrossFade("attack1", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("attack1", 0.1);
 		}
 	}
 
 	if(zombieState==11)
 	{
 
-	if (!Zombie.animation.IsPlaying("attack2"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("attack2"))
 		{
-		Zombie.animation.CrossFade("attack2", 0.1);
+		Zombie.GetComponent.<Animation>().CrossFade("attack2", 0.1);
 		}
 	}
 
@@ -247,9 +247,9 @@ if(zombieState==12)
 	{
 	transform.Translate(0,0,3*Time.deltaTime);
 	
-	if (!Zombie.animation.IsPlaying("run"))
+	if (!Zombie.GetComponent.<Animation>().IsPlaying("run"))
 		{
-		Zombie.animation.CrossFade("run", 0.3);
+		Zombie.GetComponent.<Animation>().CrossFade("run", 0.3);
 		}
 	
 	}

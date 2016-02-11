@@ -37,7 +37,7 @@ using UnityEngine;
         com.ExecuteNonQuery();
         myConnection.Close();
     }
-    public static string[] loadWorld()
+    public static JSONObject loadWorld()
     {
         myConnection.Open();
         string query = "SELECT idSpawn, position_x, position_y, position_z, orientation_x, orientation_y, orientation_z FROM nemici_info;";
@@ -45,14 +45,22 @@ using UnityEngine;
         SqliteDataReader reader = com.ExecuteReader();
         string[] result = new string[6];
         int contatore = 0;
+        JSONObject j = new JSONObject();
         while (reader.Read())
         {
-            result[contatore] = reader["idSpawn"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
+            j.AddField("idSpawn", reader["idSpawn"].ToString());
+            j.AddField("position_x", reader["position_x"].ToString());
+            j.AddField("position_y", reader["position_y"].ToString());
+            j.AddField("position_z", reader["position_z"].ToString());
+            j.AddField("orientation_x", reader["orientation_x"].ToString());
+            j.AddField("orientation_y", reader["orientation_y"].ToString());
+            j.AddField("orientation_z", reader["orientation_z"].ToString());
+            //result[contatore] = reader["idSpawn"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
             contatore++;
         }
         myConnection.Close();
         
-        return result;
+        return j;
         
     }
 	public static string loadPlayer(string playerName){

@@ -31,7 +31,7 @@ public class Proiettile : MonoBehaviour {
             //applico una forza per far andare in avanti e velocemente il proiettile
             //il RELATIVE fa considerare il vettore di forza relativo all'oggetto, non usa le coordinate globali
             //in questo modo però se metto a forzaSparo un valore alto, il motore di unity potrebbe non capire che c'è stata una collisione
-            clone.rigidbody.AddRelativeForce(Vector3.forward * forzaSparo /* 1 * variabile*/ , ForceMode.Impulse);
+            clone.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * forzaSparo /* 1 * variabile*/ , ForceMode.Impulse);
             
             Destroy(clone, attesa);
 
