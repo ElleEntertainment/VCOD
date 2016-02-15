@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Packet : MonoBehaviour {
+public class Packet {
 
 	// Use this for initialization
 	void Start () {
