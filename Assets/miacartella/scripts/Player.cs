@@ -155,7 +155,8 @@ public class Player : MonoBehaviour
             //Resetta la vita
             health = maxHealth;
             wasDead = true;
-            TM.SendMessage("playerText", health + "-" + maxHealth + "-" + " " + "-" + level + "-" + exp + "-" + expToNextLevel);
+            PlayerText pt = new PlayerText(health, maxHealth, 0, level, exp, expToNextLevel);
+            TM.SendMessage("playerText", pt.buildPacket());
         }
 
         if (currentTarget != null)
@@ -174,14 +175,8 @@ public class Player : MonoBehaviour
         if (currentTarget != null && !isAttacking)
         {
             TM.setTargetTrue(true);
-            //string targetInfo = currentTarget.getHealth() + "-" + currentTarget.getMaxHealth() + "-" + " " + "-" + currentTarget.getLevel() + "-";
-            JSONObject targetInfo = new JSONObject();
-            targetInfo.AddField("curhealth", currentTarget.getHealth());
-            targetInfo.AddField("tothealth", currentTarget.getMaxHealth());
-            targetInfo.AddField("level", currentTarget.getLevel());
-            targetInfo.AddField("damage", "");
-            targetInfo.AddField("expgive", "");
-            TM.SendMessage("targetText", targetInfo);
+            TargetInfo t = new TargetInfo(currentTarget.getHealth(), currentTarget.getMaxHealth(), currentTarget.getLevel(), 0, 0);
+            TM.SendMessage("targetText", t.buildPacket());
         }
         if (currentTarget != null)
         {
@@ -225,13 +220,8 @@ public class Player : MonoBehaviour
         {
             int dam = UnityEngine.Random.Range(10, 25);
             target.SendMessage("applyDamage", dam);
-            JSONObject targetInfo = new JSONObject();
-            targetInfo.AddField("curhealth", currentTarget.getHealth());
-            targetInfo.AddField("tothealth", currentTarget.getMaxHealth());
-            targetInfo.AddField("level", currentTarget.getLevel());
-            targetInfo.AddField("damage", "");
-            targetInfo.AddField("expgive", "");
-            TM.SendMessage("targetText", targetInfo);
+            TargetInfo t = new TargetInfo(currentTarget.getHealth(), currentTarget.getMaxHealth(), currentTarget.getLevel(), 0, 0);
+            TM.SendMessage("targetText", t.buildPacket());
             attackTime = 1.5F;
         }
         else
@@ -247,14 +237,8 @@ public class Player : MonoBehaviour
         }
         damageRec = "<b>" + damage + "</b>";
         attackRec = true;
-        JSONObject playerTextMessage = new JSONObject();
-        playerTextMessage.AddField("health", health);
-        playerTextMessage.AddField("maxhealth", maxHealth);
-        playerTextMessage.AddField("damage", damage);
-        playerTextMessage.AddField("level", level);
-        playerTextMessage.AddField("exp", exp);
-        playerTextMessage.AddField("exptonextlevel", expToNextLevel);
-        TM.SendMessage("playerText", playerTextMessage);
+        PlayerText pt = new PlayerText(health, maxHealth, damage, level, exp, expToNextLevel);
+        TM.SendMessage("playerText", pt.buildPacket());
         Debug.Log("Damage Received " + damage);
     }
 
@@ -284,14 +268,8 @@ public class Player : MonoBehaviour
             }
 
         }
-        JSONObject playerTextMessage = new JSONObject();
-        playerTextMessage.AddField("health", health);
-        playerTextMessage.AddField("maxhealth", maxHealth);
-        playerTextMessage.AddField("damage", "");
-        playerTextMessage.AddField("level", level);
-        playerTextMessage.AddField("exp", exp);
-        playerTextMessage.AddField("exptonextlevel", expToNextLevel);
-        TM.SendMessage("playerText", playerTextMessage);
+        PlayerText pt = new PlayerText(health, maxHealth, 0, level, exp, expToNextLevel);
+        TM.SendMessage("playerText", pt.buildPacket());
 
     }
 
@@ -312,14 +290,8 @@ public class Player : MonoBehaviour
         }
         /*string targetInfo = " - - - -" + experience;
         TM.SendMessage("targetText", targetInfo);*/
-        JSONObject playerTextMessage = new JSONObject();
-        playerTextMessage.AddField("health", health);
-        playerTextMessage.AddField("maxhealth", maxHealth);
-        playerTextMessage.AddField("damage", "");
-        playerTextMessage.AddField("level", level);
-        playerTextMessage.AddField("exp", exp);
-        playerTextMessage.AddField("exptonextlevel", expToNextLevel);
-        TM.SendMessage("playerText", playerTextMessage);
+        PlayerText pt = new PlayerText(health, maxHealth, 0, level, exp, expToNextLevel);
+        TM.SendMessage("playerText", pt.buildPacket());
     }
 
     public Infetto getTarget()
@@ -367,14 +339,8 @@ public class Player : MonoBehaviour
             spawnPos.z = myData.GetField("position_z").n;
             transform.position = spawnPos;
             transform.Rotate(myData.GetField("orientation_x").n, myData.GetField("orientation_y").n, myData.GetField("orientation_z").n);
-            JSONObject playerTextMessage = new JSONObject();
-            playerTextMessage.AddField("health", health);
-            playerTextMessage.AddField("maxhealth", maxHealth);
-            playerTextMessage.AddField("damage", "");
-            playerTextMessage.AddField("level", level);
-            playerTextMessage.AddField("exp", exp);
-            playerTextMessage.AddField("exptonextlevel", expToNextLevel);
-            TM.SendMessage("playerText", playerTextMessage);
+            PlayerText pt = new PlayerText(health, maxHealth, 0, level, exp, expToNextLevel);
+            TM.SendMessage("playerText", pt.buildPacket());
         }
     }
     public long UnixTimeNow()
