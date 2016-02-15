@@ -85,17 +85,17 @@ using UnityEngine;
 
             if (reader.Read())
             {
-                json.AddField("level", reader["level"].ToString());
-                json.AddField("exp", reader["exp"].ToString());
-                json.AddField("expToNextLvl", reader["expToNextLvl"].ToString());
-                json.AddField("health", reader["health"].ToString());
-                json.AddField("maxhealth", reader["maxhealth"].ToString());
-                json.AddField("position_x", reader["position_x"].ToString());
-                json.AddField("position_y", reader["position_y"].ToString());
-                json.AddField("position_z", reader["position_z"].ToString());
-                json.AddField("orientation_x", reader["orientation_x"].ToString());
-                json.AddField("orientation_y", reader["orientation_y"].ToString());
-                json.AddField("orientation_z", reader["orientation_z"].ToString());
+                json.AddField("level", System.Convert.ToInt16(reader["level"]));
+                json.AddField("exp", System.Convert.ToInt16(reader["exp"]));
+                json.AddField("expToNextLvl", System.Convert.ToInt16(reader["expToNextLvl"]));
+                json.AddField("health", System.Convert.ToInt16(reader["health"]));
+                json.AddField("maxhealth", System.Convert.ToInt16(reader["maxhealth"]));
+                json.AddField("position_x", (float)System.Convert.ToDouble(reader["position_x"]));
+                json.AddField("position_y", (float)System.Convert.ToDouble(reader["position_y"]));
+                json.AddField("position_z", (float)System.Convert.ToDouble(reader["position_z"]));
+                json.AddField("orientation_x", (float)System.Convert.ToDouble(reader["orientation_x"]));
+                json.AddField("orientation_y", (float)System.Convert.ToDouble(reader["orientation_y"]));
+                json.AddField("orientation_z", (float)System.Convert.ToDouble(reader["orientation_z"]));
                 //result = reader["level"] + "|" + reader["exp"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
             }
             reader.Close();
@@ -111,17 +111,17 @@ using UnityEngine;
 
             if (reader.Read())
             {
-                json.AddField("level", reader["level"].ToString());
-                json.AddField("exp", reader["exp"].ToString());
-                json.AddField("expToNextLvl", reader["expToNextLvl"].ToString());
-                json.AddField("health", reader["health"].ToString());
-                json.AddField("maxhealth", reader["maxhealth"].ToString());
-                json.AddField("position_x", reader["position_x"].ToString());
-                json.AddField("position_y", reader["position_y"].ToString());
-                json.AddField("position_z", reader["position_z"].ToString());
-                json.AddField("orientation_x", reader["orientation_x"].ToString());
-                json.AddField("orientation_y", reader["orientation_y"].ToString());
-                json.AddField("orientation_z", reader["orientation_z"].ToString());
+                json.AddField("level", System.Convert.ToInt16(reader["level"]));
+                json.AddField("exp", System.Convert.ToInt16(reader["exp"]));
+                json.AddField("expToNextLvl", System.Convert.ToInt16(reader["expToNextLvl"]));
+                json.AddField("health", System.Convert.ToInt16(reader["health"]));
+                json.AddField("maxhealth", System.Convert.ToInt16(reader["maxhealth"]));
+                json.AddField("position_x", (float)System.Convert.ToDouble(reader["position_x"]));
+                json.AddField("position_y", (float)System.Convert.ToDouble(reader["position_y"]));
+                json.AddField("position_z", (float)System.Convert.ToDouble(reader["position_z"]));
+                json.AddField("orientation_x", (float)System.Convert.ToDouble(reader["orientation_x"]));
+                json.AddField("orientation_y", (float)System.Convert.ToDouble(reader["orientation_y"]));
+                json.AddField("orientation_z", (float)System.Convert.ToDouble(reader["orientation_z"]));
                 //result = reader["level"] + "|" + reader["exp"] + "|" + reader["expToNextLvl"] + "|" + reader["health"] + "|" + reader["maxhealth"] + "|" + reader["position_x"] + "|" + reader["position_y"] + "|" + reader["position_z"] + "|" + reader["orientation_x"] + "|" + reader["orientation_y"] + "|" + reader["orientation_z"];
             }
             reader.Close();

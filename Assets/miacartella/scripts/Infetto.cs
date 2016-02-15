@@ -112,7 +112,7 @@ public class Infetto : MonoBehaviour {
                     float curSpeed = anim["attack1"].speed;
                     anim["attack1"].speed = duration / attackSpeed;
 
-                    Debug.Log("La velocità dell'animazione è " + anim["attack1"].speed);
+                    //Debug.Log("La velocità dell'animazione è " + anim["attack1"].speed);
                 }
             }
 

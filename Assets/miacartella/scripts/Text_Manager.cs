@@ -8,17 +8,17 @@ using System;
 public class Text_Manager : MonoBehaviour {
 
 	public GUISkin customSkin;
-	string playerLevel = "";
-	string playerExp = "";
-	string playerExpToNextLevel = "";
-	string playerCurHealth = "";
-	string playerToTHealth = "";
-	string targetCurHealth = "";
-	string targetTotHealth = "";
-	string targetLevel = "";
-	string targetExpGive = "";
-	string targetDamage = "";
-	string playerDamage = "";
+	int playerLevel = 0;
+	int playerExp = 0;
+	int playerExpToNextLevel = 0;
+	int playerCurHealth = 0;
+	int playerToTHealth = 0;
+	int targetCurHealth = 0;
+	int targetTotHealth = 0;
+	int targetLevel = 0;
+	int targetExpGive = 0;
+	int targetDamage = 0;
+	int playerDamage = 0;
 	Vector3 mousePosition;
 	float disappearTime;
 	float tdisappearTime;
@@ -44,15 +44,15 @@ public class Text_Manager : MonoBehaviour {
 		//fa scomparire il testo del danno dopo un po' di tempo
 		disappearTime -= Time.deltaTime;
 		if (disappearTime <= 0) {
-			playerDamage = "";
+			playerDamage = 0;
 		}
 		tdisappearTime -= Time.deltaTime;
 		if (tdisappearTime <= 0) {
-			targetDamage = "";
+			targetDamage = 0;
 		}
 		expdisappearTime -= Time.deltaTime;
 		if (expdisappearTime <= 0) {
-			targetExpGive = "";
+			targetExpGive = 0;
 		}
 		mousePosition = Input.mousePosition;
         
@@ -67,8 +67,8 @@ public class Text_Manager : MonoBehaviour {
 
 
 		//--------- Player
-		float curh = (float)Convert.ToInt32 (playerCurHealth);
-		float toth = (float)Convert.ToInt32 (playerToTHealth);
+		float curh = (float)Convert.ToDouble (playerCurHealth);
+		float toth = (float)Convert.ToDouble(playerToTHealth);
 		int percent = Mathf.RoundToInt((curh/toth) * 100);
 		GUI.skin = customSkin;
 		GUI.color = Color.black;
@@ -84,13 +84,13 @@ public class Text_Manager : MonoBehaviour {
 			GUI.Label (new Rect (110 , -30, 80, 80), percent + "%");
 
 		GUI.color = Color.red;
-		GUI.Label (new Rect (Screen.width / 2 - 20, Screen.height / 2 - 20, 40, 40), playerDamage);
+		GUI.Label (new Rect (Screen.width / 2 - 20, Screen.height / 2 - 20, 40, 40), playerDamage.ToString());
 		//Exp
 		GUI.color = Color.magenta;
 		int expInt = Convert.ToInt32 (playerExp);
 		int expToNextInt = Convert.ToInt32 (playerExpToNextLevel);
 		int expPercent = Mathf.RoundToInt (((float)expInt / (float)expToNextInt) * 100);
-		GUI.Label (new Rect (Screen.width / 2, Screen.height - 100, 40, 40), targetExpGive);
+		GUI.Label (new Rect (Screen.width / 2, Screen.height - 100, 40, 40), targetExpGive.ToString());
 		if(expPercent > 0)
 			GUI.Button (new Rect (Screen.width/2 - 200,Screen.height - 35, expPercent * 4 , 25), "");
 		GUI.color = Color.white;
@@ -111,7 +111,7 @@ public class Text_Manager : MonoBehaviour {
 						else
 								GUI.Label (new Rect (430, -30, 80, 80), tpercent + "%");
 						GUI.color = Color.white;
-						GUI.Label (new Rect (Screen.width / 2 , Screen.height / 2 , 40, 40), targetDamage);
+						GUI.Label (new Rect (Screen.width / 2 , Screen.height / 2 , 40, 40), targetDamage.ToString());
 		}
 		//Reset color
 		GUI.color = backupColor;
@@ -121,28 +121,24 @@ public class Text_Manager : MonoBehaviour {
 
 	}
 	//funzione che chiama il player quando deve aggiornare i suoi dati
-	void playerText(string value) {
-		char[] del = {'-'};
-		string[] values = value.Split(del);
-        playerCurHealth = values [0];
-		playerToTHealth = values [1];
-		playerDamage = values [2];
-		playerLevel = values [3];
-		playerExp = values [4];
-		playerExpToNextLevel = values [5];
-		disappearTime = 0.7F;
+	void playerText(JSONObject json) {
+		playerCurHealth = Global.JSONParseInt(json.GetField("health").n);
+		playerToTHealth = Global.JSONParseInt(json.GetField("maxhealth").n);
+        playerDamage = Global.JSONParseInt(json.GetField("damage").n);
+        playerLevel = Global.JSONParseInt(json.GetField("level").n);
+        playerExp = Global.JSONParseInt(json.GetField("exp").n);
+        playerExpToNextLevel = Global.JSONParseInt(json.GetField("exptonextlevel").n);
+        disappearTime = 0.7F;
 	}
 
 	//funzione che chiama l'infetto quando deve aggiornare i suoi dati
-	void targetText(string value) {
-		char[] del = {'-'};
-		string[] values = value.Split(del);
-		targetCurHealth = values [0];
-		targetTotHealth = values [1];
-		targetDamage = values [2];
-		targetLevel = values [3];
-		targetExpGive = values [4];
-		tdisappearTime = 0.7F;
+	void targetText(JSONObject json) {
+		targetCurHealth = Global.JSONParseInt(json.GetField("curhealth").n);
+        targetTotHealth = Global.JSONParseInt(json.GetField("tothealth").n);
+        targetDamage = Global.JSONParseInt(json.GetField("damage").n);
+        targetLevel = Global.JSONParseInt(json.GetField("level").n);
+        targetExpGive = Global.JSONParseInt(json.GetField("expgive").n);
+        tdisappearTime = 0.7F;
 		expdisappearTime = 1.0F;
 	}
 	public void setTargetTrue(bool hasTarget){
