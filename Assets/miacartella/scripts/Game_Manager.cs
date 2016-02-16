@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using NetMQ;
+using NetMQ.Sockets;
+using System.Threading;
+using AsyncIO;
 
 //Classe per gestire il gioco (creazione infetti e spawn vari)
 //----------------------------------
@@ -34,12 +38,12 @@ public class Game_Manager : MonoBehaviour {
                 infetti[i] = inf;
             }
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        for (int i = 0; i < infetti.Length; i++)
+        /*for (int i = 0; i < infetti.Length; i++)
         {
             if (infetti[i] != null)
             {
@@ -51,7 +55,7 @@ public class Game_Manager : MonoBehaviour {
                     break;
                 }
             }
-        }
+        }*/
 	}
 	//getter per array di infetti (servirà più avanti sicuramente)
 	public Infetto[] getInfettiInMap(){

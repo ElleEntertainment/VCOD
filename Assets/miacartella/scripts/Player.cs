@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     GameObject camera;
     bool isTargetting;
     GameObject armacamera;
+    Client c = new Client();
     string query = "";
     float armacamera_p_x, armacamera_p_y, armacamera_p_z, armacamera_o_x, armacamera_o_y, armacamera_o_z, camera_p_x, camera_p_y, camera_p_z, camera_o_x, camera_o_y, camera_o_z; 
     //--------------------------------
@@ -72,7 +73,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Sistema di Rotazione (non ce n'è bisogno per ora)
         if (Input.GetKey(KeyCode.A))
             transform.Rotate(Vector3.up, -1); //-1 sono i gradi di rotazione
